@@ -5,7 +5,7 @@
 
 import {proto3, Timestamp} from "@bufbuild/protobuf";
 import {GeoPoint, Subject} from "../../domain/v1/domain_pb.js";
-import {GeoLocationHistoryRecord, LocationHistoryRecord} from "./location_pb.js";
+import {LocationHistoryRecord, LocationRecord} from "./location_pb.js";
 
 /**
  * @generated from message location.v1.GetLocationHistoryRequest
@@ -37,39 +37,6 @@ export const LocationHistory = proto3.makeMessageType(
   () => [
     { no: 1, name: "subject", kind: "message", T: Subject },
     { no: 2, name: "records", kind: "message", T: LocationHistoryRecord, repeated: true },
-  ],
-);
-
-/**
- * @generated from message location.v1.GeoLocationHistory
- */
-export const GeoLocationHistory = proto3.makeMessageType(
-  "location.v1.GeoLocationHistory",
-  () => [
-    { no: 1, name: "subject", kind: "message", T: Subject },
-    { no: 2, name: "records", kind: "message", T: GeoLocationHistoryRecord, repeated: true },
-  ],
-);
-
-/**
- * @generated from message location.v1.GetGeoLocationHistoryRequest
- */
-export const GetGeoLocationHistoryRequest = proto3.makeMessageType(
-  "location.v1.GetGeoLocationHistoryRequest",
-  () => [
-    { no: 1, name: "subject", kind: "message", T: Subject },
-    { no: 2, name: "from_time", kind: "message", T: Timestamp },
-    { no: 3, name: "to_time", kind: "message", T: Timestamp },
-  ],
-);
-
-/**
- * @generated from message location.v1.GetGeoLocationHistoryResponse
- */
-export const GetGeoLocationHistoryResponse = proto3.makeMessageType(
-  "location.v1.GetGeoLocationHistoryResponse",
-  () => [
-    { no: 1, name: "subject_geo_location_history", kind: "map", K: 5 /* ScalarType.INT32 */, V: {kind: "message", T: GeoLocationHistory} },
   ],
 );
 
@@ -136,5 +103,39 @@ export const GetLatestSubjectPositionResponse = proto3.makeMessageType(
     { no: 1, name: "time", kind: "message", T: Timestamp },
     { no: 2, name: "point", kind: "message", T: GeoPoint },
   ],
+);
+
+/**
+ * @generated from message location.v1.GetLocationRecordsRequest
+ */
+export const GetLocationRecordsRequest = proto3.makeMessageType(
+  "location.v1.GetLocationRecordsRequest",
+  () => [
+    { no: 1, name: "subjects", kind: "message", T: Subject, repeated: true },
+    { no: 2, name: "from_time", kind: "message", T: Timestamp },
+    { no: 3, name: "to_time", kind: "message", T: Timestamp },
+  ],
+);
+
+/**
+ * @generated from message location.v1.GetLocationRecordsResponse
+ */
+export const GetLocationRecordsResponse = proto3.makeMessageType(
+  "location.v1.GetLocationRecordsResponse",
+  () => [
+    { no: 1, name: "subject_location_records", kind: "map", K: 5 /* ScalarType.INT32 */, V: {kind: "message", T: GetLocationRecordsResponse_SubjectLocationRecords} },
+  ],
+);
+
+/**
+ * @generated from message location.v1.GetLocationRecordsResponse.SubjectLocationRecords
+ */
+export const GetLocationRecordsResponse_SubjectLocationRecords = proto3.makeMessageType(
+  "location.v1.GetLocationRecordsResponse.SubjectLocationRecords",
+  () => [
+    { no: 1, name: "subject", kind: "message", T: Subject },
+    { no: 2, name: "records", kind: "message", T: LocationRecord, repeated: true },
+  ],
+  {localName: "GetLocationRecordsResponse_SubjectLocationRecords"},
 );
 

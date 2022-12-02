@@ -82,38 +82,40 @@ export declare class LatLng extends Message<LatLng> {
 }
 
 /**
- * @generated from message location.v1.GeoLocationHistoryRecord
+ * @generated from message location.v1.LocationRecord
  */
-export declare class GeoLocationHistoryRecord extends Message<GeoLocationHistoryRecord> {
+export declare class LocationRecord extends Message<LocationRecord> {
+  /**
+   * Zone in which the beacon was present
+   *
+   * @generated from field: int32 zone = 1;
+   */
+  zone: number;
+
   /**
    * coordinates at which beacon was present
    *
-   * @generated from field: location.v1.LatLng coordinates = 1;
+   * @generated from field: location.v1.LatLng coordinates = 2;
    */
   coordinates?: LatLng;
 
   /**
-   * @generated from field: google.protobuf.Timestamp from_time = 2;
+   * @generated from field: google.protobuf.Timestamp time = 3;
    */
-  fromTime?: Timestamp;
+  time?: Timestamp;
 
-  /**
-   * @generated from field: google.protobuf.Timestamp to_time = 3;
-   */
-  toTime?: Timestamp;
-
-  constructor(data?: PartialMessage<GeoLocationHistoryRecord>);
+  constructor(data?: PartialMessage<LocationRecord>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "location.v1.GeoLocationHistoryRecord";
+  static readonly typeName = "location.v1.LocationRecord";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GeoLocationHistoryRecord;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LocationRecord;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GeoLocationHistoryRecord;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LocationRecord;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GeoLocationHistoryRecord;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LocationRecord;
 
-  static equals(a: GeoLocationHistoryRecord | PlainMessage<GeoLocationHistoryRecord> | undefined, b: GeoLocationHistoryRecord | PlainMessage<GeoLocationHistoryRecord> | undefined): boolean;
+  static equals(a: LocationRecord | PlainMessage<LocationRecord> | undefined, b: LocationRecord | PlainMessage<LocationRecord> | undefined): boolean;
 }
 

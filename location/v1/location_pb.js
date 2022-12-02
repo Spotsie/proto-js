@@ -35,14 +35,14 @@ export const LatLng = proto3.makeMessageType(
 );
 
 /**
- * @generated from message location.v1.GeoLocationHistoryRecord
+ * @generated from message location.v1.LocationRecord
  */
-export const GeoLocationHistoryRecord = proto3.makeMessageType(
-  "location.v1.GeoLocationHistoryRecord",
+export const LocationRecord = proto3.makeMessageType(
+  "location.v1.LocationRecord",
   () => [
-    { no: 1, name: "coordinates", kind: "message", T: LatLng },
-    { no: 2, name: "from_time", kind: "message", T: Timestamp },
-    { no: 3, name: "to_time", kind: "message", T: Timestamp },
+    { no: 1, name: "zone", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "coordinates", kind: "message", T: LatLng },
+    { no: 3, name: "time", kind: "message", T: Timestamp },
   ],
 );
 
