@@ -6,7 +6,7 @@
 import type {BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp} from "@bufbuild/protobuf";
 import {Message, proto3} from "@bufbuild/protobuf";
 import type {GeoPoint, Subject} from "../../domain/v1/domain_pb.js";
-import type {GeoLocationHistoryRecord, LocationHistoryRecord} from "./location_pb.js";
+import type {LocationHistoryRecord, LocationRecord} from "./location_pb.js";
 
 /**
  * @generated from message location.v1.GetLocationHistoryRequest
@@ -93,93 +93,6 @@ export declare class LocationHistory extends Message<LocationHistory> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LocationHistory;
 
   static equals(a: LocationHistory | PlainMessage<LocationHistory> | undefined, b: LocationHistory | PlainMessage<LocationHistory> | undefined): boolean;
-}
-
-/**
- * @generated from message location.v1.GeoLocationHistory
- */
-export declare class GeoLocationHistory extends Message<GeoLocationHistory> {
-  /**
-   * @generated from field: domain.v1.Subject subject = 1;
-   */
-  subject?: Subject;
-
-  /**
-   * @generated from field: repeated location.v1.GeoLocationHistoryRecord records = 2;
-   */
-  records: GeoLocationHistoryRecord[];
-
-  constructor(data?: PartialMessage<GeoLocationHistory>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "location.v1.GeoLocationHistory";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GeoLocationHistory;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GeoLocationHistory;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GeoLocationHistory;
-
-  static equals(a: GeoLocationHistory | PlainMessage<GeoLocationHistory> | undefined, b: GeoLocationHistory | PlainMessage<GeoLocationHistory> | undefined): boolean;
-}
-
-/**
- * @generated from message location.v1.GetGeoLocationHistoryRequest
- */
-export declare class GetGeoLocationHistoryRequest extends Message<GetGeoLocationHistoryRequest> {
-  /**
-   * @generated from field: domain.v1.Subject subject = 1;
-   */
-  subject?: Subject;
-
-  /**
-   * @generated from field: google.protobuf.Timestamp from_time = 2;
-   */
-  fromTime?: Timestamp;
-
-  /**
-   * @generated from field: google.protobuf.Timestamp to_time = 3;
-   */
-  toTime?: Timestamp;
-
-  constructor(data?: PartialMessage<GetGeoLocationHistoryRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "location.v1.GetGeoLocationHistoryRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetGeoLocationHistoryRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetGeoLocationHistoryRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetGeoLocationHistoryRequest;
-
-  static equals(a: GetGeoLocationHistoryRequest | PlainMessage<GetGeoLocationHistoryRequest> | undefined, b: GetGeoLocationHistoryRequest | PlainMessage<GetGeoLocationHistoryRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message location.v1.GetGeoLocationHistoryResponse
- */
-export declare class GetGeoLocationHistoryResponse extends Message<GetGeoLocationHistoryResponse> {
-  /**
-   * @generated from field: map<int32, location.v1.GeoLocationHistory> subject_geo_location_history = 1;
-   */
-  subjectGeoLocationHistory: { [key: number]: GeoLocationHistory };
-
-  constructor(data?: PartialMessage<GetGeoLocationHistoryResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "location.v1.GetGeoLocationHistoryResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetGeoLocationHistoryResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetGeoLocationHistoryResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetGeoLocationHistoryResponse;
-
-  static equals(a: GetGeoLocationHistoryResponse | PlainMessage<GetGeoLocationHistoryResponse> | undefined, b: GetGeoLocationHistoryResponse | PlainMessage<GetGeoLocationHistoryResponse> | undefined): boolean;
 }
 
 /**
@@ -351,5 +264,92 @@ export declare class GetLatestSubjectPositionResponse extends Message<GetLatestS
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLatestSubjectPositionResponse;
 
   static equals(a: GetLatestSubjectPositionResponse | PlainMessage<GetLatestSubjectPositionResponse> | undefined, b: GetLatestSubjectPositionResponse | PlainMessage<GetLatestSubjectPositionResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message location.v1.GetLocationRecordsRequest
+ */
+export declare class GetLocationRecordsRequest extends Message<GetLocationRecordsRequest> {
+  /**
+   * @generated from field: repeated domain.v1.Subject subjects = 1;
+   */
+  subjects: Subject[];
+
+  /**
+   * @generated from field: google.protobuf.Timestamp from_time = 2;
+   */
+  fromTime?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp to_time = 3;
+   */
+  toTime?: Timestamp;
+
+  constructor(data?: PartialMessage<GetLocationRecordsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "location.v1.GetLocationRecordsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLocationRecordsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLocationRecordsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLocationRecordsRequest;
+
+  static equals(a: GetLocationRecordsRequest | PlainMessage<GetLocationRecordsRequest> | undefined, b: GetLocationRecordsRequest | PlainMessage<GetLocationRecordsRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message location.v1.GetLocationRecordsResponse
+ */
+export declare class GetLocationRecordsResponse extends Message<GetLocationRecordsResponse> {
+  /**
+   * @generated from field: map<int32, location.v1.GetLocationRecordsResponse.SubjectLocationRecords> subject_location_records = 1;
+   */
+  subjectLocationRecords: { [key: number]: GetLocationRecordsResponse_SubjectLocationRecords };
+
+  constructor(data?: PartialMessage<GetLocationRecordsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "location.v1.GetLocationRecordsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLocationRecordsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLocationRecordsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLocationRecordsResponse;
+
+  static equals(a: GetLocationRecordsResponse | PlainMessage<GetLocationRecordsResponse> | undefined, b: GetLocationRecordsResponse | PlainMessage<GetLocationRecordsResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message location.v1.GetLocationRecordsResponse.SubjectLocationRecords
+ */
+export declare class GetLocationRecordsResponse_SubjectLocationRecords extends Message<GetLocationRecordsResponse_SubjectLocationRecords> {
+  /**
+   * @generated from field: domain.v1.Subject subject = 1;
+   */
+  subject?: Subject;
+
+  /**
+   * @generated from field: repeated location.v1.LocationRecord records = 2;
+   */
+  records: LocationRecord[];
+
+  constructor(data?: PartialMessage<GetLocationRecordsResponse_SubjectLocationRecords>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "location.v1.GetLocationRecordsResponse.SubjectLocationRecords";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLocationRecordsResponse_SubjectLocationRecords;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLocationRecordsResponse_SubjectLocationRecords;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLocationRecordsResponse_SubjectLocationRecords;
+
+  static equals(a: GetLocationRecordsResponse_SubjectLocationRecords | PlainMessage<GetLocationRecordsResponse_SubjectLocationRecords> | undefined, b: GetLocationRecordsResponse_SubjectLocationRecords | PlainMessage<GetLocationRecordsResponse_SubjectLocationRecords> | undefined): boolean;
 }
 

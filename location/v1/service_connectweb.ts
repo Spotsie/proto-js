@@ -3,7 +3,7 @@
 /* eslint-disable */
 /* @ts-nocheck */
 
-import {GetGeoLocationHistoryRequest, GetGeoLocationHistoryResponse, GetLatestSubjectPositionRequest, GetLatestSubjectPositionResponse, GetLocationHistoryRequest, GetLocationHistoryResponse, GetRealtimeLocationRequest, GetRealtimeLocationResponse, GetSubjectLocationsAtRequest, GetSubjectLocationsAtResponse} from "./service_pb.js";
+import {GetLatestSubjectPositionRequest, GetLatestSubjectPositionResponse, GetLocationHistoryRequest, GetLocationHistoryResponse, GetLocationRecordsRequest, GetLocationRecordsResponse, GetRealtimeLocationRequest, GetRealtimeLocationResponse, GetSubjectLocationsAtRequest, GetSubjectLocationsAtResponse} from "./service_pb.js";
 import {MethodKind} from "@bufbuild/protobuf";
 
 /**
@@ -13,6 +13,8 @@ export const LocationService = {
   typeName: "location.v1.LocationService",
   methods: {
     /**
+     * Compressed location history based on zones
+     *
      * @generated from rpc location.v1.LocationService.GetLocationHistory
      */
     getLocationHistory: {
@@ -22,12 +24,14 @@ export const LocationService = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc location.v1.LocationService.GetGeoLocationHistory
+     * Point in time location records based on zone and/or coordinates
+     *
+     * @generated from rpc location.v1.LocationService.GetLocationRecords
      */
-    getGeoLocationHistory: {
-      name: "GetGeoLocationHistory",
-      I: GetGeoLocationHistoryRequest,
-      O: GetGeoLocationHistoryResponse,
+    getLocationRecords: {
+      name: "GetLocationRecords",
+      I: GetLocationRecordsRequest,
+      O: GetLocationRecordsResponse,
       kind: MethodKind.Unary,
     },
     /**
