@@ -1035,6 +1035,11 @@ export declare class Test extends Message<Test> {
    */
   bar: number;
 
+  /**
+   * @generated from field: int32 a = 4;
+   */
+  a: number;
+
   constructor(data?: PartialMessage<Test>);
 
   static readonly runtime: typeof proto3;
