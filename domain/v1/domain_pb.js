@@ -371,6 +371,7 @@ export const Test = proto3.makeMessageType(
     { no: 2, name: "foo", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "bar", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 4, name: "a", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "b", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ],
 );
 
