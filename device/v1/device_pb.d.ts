@@ -5,6 +5,61 @@
 
 import type {BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp} from "@bufbuild/protobuf";
 import {Message, proto3} from "@bufbuild/protobuf";
+import type {Audit} from "../../domain/v1/domain_pb.js";
+
+/**
+ * @generated from enum device.v1.DeviceType
+ */
+export declare enum DeviceType {
+  /**
+   * @generated from enum value: UNDEFINED = 0;
+   */
+  UNDEFINED = 0,
+
+  /**
+   * @generated from enum value: BLE_GATEWAY = 1;
+   */
+  BLE_GATEWAY = 1,
+
+  /**
+   * @generated from enum value: BEACON = 2;
+   */
+  BEACON = 2,
+}
+
+/**
+ * @generated from message device.v1.Semver
+ */
+export declare class Semver extends Message<Semver> {
+  /**
+   * @generated from field: int32 major = 1;
+   */
+  major: number;
+
+  /**
+   * @generated from field: int32 minor = 2;
+   */
+  minor: number;
+
+  /**
+   * @generated from field: int32 patch = 3;
+   */
+  patch: number;
+
+  constructor(data?: PartialMessage<Semver>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "device.v1.Semver";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Semver;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Semver;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Semver;
+
+  static equals(a: Semver | PlainMessage<Semver> | undefined, b: Semver | PlainMessage<Semver> | undefined): boolean;
+}
 
 /**
  * @generated from message device.v1.Device
@@ -21,19 +76,34 @@ export declare class Device extends Message<Device> {
   hardwareId: bigint;
 
   /**
-   * @generated from field: google.protobuf.Timestamp last_ping = 3;
+   * @generated from field: string name = 3;
+   */
+  name: string;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp last_ping = 4;
    */
   lastPing?: Timestamp;
 
   /**
-   * @generated from field: google.protobuf.Timestamp created_at = 4;
+   * @generated from field: string metadata = 5;
    */
-  createdAt?: Timestamp;
+  metadata: string;
 
   /**
-   * @generated from field: repeated device.v1.Session sessions = 5;
+   * @generated from field: device.v1.DeviceType type = 6;
    */
-  sessions: Session[];
+  type: DeviceType;
+
+  /**
+   * @generated from field: device.v1.Firmware firmware = 7;
+   */
+  firmware?: Firmware;
+
+  /**
+   * @generated from field: domain.v1.Audit audit = 8;
+   */
+  audit?: Audit;
 
   constructor(data?: PartialMessage<Device>);
 
@@ -51,6 +121,57 @@ export declare class Device extends Message<Device> {
 }
 
 /**
+ * @generated from message device.v1.Firmware
+ */
+export declare class Firmware extends Message<Firmware> {
+  /**
+   * @generated from field: int64 id = 1;
+   */
+  id: bigint;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: device.v1.Semver semver = 3;
+   */
+  semver?: Semver;
+
+  /**
+   * @generated from field: bytes file = 4;
+   */
+  file: Uint8Array;
+
+  /**
+   * @generated from field: string commit_hash = 5;
+   */
+  commitHash: string;
+
+  /**
+   * @generated from field: domain.v1.Audit audit = 6;
+   */
+  audit?: Audit;
+
+  constructor(data?: PartialMessage<Firmware>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "device.v1.Firmware";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Firmware;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Firmware;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Firmware;
+
+  static equals(a: Firmware | PlainMessage<Firmware> | undefined, b: Firmware | PlainMessage<Firmware> | undefined): boolean;
+}
+
+/**
+ * TODO: fix when needed
+ *
  * @generated from message device.v1.Session
  */
 export declare class Session extends Message<Session> {

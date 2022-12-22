@@ -4,6 +4,51 @@
 /* @ts-nocheck */
 
 import {Duration, proto3, Timestamp} from "@bufbuild/protobuf";
+import {Device, Firmware, Semver} from "./device_pb.js";
+
+/**
+ * Get all devices in specified organization
+ *
+ * @generated from message device.v1.GetDevicesRequest
+ */
+export const GetDevicesRequest = proto3.makeMessageType(
+  "device.v1.GetDevicesRequest",
+  () => [
+    { no: 1, name: "organization_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * @generated from message device.v1.GetDevicesResponse
+ */
+export const GetDevicesResponse = proto3.makeMessageType(
+  "device.v1.GetDevicesResponse",
+  () => [
+    { no: 1, name: "devices", kind: "message", T: Device, repeated: true },
+  ],
+);
+
+/**
+ * Get a device by hardware ID
+ *
+ * @generated from message device.v1.GetDeviceRequest
+ */
+export const GetDeviceRequest = proto3.makeMessageType(
+  "device.v1.GetDeviceRequest",
+  () => [
+    { no: 1, name: "hardware_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * @generated from message device.v1.GetDeviceResponse
+ */
+export const GetDeviceResponse = proto3.makeMessageType(
+  "device.v1.GetDeviceResponse",
+  () => [
+    { no: 1, name: "device", kind: "message", T: Device },
+  ],
+);
 
 /**
  * @generated from message device.v1.CreateOneTimeTokenRequest
@@ -34,7 +79,6 @@ export const UseOneTimeTokenRequest = proto3.makeMessageType(
   "device.v1.UseOneTimeTokenRequest",
   () => [
     { no: 1, name: "token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "hardware_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
@@ -72,18 +116,6 @@ export const CreateFirmwareResponse = proto3.makeMessageType(
 );
 
 /**
- * @generated from message device.v1.Semver
- */
-export const Semver = proto3.makeMessageType(
-  "device.v1.Semver",
-  () => [
-    { no: 2, name: "major", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: "minor", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 4, name: "patch", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
  * @generated from message device.v1.GetFirmwareRequest
  */
 export const GetFirmwareRequest = proto3.makeMessageType(
@@ -100,9 +132,7 @@ export const GetFirmwareRequest = proto3.makeMessageType(
 export const GetFirmwareResponse = proto3.makeMessageType(
   "device.v1.GetFirmwareResponse",
   () => [
-    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "semver", kind: "message", T: Semver },
-    { no: 3, name: "file", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 1, name: "firmware", kind: "message", T: Firmware },
   ],
 );
 

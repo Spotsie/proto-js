@@ -3,7 +3,7 @@
 /* eslint-disable */
 /* @ts-nocheck */
 
-import {CreateFirmwareRequest, CreateFirmwareResponse, CreateOneTimeTokenRequest, CreateOneTimeTokenResponse, GetFirmwareRequest, GetFirmwareResponse, UseOneTimeTokenRequest, UseOneTimeTokenResponse} from "./service_pb.js";
+import {CreateFirmwareRequest, CreateFirmwareResponse, CreateOneTimeTokenRequest, CreateOneTimeTokenResponse, GetDeviceRequest, GetDeviceResponse, GetDevicesRequest, GetDevicesResponse, GetFirmwareRequest, GetFirmwareResponse, UseOneTimeTokenRequest, UseOneTimeTokenResponse} from "./service_pb.js";
 import {MethodKind} from "@bufbuild/protobuf";
 
 /**
@@ -12,6 +12,26 @@ import {MethodKind} from "@bufbuild/protobuf";
 export const DeviceService = {
   typeName: "device.v1.DeviceService",
   methods: {
+    /**
+     * Device ops
+     *
+     * @generated from rpc device.v1.DeviceService.GetDevices
+     */
+    getDevices: {
+      name: "GetDevices",
+      I: GetDevicesRequest,
+      O: GetDevicesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc device.v1.DeviceService.GetDevice
+     */
+    getDevice: {
+      name: "GetDevice",
+      I: GetDeviceRequest,
+      O: GetDeviceResponse,
+      kind: MethodKind.Unary,
+    },
     /**
      * One time token ops
      *

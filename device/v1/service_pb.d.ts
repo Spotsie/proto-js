@@ -5,6 +5,107 @@
 
 import type {BinaryReadOptions, Duration, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp} from "@bufbuild/protobuf";
 import {Message, proto3} from "@bufbuild/protobuf";
+import type {Device, Firmware, Semver} from "./device_pb.js";
+
+/**
+ * Get all devices in specified organization
+ *
+ * @generated from message device.v1.GetDevicesRequest
+ */
+export declare class GetDevicesRequest extends Message<GetDevicesRequest> {
+  /**
+   * @generated from field: int64 organization_id = 1;
+   */
+  organizationId: bigint;
+
+  constructor(data?: PartialMessage<GetDevicesRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "device.v1.GetDevicesRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDevicesRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDevicesRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDevicesRequest;
+
+  static equals(a: GetDevicesRequest | PlainMessage<GetDevicesRequest> | undefined, b: GetDevicesRequest | PlainMessage<GetDevicesRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message device.v1.GetDevicesResponse
+ */
+export declare class GetDevicesResponse extends Message<GetDevicesResponse> {
+  /**
+   * @generated from field: repeated device.v1.Device devices = 1;
+   */
+  devices: Device[];
+
+  constructor(data?: PartialMessage<GetDevicesResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "device.v1.GetDevicesResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDevicesResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDevicesResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDevicesResponse;
+
+  static equals(a: GetDevicesResponse | PlainMessage<GetDevicesResponse> | undefined, b: GetDevicesResponse | PlainMessage<GetDevicesResponse> | undefined): boolean;
+}
+
+/**
+ * Get a device by hardware ID
+ *
+ * @generated from message device.v1.GetDeviceRequest
+ */
+export declare class GetDeviceRequest extends Message<GetDeviceRequest> {
+  /**
+   * @generated from field: int64 hardware_id = 1;
+   */
+  hardwareId: bigint;
+
+  constructor(data?: PartialMessage<GetDeviceRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "device.v1.GetDeviceRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDeviceRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDeviceRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDeviceRequest;
+
+  static equals(a: GetDeviceRequest | PlainMessage<GetDeviceRequest> | undefined, b: GetDeviceRequest | PlainMessage<GetDeviceRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message device.v1.GetDeviceResponse
+ */
+export declare class GetDeviceResponse extends Message<GetDeviceResponse> {
+  /**
+   * @generated from field: device.v1.Device device = 1;
+   */
+  device?: Device;
+
+  constructor(data?: PartialMessage<GetDeviceResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "device.v1.GetDeviceResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDeviceResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDeviceResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDeviceResponse;
+
+  static equals(a: GetDeviceResponse | PlainMessage<GetDeviceResponse> | undefined, b: GetDeviceResponse | PlainMessage<GetDeviceResponse> | undefined): boolean;
+}
 
 /**
  * @generated from message device.v1.CreateOneTimeTokenRequest
@@ -72,11 +173,6 @@ export declare class UseOneTimeTokenRequest extends Message<UseOneTimeTokenReque
    * @generated from field: string token = 1;
    */
   token: string;
-
-  /**
-   * @generated from field: int64 hardware_id = 2;
-   */
-  hardwareId: bigint;
 
   constructor(data?: PartialMessage<UseOneTimeTokenRequest>);
 
@@ -186,40 +282,6 @@ export declare class CreateFirmwareResponse extends Message<CreateFirmwareRespon
 }
 
 /**
- * @generated from message device.v1.Semver
- */
-export declare class Semver extends Message<Semver> {
-  /**
-   * @generated from field: int32 major = 2;
-   */
-  major: number;
-
-  /**
-   * @generated from field: int32 minor = 3;
-   */
-  minor: number;
-
-  /**
-   * @generated from field: int32 patch = 4;
-   */
-  patch: number;
-
-  constructor(data?: PartialMessage<Semver>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "device.v1.Semver";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Semver;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Semver;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Semver;
-
-  static equals(a: Semver | PlainMessage<Semver> | undefined, b: Semver | PlainMessage<Semver> | undefined): boolean;
-}
-
-/**
  * @generated from message device.v1.GetFirmwareRequest
  */
 export declare class GetFirmwareRequest extends Message<GetFirmwareRequest> {
@@ -262,19 +324,9 @@ export declare class GetFirmwareRequest extends Message<GetFirmwareRequest> {
  */
 export declare class GetFirmwareResponse extends Message<GetFirmwareResponse> {
   /**
-   * @generated from field: string name = 1;
+   * @generated from field: device.v1.Firmware firmware = 1;
    */
-  name: string;
-
-  /**
-   * @generated from field: device.v1.Semver semver = 2;
-   */
-  semver?: Semver;
-
-  /**
-   * @generated from field: bytes file = 3;
-   */
-  file: Uint8Array;
+  firmware?: Firmware;
 
   constructor(data?: PartialMessage<GetFirmwareResponse>);
 

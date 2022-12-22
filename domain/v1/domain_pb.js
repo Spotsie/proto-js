@@ -376,3 +376,17 @@ export const Test = proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message domain.v1.Audit
+ */
+export const Audit = proto3.makeMessageType(
+  "domain.v1.Audit",
+  () => [
+    { no: 1, name: "created_at", kind: "message", T: Timestamp },
+    { no: 2, name: "created_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "last_modified_at", kind: "message", T: Timestamp, opt: true },
+    { no: 4, name: "last_modified_by", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 5, name: "deleted_at", kind: "message", T: Timestamp, opt: true },
+  ],
+);
+

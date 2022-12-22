@@ -1065,3 +1065,47 @@ export declare class Test extends Message<Test> {
   static equals(a: Test | PlainMessage<Test> | undefined, b: Test | PlainMessage<Test> | undefined): boolean;
 }
 
+/**
+ * @generated from message domain.v1.Audit
+ */
+export declare class Audit extends Message<Audit> {
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 1;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: string created_by = 2;
+   */
+  createdBy: string;
+
+  /**
+   * @generated from field: optional google.protobuf.Timestamp last_modified_at = 3;
+   */
+  lastModifiedAt?: Timestamp;
+
+  /**
+   * @generated from field: optional string last_modified_by = 4;
+   */
+  lastModifiedBy?: string;
+
+  /**
+   * @generated from field: optional google.protobuf.Timestamp deleted_at = 5;
+   */
+  deletedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<Audit>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "domain.v1.Audit";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Audit;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Audit;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Audit;
+
+  static equals(a: Audit | PlainMessage<Audit> | undefined, b: Audit | PlainMessage<Audit> | undefined): boolean;
+}
+
