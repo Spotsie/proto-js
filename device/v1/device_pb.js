@@ -42,7 +42,7 @@ export const Device = proto3.makeMessageType(
     { no: 4, name: "last_ping", kind: "message", T: Timestamp },
     { no: 5, name: "metadata", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "type", kind: "enum", T: proto3.getEnumType(DeviceType) },
-    { no: 7, name: "firmware", kind: "message", T: Firmware },
+    { no: 7, name: "firmver_version", kind: "message", T: Semver },
     { no: 8, name: "audit", kind: "message", T: Audit },
   ],
 );

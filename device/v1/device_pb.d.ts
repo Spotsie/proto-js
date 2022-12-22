@@ -96,9 +96,9 @@ export declare class Device extends Message<Device> {
   type: DeviceType;
 
   /**
-   * @generated from field: device.v1.Firmware firmware = 7;
+   * @generated from field: device.v1.Semver firmver_version = 7;
    */
-  firmware?: Firmware;
+  firmverVersion?: Semver;
 
   /**
    * @generated from field: domain.v1.Audit audit = 8;
