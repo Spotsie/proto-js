@@ -4,6 +4,7 @@
 /* @ts-nocheck */
 
 import {Duration, proto3, Timestamp} from "@bufbuild/protobuf";
+import {Page, Sort} from "../../domain/v1/domain_pb.js";
 import {Device, Firmware, Semver} from "./device_pb.js";
 
 /**
@@ -14,7 +15,9 @@ import {Device, Firmware, Semver} from "./device_pb.js";
 export const GetDevicesRequest = proto3.makeMessageType(
   "device.v1.GetDevicesRequest",
   () => [
-    { no: 1, name: "organization_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: "organization_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 2, name: "page", kind: "message", T: Page },
+    { no: 3, name: "sort", kind: "message", T: Sort, opt: true },
   ],
 );
 

@@ -390,3 +390,48 @@ export const Audit = proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message domain.v1.Sort
+ */
+export const Sort = proto3.makeMessageType(
+  "domain.v1.Sort",
+  () => [
+    { no: 1, name: "sort_by", kind: "message", T: Sort_Parameter, repeated: true },
+  ],
+);
+
+/**
+ * @generated from enum domain.v1.Sort.Direction
+ */
+export const Sort_Direction = proto3.makeEnum(
+  "domain.v1.Sort.Direction",
+  [
+    {no: 0, name: "DIRECTION_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "DIRECTION_ASCENDING", localName: "ASCENDING"},
+    {no: 2, name: "DIRECTION_DESCENDING", localName: "DESCENDING"},
+  ],
+);
+
+/**
+ * @generated from message domain.v1.Sort.Parameter
+ */
+export const Sort_Parameter = proto3.makeMessageType(
+  "domain.v1.Sort.Parameter",
+  () => [
+    { no: 1, name: "property_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "direction", kind: "message", T: Sort },
+  ],
+  {localName: "Sort_Parameter"},
+);
+
+/**
+ * @generated from message domain.v1.Page
+ */
+export const Page = proto3.makeMessageType(
+  "domain.v1.Page",
+  () => [
+    { no: 1, name: "number", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "size", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
