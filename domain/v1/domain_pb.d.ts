@@ -1165,9 +1165,9 @@ export declare class Sort_Parameter extends Message<Sort_Parameter> {
   propertyName: string;
 
   /**
-   * @generated from field: domain.v1.Sort direction = 2;
+   * @generated from field: domain.v1.Sort.Direction direction = 2;
    */
-  direction?: Sort;
+  direction: Sort_Direction;
 
   constructor(data?: PartialMessage<Sort_Parameter>);
 
@@ -1191,16 +1191,16 @@ export declare class Page extends Message<Page> {
   /**
    * Page number
    *
-   * @generated from field: int64 number = 1;
+   * @generated from field: int32 number = 1;
    */
-  number: bigint;
+  number: number;
 
   /**
    * Amount of items per page
    *
-   * @generated from field: int64 size = 2;
+   * @generated from field: int32 size = 2;
    */
-  size: bigint;
+  size: number;
 
   constructor(data?: PartialMessage<Page>);
 
