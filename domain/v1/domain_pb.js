@@ -419,7 +419,7 @@ export const Sort_Parameter = proto3.makeMessageType(
   "domain.v1.Sort.Parameter",
   () => [
     { no: 1, name: "property_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "direction", kind: "message", T: Sort },
+    { no: 2, name: "direction", kind: "enum", T: proto3.getEnumType(Sort_Direction) },
   ],
   {localName: "Sort_Parameter"},
 );
@@ -430,8 +430,8 @@ export const Sort_Parameter = proto3.makeMessageType(
 export const Page = proto3.makeMessageType(
   "domain.v1.Page",
   () => [
-    { no: 1, name: "number", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: "size", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: "number", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "size", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ],
 );
 
