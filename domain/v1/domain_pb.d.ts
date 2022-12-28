@@ -1109,3 +1109,111 @@ export declare class Audit extends Message<Audit> {
   static equals(a: Audit | PlainMessage<Audit> | undefined, b: Audit | PlainMessage<Audit> | undefined): boolean;
 }
 
+/**
+ * @generated from message domain.v1.Sort
+ */
+export declare class Sort extends Message<Sort> {
+  /**
+   * List of sort parameters, can be more than one
+   *
+   * @generated from field: repeated domain.v1.Sort.Parameter sort_by = 1;
+   */
+  sortBy: Sort_Parameter[];
+
+  constructor(data?: PartialMessage<Sort>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "domain.v1.Sort";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Sort;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Sort;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Sort;
+
+  static equals(a: Sort | PlainMessage<Sort> | undefined, b: Sort | PlainMessage<Sort> | undefined): boolean;
+}
+
+/**
+ * @generated from enum domain.v1.Sort.Direction
+ */
+export declare enum Sort_Direction {
+  /**
+   * @generated from enum value: DIRECTION_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: DIRECTION_ASCENDING = 1;
+   */
+  ASCENDING = 1,
+
+  /**
+   * @generated from enum value: DIRECTION_DESCENDING = 2;
+   */
+  DESCENDING = 2,
+}
+
+/**
+ * @generated from message domain.v1.Sort.Parameter
+ */
+export declare class Sort_Parameter extends Message<Sort_Parameter> {
+  /**
+   * @generated from field: string property_name = 1;
+   */
+  propertyName: string;
+
+  /**
+   * @generated from field: domain.v1.Sort direction = 2;
+   */
+  direction?: Sort;
+
+  constructor(data?: PartialMessage<Sort_Parameter>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "domain.v1.Sort.Parameter";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Sort_Parameter;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Sort_Parameter;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Sort_Parameter;
+
+  static equals(a: Sort_Parameter | PlainMessage<Sort_Parameter> | undefined, b: Sort_Parameter | PlainMessage<Sort_Parameter> | undefined): boolean;
+}
+
+/**
+ * @generated from message domain.v1.Page
+ */
+export declare class Page extends Message<Page> {
+  /**
+   * Page number
+   *
+   * @generated from field: int64 number = 1;
+   */
+  number: bigint;
+
+  /**
+   * Amount of items per page
+   *
+   * @generated from field: int64 size = 2;
+   */
+  size: bigint;
+
+  constructor(data?: PartialMessage<Page>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "domain.v1.Page";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Page;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Page;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Page;
+
+  static equals(a: Page | PlainMessage<Page> | undefined, b: Page | PlainMessage<Page> | undefined): boolean;
+}
+

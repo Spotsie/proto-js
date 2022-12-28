@@ -5,6 +5,7 @@
 
 import type {BinaryReadOptions, Duration, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp} from "@bufbuild/protobuf";
 import {Message, proto3} from "@bufbuild/protobuf";
+import type {Page, Sort} from "../../domain/v1/domain_pb.js";
 import type {Device, Firmware, Semver} from "./device_pb.js";
 
 /**
@@ -14,9 +15,19 @@ import type {Device, Firmware, Semver} from "./device_pb.js";
  */
 export declare class GetDevicesRequest extends Message<GetDevicesRequest> {
   /**
-   * @generated from field: int64 organization_id = 1;
+   * @generated from field: optional int64 organization_id = 1;
    */
-  organizationId: bigint;
+  organizationId?: bigint;
+
+  /**
+   * @generated from field: domain.v1.Page page = 2;
+   */
+  page?: Page;
+
+  /**
+   * @generated from field: optional domain.v1.Sort sort = 3;
+   */
+  sort?: Sort;
 
   constructor(data?: PartialMessage<GetDevicesRequest>);
 
