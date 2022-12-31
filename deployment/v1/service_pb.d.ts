@@ -5,6 +5,7 @@
 
 import type {BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage} from "@bufbuild/protobuf";
 import {Message, proto3} from "@bufbuild/protobuf";
+import type {Page, Pagination, Sort} from "../../domain/v1/domain_pb.js";
 import type {Deployment, Deployment_Type, GeoPoint, MultilaterationConfig, Organization, PointConfig, PositioningReferent, PositioningReferent_DeviceType, Zone, Zone_Config} from "./organization_pb.js";
 
 /**
@@ -15,6 +16,16 @@ export declare class GetZonesRequest extends Message<GetZonesRequest> {
    * @generated from field: int32 organization_id = 1;
    */
   organizationId: number;
+
+  /**
+   * @generated from field: domain.v1.Page page = 2;
+   */
+  page?: Page;
+
+  /**
+   * @generated from field: optional domain.v1.Sort sort = 3;
+   */
+  sort?: Sort;
 
   constructor(data?: PartialMessage<GetZonesRequest>);
 
@@ -39,6 +50,11 @@ export declare class GetZonesResponse extends Message<GetZonesResponse> {
    * @generated from field: repeated deployment.v1.Zone zones = 1;
    */
   zones: Zone[];
+
+  /**
+   * @generated from field: domain.v1.Pagination pagination = 2;
+   */
+  pagination?: Pagination;
 
   constructor(data?: PartialMessage<GetZonesResponse>);
 
@@ -613,6 +629,16 @@ export declare class GetPositioningReferentsRequest extends Message<GetPositioni
    */
   organizationId: number;
 
+  /**
+   * @generated from field: domain.v1.Page page = 2;
+   */
+  page?: Page;
+
+  /**
+   * @generated from field: optional domain.v1.Sort sort = 3;
+   */
+  sort?: Sort;
+
   constructor(data?: PartialMessage<GetPositioningReferentsRequest>);
 
   static readonly runtime: typeof proto3;
@@ -636,6 +662,11 @@ export declare class GetPositioningReferentsResponse extends Message<GetPosition
    * @generated from field: repeated deployment.v1.PositioningReferent positioning_referents = 1;
    */
   positioningReferents: PositioningReferent[];
+
+  /**
+   * @generated from field: domain.v1.Pagination pagination = 2;
+   */
+  pagination?: Pagination;
 
   constructor(data?: PartialMessage<GetPositioningReferentsResponse>);
 

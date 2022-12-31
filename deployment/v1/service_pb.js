@@ -4,6 +4,7 @@
 /* @ts-nocheck */
 
 import {proto3} from "@bufbuild/protobuf";
+import {Page, Pagination, Sort} from "../../domain/v1/domain_pb.js";
 import {Deployment, Deployment_Type, GeoPoint, MultilaterationConfig, Organization, PointConfig, PositioningReferent, PositioningReferent_DeviceType, Zone, Zone_Config} from "./organization_pb.js";
 
 /**
@@ -13,6 +14,8 @@ export const GetZonesRequest = proto3.makeMessageType(
   "deployment.v1.GetZonesRequest",
   () => [
     { no: 1, name: "organization_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "page", kind: "message", T: Page },
+    { no: 3, name: "sort", kind: "message", T: Sort, opt: true },
   ],
 );
 
@@ -23,6 +26,7 @@ export const GetZonesResponse = proto3.makeMessageType(
   "deployment.v1.GetZonesResponse",
   () => [
     { no: 1, name: "zones", kind: "message", T: Zone, repeated: true },
+    { no: 2, name: "pagination", kind: "message", T: Pagination },
   ],
 );
 
@@ -237,6 +241,8 @@ export const GetPositioningReferentsRequest = proto3.makeMessageType(
   "deployment.v1.GetPositioningReferentsRequest",
   () => [
     { no: 1, name: "organization_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "page", kind: "message", T: Page },
+    { no: 3, name: "sort", kind: "message", T: Sort, opt: true },
   ],
 );
 
@@ -247,6 +253,7 @@ export const GetPositioningReferentsResponse = proto3.makeMessageType(
   "deployment.v1.GetPositioningReferentsResponse",
   () => [
     { no: 1, name: "positioning_referents", kind: "message", T: PositioningReferent, repeated: true },
+    { no: 2, name: "pagination", kind: "message", T: Pagination },
   ],
 );
 
