@@ -5,7 +5,7 @@
 
 import type {BinaryReadOptions, Duration, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp} from "@bufbuild/protobuf";
 import {Message, proto3} from "@bufbuild/protobuf";
-import type {Page, Sort} from "../../domain/v1/domain_pb.js";
+import type {Page, Pagination, Sort} from "../../domain/v1/domain_pb.js";
 import type {Device, Firmware, Semver} from "./device_pb.js";
 
 /**
@@ -52,6 +52,11 @@ export declare class GetDevicesResponse extends Message<GetDevicesResponse> {
    * @generated from field: repeated device.v1.Device devices = 1;
    */
   devices: Device[];
+
+  /**
+   * @generated from field: domain.v1.Pagination pagination = 2;
+   */
+  pagination?: Pagination;
 
   constructor(data?: PartialMessage<GetDevicesResponse>);
 

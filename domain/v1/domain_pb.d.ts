@@ -1189,7 +1189,7 @@ export declare class Sort_Parameter extends Message<Sort_Parameter> {
  */
 export declare class Page extends Message<Page> {
   /**
-   * Page number
+   * Page number, 0 is the first page
    *
    * @generated from field: int32 number = 1;
    */
@@ -1215,5 +1215,44 @@ export declare class Page extends Message<Page> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Page;
 
   static equals(a: Page | PlainMessage<Page> | undefined, b: Page | PlainMessage<Page> | undefined): boolean;
+}
+
+/**
+ * @generated from message domain.v1.Pagination
+ */
+export declare class Pagination extends Message<Pagination> {
+  /**
+   * @generated from field: int32 index = 1;
+   */
+  index: number;
+
+  /**
+   * @generated from field: int32 size = 2;
+   */
+  size: number;
+
+  /**
+   * @generated from field: int32 total_count = 3;
+   */
+  totalCount: number;
+
+  /**
+   * @generated from field: int32 page_count = 4;
+   */
+  pageCount: number;
+
+  constructor(data?: PartialMessage<Pagination>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "domain.v1.Pagination";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Pagination;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Pagination;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Pagination;
+
+  static equals(a: Pagination | PlainMessage<Pagination> | undefined, b: Pagination | PlainMessage<Pagination> | undefined): boolean;
 }
 

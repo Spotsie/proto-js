@@ -311,32 +311,27 @@ export declare class PositioningReferent extends Message<PositioningReferent> {
   name: string;
 
   /**
-   * @generated from field: repeated int32 deployments = 7;
-   */
-  deployments: number[];
-
-  /**
-   * @generated from field: repeated int32 zones = 8;
+   * @generated from field: repeated int32 zones = 7;
    */
   zones: number[];
 
   /**
-   * @generated from field: google.protobuf.Timestamp created_date = 9;
+   * @generated from field: google.protobuf.Timestamp created_date = 8;
    */
   createdDate?: Timestamp;
 
   /**
-   * @generated from field: google.protobuf.Timestamp last_modified_date = 10;
+   * @generated from field: google.protobuf.Timestamp last_modified_date = 9;
    */
   lastModifiedDate?: Timestamp;
 
   /**
-   * @generated from field: string created_by = 11;
+   * @generated from field: string created_by = 10;
    */
   createdBy: string;
 
   /**
-   * @generated from field: string last_modified_by = 12;
+   * @generated from field: string last_modified_by = 11;
    */
   lastModifiedBy: string;
 

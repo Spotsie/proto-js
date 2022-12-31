@@ -4,7 +4,7 @@
 /* @ts-nocheck */
 
 import {Duration, proto3, Timestamp} from "@bufbuild/protobuf";
-import {Page, Sort} from "../../domain/v1/domain_pb.js";
+import {Page, Pagination, Sort} from "../../domain/v1/domain_pb.js";
 import {Device, Firmware, Semver} from "./device_pb.js";
 
 /**
@@ -28,6 +28,7 @@ export const GetDevicesResponse = proto3.makeMessageType(
   "device.v1.GetDevicesResponse",
   () => [
     { no: 1, name: "devices", kind: "message", T: Device, repeated: true },
+    { no: 2, name: "pagination", kind: "message", T: Pagination },
   ],
 );
 

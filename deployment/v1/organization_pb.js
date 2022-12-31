@@ -109,12 +109,11 @@ export const PositioningReferent = proto3.makeMessageType(
     { no: 4, name: "organization_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 5, name: "location", kind: "message", T: GeoPoint },
     { no: 6, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 7, name: "deployments", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 8, name: "zones", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 9, name: "created_date", kind: "message", T: Timestamp },
-    { no: 10, name: "last_modified_date", kind: "message", T: Timestamp },
-    { no: 11, name: "created_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 12, name: "last_modified_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "zones", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 8, name: "created_date", kind: "message", T: Timestamp },
+    { no: 9, name: "last_modified_date", kind: "message", T: Timestamp },
+    { no: 10, name: "created_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "last_modified_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

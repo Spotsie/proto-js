@@ -435,3 +435,16 @@ export const Page = proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message domain.v1.Pagination
+ */
+export const Pagination = proto3.makeMessageType(
+  "domain.v1.Pagination",
+  () => [
+    { no: 1, name: "index", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "size", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "total_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "page_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
