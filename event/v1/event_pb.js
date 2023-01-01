@@ -39,7 +39,7 @@ export const SubjectLocationUpdateEvent = proto3.makeMessageType(
     { no: 1, name: "subject", kind: "message", T: Subject },
     { no: 2, name: "time", kind: "message", T: Timestamp },
     { no: 3, name: "location_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 4, name: "point", kind: "message", T: GeoPoint },
+    { no: 4, name: "point", kind: "message", T: GeoPoint, opt: true },
   ],
 );
 

@@ -87,7 +87,7 @@ export declare class SubjectLocationUpdateEvent extends Message<SubjectLocationU
   locationId: number;
 
   /**
-   * @generated from field: domain.v1.GeoPoint point = 4;
+   * @generated from field: optional domain.v1.GeoPoint point = 4;
    */
   point?: GeoPoint;
 
