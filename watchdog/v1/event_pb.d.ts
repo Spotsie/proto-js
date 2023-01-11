@@ -33,46 +33,23 @@ export declare class Event extends Message<Event> {
   /**
    * Time of the last update
    *
-   * @generated from field: google.protobuf.Timestamp updated_at = 4;
+   * @generated from field: google.protobuf.Timestamp created_at = 4;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * Time of the last update
+   *
+   * @generated from field: google.protobuf.Timestamp updated_at = 5;
    */
   updatedAt?: Timestamp;
 
   /**
-   * Type of the event
+   * Type of the event with event specific data
    *
-   * @generated from oneof watchdog.v1.Event.payload
+   * @generated from field: watchdog.v1.Event.Payload payload = 6;
    */
-  payload: {
-    /**
-     * @generated from field: watchdog.v1.Event.NoActivity no_activity = 10;
-     */
-    value: Event_NoActivity;
-    case: "noActivity";
-  } | {
-    /**
-     * @generated from field: watchdog.v1.Event.Activity activity = 11;
-     */
-    value: Event_Activity;
-    case: "activity";
-  } | {
-    /**
-     * @generated from field: watchdog.v1.Event.ZoneOverstay zone_overstay = 12;
-     */
-    value: Event_ZoneOverstay;
-    case: "zoneOverstay";
-  } | {
-    /**
-     * @generated from field: watchdog.v1.Event.SimilarMovement similar_movement = 13;
-     */
-    value: Event_SimilarMovement;
-    case: "similarMovement";
-  } | {
-    /**
-     * @generated from field: watchdog.v1.Event.ZoneVisit zone_visit = 14;
-     */
-    value: Event_ZoneVisit;
-    case: "zoneVisit";
-  } | { case: undefined; value?: undefined };
+  payload?: Event_Payload;
 
   constructor(data?: PartialMessage<Event>);
 
@@ -90,9 +67,63 @@ export declare class Event extends Message<Event> {
 }
 
 /**
- * @generated from message watchdog.v1.Event.NoActivity
+ * @generated from message watchdog.v1.Event.Payload
  */
-export declare class Event_NoActivity extends Message<Event_NoActivity> {
+export declare class Event_Payload extends Message<Event_Payload> {
+  /**
+   * @generated from oneof watchdog.v1.Event.Payload.payload
+   */
+  payload: {
+    /**
+     * @generated from field: watchdog.v1.Event.Payload.NoActivity no_activity = 10;
+     */
+    value: Event_Payload_NoActivity;
+    case: "noActivity";
+  } | {
+    /**
+     * @generated from field: watchdog.v1.Event.Payload.Activity activity = 11;
+     */
+    value: Event_Payload_Activity;
+    case: "activity";
+  } | {
+    /**
+     * @generated from field: watchdog.v1.Event.Payload.ZoneOverstay zone_overstay = 12;
+     */
+    value: Event_Payload_ZoneOverstay;
+    case: "zoneOverstay";
+  } | {
+    /**
+     * @generated from field: watchdog.v1.Event.Payload.SimilarMovement similar_movement = 13;
+     */
+    value: Event_Payload_SimilarMovement;
+    case: "similarMovement";
+  } | {
+    /**
+     * @generated from field: watchdog.v1.Event.Payload.ZoneVisit zone_visit = 14;
+     */
+    value: Event_Payload_ZoneVisit;
+    case: "zoneVisit";
+  } | { case: undefined; value?: undefined };
+
+  constructor(data?: PartialMessage<Event_Payload>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "watchdog.v1.Event.Payload";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Event_Payload;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Event_Payload;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Event_Payload;
+
+  static equals(a: Event_Payload | PlainMessage<Event_Payload> | undefined, b: Event_Payload | PlainMessage<Event_Payload> | undefined): boolean;
+}
+
+/**
+ * @generated from message watchdog.v1.Event.Payload.NoActivity
+ */
+export declare class Event_Payload_NoActivity extends Message<Event_Payload_NoActivity> {
   /**
    * @generated from field: google.protobuf.Timestamp start_time = 1;
    */
@@ -103,25 +134,25 @@ export declare class Event_NoActivity extends Message<Event_NoActivity> {
    */
   endTime?: Timestamp;
 
-  constructor(data?: PartialMessage<Event_NoActivity>);
+  constructor(data?: PartialMessage<Event_Payload_NoActivity>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "watchdog.v1.Event.NoActivity";
+  static readonly typeName = "watchdog.v1.Event.Payload.NoActivity";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Event_NoActivity;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Event_Payload_NoActivity;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Event_NoActivity;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Event_Payload_NoActivity;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Event_NoActivity;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Event_Payload_NoActivity;
 
-  static equals(a: Event_NoActivity | PlainMessage<Event_NoActivity> | undefined, b: Event_NoActivity | PlainMessage<Event_NoActivity> | undefined): boolean;
+  static equals(a: Event_Payload_NoActivity | PlainMessage<Event_Payload_NoActivity> | undefined, b: Event_Payload_NoActivity | PlainMessage<Event_Payload_NoActivity> | undefined): boolean;
 }
 
 /**
- * @generated from message watchdog.v1.Event.Activity
+ * @generated from message watchdog.v1.Event.Payload.Activity
  */
-export declare class Event_Activity extends Message<Event_Activity> {
+export declare class Event_Payload_Activity extends Message<Event_Payload_Activity> {
   /**
    * @generated from field: google.protobuf.Timestamp start_time = 1;
    */
@@ -132,25 +163,25 @@ export declare class Event_Activity extends Message<Event_Activity> {
    */
   endTime?: Timestamp;
 
-  constructor(data?: PartialMessage<Event_Activity>);
+  constructor(data?: PartialMessage<Event_Payload_Activity>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "watchdog.v1.Event.Activity";
+  static readonly typeName = "watchdog.v1.Event.Payload.Activity";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Event_Activity;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Event_Payload_Activity;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Event_Activity;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Event_Payload_Activity;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Event_Activity;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Event_Payload_Activity;
 
-  static equals(a: Event_Activity | PlainMessage<Event_Activity> | undefined, b: Event_Activity | PlainMessage<Event_Activity> | undefined): boolean;
+  static equals(a: Event_Payload_Activity | PlainMessage<Event_Payload_Activity> | undefined, b: Event_Payload_Activity | PlainMessage<Event_Payload_Activity> | undefined): boolean;
 }
 
 /**
- * @generated from message watchdog.v1.Event.ZoneOverstay
+ * @generated from message watchdog.v1.Event.Payload.ZoneOverstay
  */
-export declare class Event_ZoneOverstay extends Message<Event_ZoneOverstay> {
+export declare class Event_Payload_ZoneOverstay extends Message<Event_Payload_ZoneOverstay> {
   /**
    * @generated from field: google.protobuf.Timestamp start_time = 1;
    */
@@ -161,25 +192,25 @@ export declare class Event_ZoneOverstay extends Message<Event_ZoneOverstay> {
    */
   endTime?: Timestamp;
 
-  constructor(data?: PartialMessage<Event_ZoneOverstay>);
+  constructor(data?: PartialMessage<Event_Payload_ZoneOverstay>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "watchdog.v1.Event.ZoneOverstay";
+  static readonly typeName = "watchdog.v1.Event.Payload.ZoneOverstay";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Event_ZoneOverstay;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Event_Payload_ZoneOverstay;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Event_ZoneOverstay;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Event_Payload_ZoneOverstay;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Event_ZoneOverstay;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Event_Payload_ZoneOverstay;
 
-  static equals(a: Event_ZoneOverstay | PlainMessage<Event_ZoneOverstay> | undefined, b: Event_ZoneOverstay | PlainMessage<Event_ZoneOverstay> | undefined): boolean;
+  static equals(a: Event_Payload_ZoneOverstay | PlainMessage<Event_Payload_ZoneOverstay> | undefined, b: Event_Payload_ZoneOverstay | PlainMessage<Event_Payload_ZoneOverstay> | undefined): boolean;
 }
 
 /**
- * @generated from message watchdog.v1.Event.SimilarMovement
+ * @generated from message watchdog.v1.Event.Payload.SimilarMovement
  */
-export declare class Event_SimilarMovement extends Message<Event_SimilarMovement> {
+export declare class Event_Payload_SimilarMovement extends Message<Event_Payload_SimilarMovement> {
   /**
    * @generated from field: google.protobuf.Timestamp start_time = 1;
    */
@@ -197,25 +228,25 @@ export declare class Event_SimilarMovement extends Message<Event_SimilarMovement
    */
   similarity: number;
 
-  constructor(data?: PartialMessage<Event_SimilarMovement>);
+  constructor(data?: PartialMessage<Event_Payload_SimilarMovement>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "watchdog.v1.Event.SimilarMovement";
+  static readonly typeName = "watchdog.v1.Event.Payload.SimilarMovement";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Event_SimilarMovement;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Event_Payload_SimilarMovement;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Event_SimilarMovement;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Event_Payload_SimilarMovement;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Event_SimilarMovement;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Event_Payload_SimilarMovement;
 
-  static equals(a: Event_SimilarMovement | PlainMessage<Event_SimilarMovement> | undefined, b: Event_SimilarMovement | PlainMessage<Event_SimilarMovement> | undefined): boolean;
+  static equals(a: Event_Payload_SimilarMovement | PlainMessage<Event_Payload_SimilarMovement> | undefined, b: Event_Payload_SimilarMovement | PlainMessage<Event_Payload_SimilarMovement> | undefined): boolean;
 }
 
 /**
- * @generated from message watchdog.v1.Event.ZoneVisit
+ * @generated from message watchdog.v1.Event.Payload.ZoneVisit
  */
-export declare class Event_ZoneVisit extends Message<Event_ZoneVisit> {
+export declare class Event_Payload_ZoneVisit extends Message<Event_Payload_ZoneVisit> {
   /**
    * @generated from field: google.protobuf.Timestamp start_time = 1;
    */
@@ -226,18 +257,18 @@ export declare class Event_ZoneVisit extends Message<Event_ZoneVisit> {
    */
   endTime?: Timestamp;
 
-  constructor(data?: PartialMessage<Event_ZoneVisit>);
+  constructor(data?: PartialMessage<Event_Payload_ZoneVisit>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "watchdog.v1.Event.ZoneVisit";
+  static readonly typeName = "watchdog.v1.Event.Payload.ZoneVisit";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Event_ZoneVisit;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Event_Payload_ZoneVisit;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Event_ZoneVisit;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Event_Payload_ZoneVisit;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Event_ZoneVisit;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Event_Payload_ZoneVisit;
 
-  static equals(a: Event_ZoneVisit | PlainMessage<Event_ZoneVisit> | undefined, b: Event_ZoneVisit | PlainMessage<Event_ZoneVisit> | undefined): boolean;
+  static equals(a: Event_Payload_ZoneVisit | PlainMessage<Event_Payload_ZoneVisit> | undefined, b: Event_Payload_ZoneVisit | PlainMessage<Event_Payload_ZoneVisit> | undefined): boolean;
 }
 
