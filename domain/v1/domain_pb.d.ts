@@ -988,16 +988,18 @@ export declare class User extends Message<User> {
 }
 
 /**
+ * Latitude and Longitude are the units that represent the coordinates at geographic coordinate system
+ *
  * @generated from message domain.v1.GeoPoint
  */
 export declare class GeoPoint extends Message<GeoPoint> {
   /**
-   * @generated from field: float long = 1;
+   * @generated from field: double long = 1;
    */
   long: number;
 
   /**
-   * @generated from field: float lat = 2;
+   * @generated from field: double lat = 2;
    */
   lat: number;
 

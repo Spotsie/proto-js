@@ -5,7 +5,8 @@
 
 import type {BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage} from "@bufbuild/protobuf";
 import {Message, proto3} from "@bufbuild/protobuf";
-import type {Deployment, Deployment_Type, GeoPoint, MultilaterationConfig, Organization, PointConfig, PositioningReferent, PositioningReferent_DeviceType, Zone, Zone_Config} from "./organization_pb.js";
+import type {Deployment, Deployment_Type, MultilaterationConfig, Organization, PointConfig, PositioningReferent, PositioningReferent_DeviceType, Zone, Zone_Config} from "./organization_pb.js";
+import type {GeoPoint} from "../../domain/v1/domain_pb.js";
 
 /**
  * @generated from message deployment.v1.GetZonesRequest
@@ -503,7 +504,7 @@ export declare class AddPositioningReferentRequest extends Message<AddPositionin
   deviceType: PositioningReferent_DeviceType;
 
   /**
-   * @generated from field: deployment.v1.GeoPoint location = 4;
+   * @generated from field: domain.v1.GeoPoint location = 4;
    */
   location?: GeoPoint;
 
@@ -561,7 +562,7 @@ export declare class UpdatePositioningReferentRequest extends Message<UpdatePosi
   organizationId: number;
 
   /**
-   * @generated from field: deployment.v1.GeoPoint location = 4;
+   * @generated from field: domain.v1.GeoPoint location = 4;
    */
   location?: GeoPoint;
 

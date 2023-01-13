@@ -5,39 +5,7 @@
 
 import type {BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp} from "@bufbuild/protobuf";
 import {Message, proto3} from "@bufbuild/protobuf";
-
-/**
- * @generated from message deployment.v1.GeoPoint
- */
-export declare class GeoPoint extends Message<GeoPoint> {
-  /**
-   * longitude
-   *
-   * @generated from field: float longitude = 1;
-   */
-  longitude: number;
-
-  /**
-   * latitude
-   *
-   * @generated from field: float latitude = 2;
-   */
-  latitude: number;
-
-  constructor(data?: PartialMessage<GeoPoint>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "deployment.v1.GeoPoint";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GeoPoint;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GeoPoint;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GeoPoint;
-
-  static equals(a: GeoPoint | PlainMessage<GeoPoint> | undefined, b: GeoPoint | PlainMessage<GeoPoint> | undefined): boolean;
-}
+import type {GeoPoint} from "../../domain/v1/domain_pb.js";
 
 /**
  * @generated from message deployment.v1.MultilaterationConfig
@@ -301,7 +269,7 @@ export declare class PositioningReferent extends Message<PositioningReferent> {
   organizationId: number;
 
   /**
-   * @generated from field: deployment.v1.GeoPoint location = 5;
+   * @generated from field: domain.v1.GeoPoint location = 5;
    */
   location?: GeoPoint;
 

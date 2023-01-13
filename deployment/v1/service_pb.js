@@ -4,7 +4,8 @@
 /* @ts-nocheck */
 
 import {proto3} from "@bufbuild/protobuf";
-import {Deployment, Deployment_Type, GeoPoint, MultilaterationConfig, Organization, PointConfig, PositioningReferent, PositioningReferent_DeviceType, Zone, Zone_Config} from "./organization_pb.js";
+import {Deployment, Deployment_Type, MultilaterationConfig, Organization, PointConfig, PositioningReferent, PositioningReferent_DeviceType, Zone, Zone_Config} from "./organization_pb.js";
+import {GeoPoint} from "../../domain/v1/domain_pb.js";
 
 /**
  * @generated from message deployment.v1.GetZonesRequest

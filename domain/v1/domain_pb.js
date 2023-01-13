@@ -351,13 +351,15 @@ export const User = proto3.makeMessageType(
 );
 
 /**
+ * Latitude and Longitude are the units that represent the coordinates at geographic coordinate system
+ *
  * @generated from message domain.v1.GeoPoint
  */
 export const GeoPoint = proto3.makeMessageType(
   "domain.v1.GeoPoint",
   () => [
-    { no: 1, name: "long", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
-    { no: 2, name: "lat", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 1, name: "long", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "lat", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ],
 );
 

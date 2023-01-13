@@ -4,17 +4,7 @@
 /* @ts-nocheck */
 
 import {proto3, Timestamp} from "@bufbuild/protobuf";
-
-/**
- * @generated from message deployment.v1.GeoPoint
- */
-export const GeoPoint = proto3.makeMessageType(
-  "deployment.v1.GeoPoint",
-  () => [
-    { no: 1, name: "longitude", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
-    { no: 2, name: "latitude", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
-  ],
-);
+import {GeoPoint} from "../../domain/v1/domain_pb.js";
 
 /**
  * @generated from message deployment.v1.MultilaterationConfig
