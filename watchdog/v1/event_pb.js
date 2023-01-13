@@ -18,6 +18,8 @@ export const Event = proto3.makeMessageType(
     { no: 4, name: "created_at", kind: "message", T: Timestamp },
     { no: 5, name: "updated_at", kind: "message", T: Timestamp },
     { no: 6, name: "payload", kind: "message", T: Event_Payload },
+    { no: 7, name: "start_time", kind: "message", T: Timestamp },
+    { no: 8, name: "end_time", kind: "message", T: Timestamp },
   ],
 );
 
@@ -41,10 +43,7 @@ export const Event_Payload = proto3.makeMessageType(
  */
 export const Event_Payload_NoActivity = proto3.makeMessageType(
   "watchdog.v1.Event.Payload.NoActivity",
-  () => [
-    { no: 1, name: "start_time", kind: "message", T: Timestamp },
-    { no: 2, name: "end_time", kind: "message", T: Timestamp },
-  ],
+  [],
   {localName: "Event_Payload_NoActivity"},
 );
 
@@ -53,10 +52,7 @@ export const Event_Payload_NoActivity = proto3.makeMessageType(
  */
 export const Event_Payload_Activity = proto3.makeMessageType(
   "watchdog.v1.Event.Payload.Activity",
-  () => [
-    { no: 1, name: "start_time", kind: "message", T: Timestamp },
-    { no: 2, name: "end_time", kind: "message", T: Timestamp },
-  ],
+  [],
   {localName: "Event_Payload_Activity"},
 );
 
@@ -65,10 +61,7 @@ export const Event_Payload_Activity = proto3.makeMessageType(
  */
 export const Event_Payload_ZoneOverstay = proto3.makeMessageType(
   "watchdog.v1.Event.Payload.ZoneOverstay",
-  () => [
-    { no: 1, name: "start_time", kind: "message", T: Timestamp },
-    { no: 2, name: "end_time", kind: "message", T: Timestamp },
-  ],
+  [],
   {localName: "Event_Payload_ZoneOverstay"},
 );
 
@@ -78,9 +71,7 @@ export const Event_Payload_ZoneOverstay = proto3.makeMessageType(
 export const Event_Payload_SimilarMovement = proto3.makeMessageType(
   "watchdog.v1.Event.Payload.SimilarMovement",
   () => [
-    { no: 1, name: "start_time", kind: "message", T: Timestamp },
-    { no: 2, name: "end_time", kind: "message", T: Timestamp },
-    { no: 3, name: "similarity", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 1, name: "similarity", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
   ],
   {localName: "Event_Payload_SimilarMovement"},
 );
@@ -90,10 +81,7 @@ export const Event_Payload_SimilarMovement = proto3.makeMessageType(
  */
 export const Event_Payload_ZoneVisit = proto3.makeMessageType(
   "watchdog.v1.Event.Payload.ZoneVisit",
-  () => [
-    { no: 1, name: "start_time", kind: "message", T: Timestamp },
-    { no: 2, name: "end_time", kind: "message", T: Timestamp },
-  ],
+  [],
   {localName: "Event_Payload_ZoneVisit"},
 );
 

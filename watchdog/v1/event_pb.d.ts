@@ -51,6 +51,16 @@ export declare class Event extends Message<Event> {
    */
   payload?: Event_Payload;
 
+  /**
+   * @generated from field: google.protobuf.Timestamp start_time = 7;
+   */
+  startTime?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp end_time = 8;
+   */
+  endTime?: Timestamp;
+
   constructor(data?: PartialMessage<Event>);
 
   static readonly runtime: typeof proto3;
@@ -124,16 +134,6 @@ export declare class Event_Payload extends Message<Event_Payload> {
  * @generated from message watchdog.v1.Event.Payload.NoActivity
  */
 export declare class Event_Payload_NoActivity extends Message<Event_Payload_NoActivity> {
-  /**
-   * @generated from field: google.protobuf.Timestamp start_time = 1;
-   */
-  startTime?: Timestamp;
-
-  /**
-   * @generated from field: google.protobuf.Timestamp end_time = 2;
-   */
-  endTime?: Timestamp;
-
   constructor(data?: PartialMessage<Event_Payload_NoActivity>);
 
   static readonly runtime: typeof proto3;
@@ -153,16 +153,6 @@ export declare class Event_Payload_NoActivity extends Message<Event_Payload_NoAc
  * @generated from message watchdog.v1.Event.Payload.Activity
  */
 export declare class Event_Payload_Activity extends Message<Event_Payload_Activity> {
-  /**
-   * @generated from field: google.protobuf.Timestamp start_time = 1;
-   */
-  startTime?: Timestamp;
-
-  /**
-   * @generated from field: google.protobuf.Timestamp end_time = 2;
-   */
-  endTime?: Timestamp;
-
   constructor(data?: PartialMessage<Event_Payload_Activity>);
 
   static readonly runtime: typeof proto3;
@@ -182,16 +172,6 @@ export declare class Event_Payload_Activity extends Message<Event_Payload_Activi
  * @generated from message watchdog.v1.Event.Payload.ZoneOverstay
  */
 export declare class Event_Payload_ZoneOverstay extends Message<Event_Payload_ZoneOverstay> {
-  /**
-   * @generated from field: google.protobuf.Timestamp start_time = 1;
-   */
-  startTime?: Timestamp;
-
-  /**
-   * @generated from field: google.protobuf.Timestamp end_time = 2;
-   */
-  endTime?: Timestamp;
-
   constructor(data?: PartialMessage<Event_Payload_ZoneOverstay>);
 
   static readonly runtime: typeof proto3;
@@ -212,19 +192,9 @@ export declare class Event_Payload_ZoneOverstay extends Message<Event_Payload_Zo
  */
 export declare class Event_Payload_SimilarMovement extends Message<Event_Payload_SimilarMovement> {
   /**
-   * @generated from field: google.protobuf.Timestamp start_time = 1;
-   */
-  startTime?: Timestamp;
-
-  /**
-   * @generated from field: google.protobuf.Timestamp end_time = 2;
-   */
-  endTime?: Timestamp;
-
-  /**
    * 0 = no similarity, 1 = maximum similarity
    *
-   * @generated from field: float similarity = 3;
+   * @generated from field: float similarity = 1;
    */
   similarity: number;
 
@@ -247,16 +217,6 @@ export declare class Event_Payload_SimilarMovement extends Message<Event_Payload
  * @generated from message watchdog.v1.Event.Payload.ZoneVisit
  */
 export declare class Event_Payload_ZoneVisit extends Message<Event_Payload_ZoneVisit> {
-  /**
-   * @generated from field: google.protobuf.Timestamp start_time = 1;
-   */
-  startTime?: Timestamp;
-
-  /**
-   * @generated from field: google.protobuf.Timestamp end_time = 2;
-   */
-  endTime?: Timestamp;
-
   constructor(data?: PartialMessage<Event_Payload_ZoneVisit>);
 
   static readonly runtime: typeof proto3;
