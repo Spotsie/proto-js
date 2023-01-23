@@ -1,0 +1,16 @@
+{
+    "name": "@spotsie/proto",
+    "version": "1.0.0",
+    "description": "Spotsie protobuf definitions",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Spotsie/proto-js.git"
+    },
+    "author": "",
+    "license": "ISC"
+  }
