@@ -86,16 +86,16 @@ export declare class LatLng extends Message<LatLng> {
  */
 export declare class LocationRecord extends Message<LocationRecord> {
   /**
-   * Zone in which the beacon was present
+   * Zone in  which the beacon was present
    *
-   * @generated from field: int32 zone = 1;
+   * @generated from field: optional int32 zone = 1;
    */
-  zone: number;
+  zone?: number;
 
   /**
    * coordinates at which beacon was present
    *
-   * @generated from field: location.v1.LatLng coordinates = 2;
+   * @generated from field: optional location.v1.LatLng coordinates = 2;
    */
   coordinates?: LatLng;
 

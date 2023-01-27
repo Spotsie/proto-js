@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetLatestSubjectPositionRequest, GetLatestSubjectPositionResponse, GetLocationHistoryRequest, GetLocationHistoryResponse, GetLocationRecordsRequest, GetLocationRecordsResponse, GetRealtimeLocationRequest, GetRealtimeLocationResponse, GetSubjectLocationsAtRequest, GetSubjectLocationsAtResponse } from "./service_pb.js";
+import { GetLatestSubjectLocationRequest, GetLatestSubjectLocationResponse, GetLatestSubjectPositionRequest, GetLatestSubjectPositionResponse, GetLocationHistoryRequest, GetLocationHistoryResponse, GetLocationRecordsRequest, GetLocationRecordsResponse, GetRealtimeLocationRequest, GetRealtimeLocationResponse, GetSubjectLocationsAtRequest, GetSubjectLocationsAtResponse } from "./service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -59,6 +59,15 @@ export const LocationService = {
       name: "GetLatestSubjectPosition",
       I: GetLatestSubjectPositionRequest,
       O: GetLatestSubjectPositionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc location.v1.LocationService.GetLatestSubjectLocation
+     */
+    getLatestSubjectLocation: {
+      name: "GetLatestSubjectLocation",
+      I: GetLatestSubjectLocationRequest,
+      O: GetLatestSubjectLocationResponse,
       kind: MethodKind.Unary,
     },
   }

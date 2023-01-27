@@ -40,8 +40,8 @@ export const LatLng = proto3.makeMessageType(
 export const LocationRecord = proto3.makeMessageType(
   "location.v1.LocationRecord",
   () => [
-    { no: 1, name: "zone", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "coordinates", kind: "message", T: LatLng },
+    { no: 1, name: "zone", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 2, name: "coordinates", kind: "message", T: LatLng, opt: true },
     { no: 3, name: "time", kind: "message", T: Timestamp },
   ],
 );

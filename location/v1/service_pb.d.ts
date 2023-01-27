@@ -353,3 +353,58 @@ export declare class GetLocationRecordsResponse_SubjectLocationRecords extends M
   static equals(a: GetLocationRecordsResponse_SubjectLocationRecords | PlainMessage<GetLocationRecordsResponse_SubjectLocationRecords> | undefined, b: GetLocationRecordsResponse_SubjectLocationRecords | PlainMessage<GetLocationRecordsResponse_SubjectLocationRecords> | undefined): boolean;
 }
 
+/**
+ * @generated from message location.v1.GetLatestSubjectLocationRequest
+ */
+export declare class GetLatestSubjectLocationRequest extends Message<GetLatestSubjectLocationRequest> {
+  /**
+   * @generated from field: repeated domain.v1.Subject subjects = 1;
+   */
+  subjects: Subject[];
+
+  /**
+   * @generated from field: optional google.protobuf.Timestamp from_time = 2;
+   */
+  fromTime?: Timestamp;
+
+  constructor(data?: PartialMessage<GetLatestSubjectLocationRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "location.v1.GetLatestSubjectLocationRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLatestSubjectLocationRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLatestSubjectLocationRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLatestSubjectLocationRequest;
+
+  static equals(a: GetLatestSubjectLocationRequest | PlainMessage<GetLatestSubjectLocationRequest> | undefined, b: GetLatestSubjectLocationRequest | PlainMessage<GetLatestSubjectLocationRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message location.v1.GetLatestSubjectLocationResponse
+ */
+export declare class GetLatestSubjectLocationResponse extends Message<GetLatestSubjectLocationResponse> {
+  /**
+   * Map is indexed by Subject.id
+   *
+   * @generated from field: map<int32, location.v1.LocationRecord> subject_location_record = 1;
+   */
+  subjectLocationRecord: { [key: number]: LocationRecord };
+
+  constructor(data?: PartialMessage<GetLatestSubjectLocationResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "location.v1.GetLatestSubjectLocationResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLatestSubjectLocationResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLatestSubjectLocationResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLatestSubjectLocationResponse;
+
+  static equals(a: GetLatestSubjectLocationResponse | PlainMessage<GetLatestSubjectLocationResponse> | undefined, b: GetLatestSubjectLocationResponse | PlainMessage<GetLatestSubjectLocationResponse> | undefined): boolean;
+}
+

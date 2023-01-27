@@ -5,7 +5,7 @@
 
 import { createQueryService } from "@bufbuild/connect-query";
 import { MethodKind } from "@bufbuild/protobuf";
-import { GetLatestSubjectPositionRequest, GetLatestSubjectPositionResponse, GetLocationHistoryRequest, GetLocationHistoryResponse, GetLocationRecordsRequest, GetLocationRecordsResponse, GetSubjectLocationsAtRequest, GetSubjectLocationsAtResponse } from "./service_pb.js";
+import { GetLatestSubjectLocationRequest, GetLatestSubjectLocationResponse, GetLatestSubjectPositionRequest, GetLatestSubjectPositionResponse, GetLocationHistoryRequest, GetLocationHistoryResponse, GetLocationRecordsRequest, GetLocationRecordsResponse, GetSubjectLocationsAtRequest, GetSubjectLocationsAtResponse } from "./service_pb.js";
 
 export const typeName = "location.v1.LocationService";
 
@@ -80,3 +80,20 @@ export const getLatestSubjectPosition = createQueryService({
     typeName: "location.v1.LocationService",
   },
 }).getLatestSubjectPosition;
+
+/**
+ * @generated from rpc location.v1.LocationService.GetLatestSubjectLocation
+ */
+export const getLatestSubjectLocation = createQueryService({
+  service: {
+    methods: {
+      getLatestSubjectLocation: {
+        name: "GetLatestSubjectLocation",
+        kind: MethodKind.Unary,
+        I: GetLatestSubjectLocationRequest,
+        O: GetLatestSubjectLocationResponse,
+      },
+    },
+    typeName: "location.v1.LocationService",
+  },
+}).getLatestSubjectLocation;

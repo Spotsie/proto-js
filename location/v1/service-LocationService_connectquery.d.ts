@@ -4,9 +4,10 @@
 // @ts-nocheck
 
 import { UnaryHooks } from "@bufbuild/connect-query";
-import { GetLatestSubjectPositionRequest, GetLatestSubjectPositionResponse, GetLocationHistoryRequest, GetLocationHistoryResponse, GetLocationRecordsRequest, GetLocationRecordsResponse, GetSubjectLocationsAtRequest, GetSubjectLocationsAtResponse } from "./service_pb.js";
+import { GetLatestSubjectLocationRequest, GetLatestSubjectLocationResponse, GetLatestSubjectPositionRequest, GetLatestSubjectPositionResponse, GetLocationHistoryRequest, GetLocationHistoryResponse, GetLocationRecordsRequest, GetLocationRecordsResponse, GetSubjectLocationsAtRequest, GetSubjectLocationsAtResponse } from "./service_pb.js";
 
 export const getLocationHistory: UnaryHooks<GetLocationHistoryRequest, GetLocationHistoryResponse>;
 export const getLocationRecords: UnaryHooks<GetLocationRecordsRequest, GetLocationRecordsResponse>;
 export const getSubjectLocationsAt: UnaryHooks<GetSubjectLocationsAtRequest, GetSubjectLocationsAtResponse>;
 export const getLatestSubjectPosition: UnaryHooks<GetLatestSubjectPositionRequest, GetLatestSubjectPositionResponse>;
+export const getLatestSubjectLocation: UnaryHooks<GetLatestSubjectLocationRequest, GetLatestSubjectLocationResponse>;

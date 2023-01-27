@@ -139,3 +139,24 @@ export const GetLocationRecordsResponse_SubjectLocationRecords = proto3.makeMess
   {localName: "GetLocationRecordsResponse_SubjectLocationRecords"},
 );
 
+/**
+ * @generated from message location.v1.GetLatestSubjectLocationRequest
+ */
+export const GetLatestSubjectLocationRequest = proto3.makeMessageType(
+  "location.v1.GetLatestSubjectLocationRequest",
+  () => [
+    { no: 1, name: "subjects", kind: "message", T: Subject, repeated: true },
+    { no: 2, name: "from_time", kind: "message", T: Timestamp, opt: true },
+  ],
+);
+
+/**
+ * @generated from message location.v1.GetLatestSubjectLocationResponse
+ */
+export const GetLatestSubjectLocationResponse = proto3.makeMessageType(
+  "location.v1.GetLatestSubjectLocationResponse",
+  () => [
+    { no: 1, name: "subject_location_record", kind: "map", K: 5 /* ScalarType.INT32 */, V: {kind: "message", T: LocationRecord} },
+  ],
+);
+
