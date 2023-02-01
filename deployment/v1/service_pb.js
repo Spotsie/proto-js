@@ -199,6 +199,7 @@ export const AddPositioningReferentRequest = proto3.makeMessageType(
     { no: 3, name: "device_type", kind: "enum", T: proto3.getEnumType(PositioningReferent_DeviceType) },
     { no: 4, name: "location", kind: "message", T: GeoPoint },
     { no: 5, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "deployment_id", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
   ],
 );
 
@@ -220,6 +221,7 @@ export const UpdatePositioningReferentRequest = proto3.makeMessageType(
     { no: 2, name: "organization_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 4, name: "location", kind: "message", T: GeoPoint },
     { no: 5, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "deployment_id", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
   ],
 );
 

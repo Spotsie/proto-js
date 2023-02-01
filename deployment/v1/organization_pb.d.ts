@@ -303,6 +303,13 @@ export declare class PositioningReferent extends Message<PositioningReferent> {
    */
   lastModifiedBy: string;
 
+  /**
+   * Only set for multilateration deployments
+   *
+   * @generated from field: optional int32 deployment_id = 12;
+   */
+  deploymentId?: number;
+
   constructor(data?: PartialMessage<PositioningReferent>);
 
   static readonly runtime: typeof proto3;

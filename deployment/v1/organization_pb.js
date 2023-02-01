@@ -104,6 +104,7 @@ export const PositioningReferent = proto3.makeMessageType(
     { no: 9, name: "last_modified_date", kind: "message", T: Timestamp },
     { no: 10, name: "created_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 11, name: "last_modified_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "deployment_id", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
   ],
 );
 
