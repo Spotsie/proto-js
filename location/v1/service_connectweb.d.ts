@@ -53,6 +53,8 @@ export declare const LocationService: {
       readonly kind: MethodKind.Unary,
     },
     /**
+     * Deprecated: GetLatestSubjectPosition is deprecated, use GetLatestSubjectLocation instead
+     *
      * @generated from rpc location.v1.LocationService.GetLatestSubjectPosition
      */
     readonly getLatestSubjectPosition: {
