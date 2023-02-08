@@ -513,6 +513,13 @@ export declare class AddPositioningReferentRequest extends Message<AddPositionin
    */
   name: string;
 
+  /**
+   * Only for multilateration deployments
+   *
+   * @generated from field: optional int32 deployment_id = 6;
+   */
+  deploymentId?: number;
+
   constructor(data?: PartialMessage<AddPositioningReferentRequest>);
 
   static readonly runtime: typeof proto3;
@@ -570,6 +577,13 @@ export declare class UpdatePositioningReferentRequest extends Message<UpdatePosi
    * @generated from field: string name = 5;
    */
   name: string;
+
+  /**
+   * Only for multilateration deployments
+   *
+   * @generated from field: optional int32 deployment_id = 6;
+   */
+  deploymentId?: number;
 
   constructor(data?: PartialMessage<UpdatePositioningReferentRequest>);
 
