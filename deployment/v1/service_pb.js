@@ -280,7 +280,7 @@ export const CreateOrganizationRequest = proto3.makeMessageType(
   "deployment.v1.CreateOrganizationRequest",
   () => [
     { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "short_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "namespace_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 4, name: "website", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],

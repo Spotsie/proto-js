@@ -725,9 +725,9 @@ export declare class CreateOrganizationRequest extends Message<CreateOrganizatio
   name: string;
 
   /**
-   * @generated from field: string short_name = 2;
+   * @generated from field: string code = 2;
    */
-  shortName: string;
+  code: string;
 
   /**
    * @generated from field: int32 namespace_id = 3;
