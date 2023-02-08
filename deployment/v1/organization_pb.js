@@ -130,7 +130,7 @@ export const Organization = proto3.makeMessageType(
     { no: 2, name: "created_date", kind: "message", T: Timestamp },
     { no: 3, name: "last_modified_date", kind: "message", T: Timestamp },
     { no: 4, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "short_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "namespace_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 7, name: "website", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "deployments", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },

@@ -368,9 +368,9 @@ export declare class Organization extends Message<Organization> {
   name: string;
 
   /**
-   * @generated from field: string short_name = 5;
+   * @generated from field: string code = 5;
    */
-  shortName: string;
+  code: string;
 
   /**
    * @generated from field: int32 namespace_id = 6;
