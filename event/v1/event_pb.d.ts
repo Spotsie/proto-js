@@ -6,6 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Beacon, DeploymentDto, GeoPoint, Observation, Subject } from "../../domain/v1/domain_pb.js";
+import type { LocationHistoryRecord } from "../../location/v1/location_pb.js";
 
 /**
  * @generated from message event.v1.BeaconObservationsEvent
@@ -215,5 +216,36 @@ export declare class DeviceDiscovery extends Message<DeviceDiscovery> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeviceDiscovery;
 
   static equals(a: DeviceDiscovery | PlainMessage<DeviceDiscovery> | undefined, b: DeviceDiscovery | PlainMessage<DeviceDiscovery> | undefined): boolean;
+}
+
+/**
+ * Produced by timeline service
+ *
+ * @generated from message event.v1.SubjectLocationSpanUpateEvent
+ */
+export declare class SubjectLocationSpanUpateEvent extends Message<SubjectLocationSpanUpateEvent> {
+  /**
+   * @generated from field: domain.v1.Subject subject = 1;
+   */
+  subject?: Subject;
+
+  /**
+   * @generated from field: location.v1.LocationHistoryRecord record = 2;
+   */
+  record?: LocationHistoryRecord;
+
+  constructor(data?: PartialMessage<SubjectLocationSpanUpateEvent>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "event.v1.SubjectLocationSpanUpateEvent";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubjectLocationSpanUpateEvent;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubjectLocationSpanUpateEvent;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubjectLocationSpanUpateEvent;
+
+  static equals(a: SubjectLocationSpanUpateEvent | PlainMessage<SubjectLocationSpanUpateEvent> | undefined, b: SubjectLocationSpanUpateEvent | PlainMessage<SubjectLocationSpanUpateEvent> | undefined): boolean;
 }
 

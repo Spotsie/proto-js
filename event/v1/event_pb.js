@@ -5,6 +5,7 @@
 
 import { proto3, Timestamp } from "@bufbuild/protobuf";
 import { Beacon, DeploymentDto, GeoPoint, Observation, Subject } from "../../domain/v1/domain_pb.js";
+import { LocationHistoryRecord } from "../../location/v1/location_pb.js";
 
 /**
  * @generated from message event.v1.BeaconObservationsEvent
@@ -83,6 +84,19 @@ export const DeviceDiscovery = proto3.makeMessageType(
   () => [
     { no: 1, name: "deployment_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 2, name: "model", kind: "message", T: DeploymentDto },
+  ],
+);
+
+/**
+ * Produced by timeline service
+ *
+ * @generated from message event.v1.SubjectLocationSpanUpateEvent
+ */
+export const SubjectLocationSpanUpateEvent = proto3.makeMessageType(
+  "event.v1.SubjectLocationSpanUpateEvent",
+  () => [
+    { no: 1, name: "subject", kind: "message", T: Subject },
+    { no: 2, name: "record", kind: "message", T: LocationHistoryRecord },
   ],
 );
 
