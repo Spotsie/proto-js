@@ -221,9 +221,9 @@ export declare class DeviceDiscovery extends Message<DeviceDiscovery> {
 /**
  * Produced by timeline service
  *
- * @generated from message event.v1.SubjectLocationSpanUpateEvent
+ * @generated from message event.v1.SubjectLocationSpanUpdateEvent
  */
-export declare class SubjectLocationSpanUpateEvent extends Message<SubjectLocationSpanUpateEvent> {
+export declare class SubjectLocationSpanUpdateEvent extends Message<SubjectLocationSpanUpdateEvent> {
   /**
    * @generated from field: domain.v1.Subject subject = 1;
    */
@@ -234,18 +234,18 @@ export declare class SubjectLocationSpanUpateEvent extends Message<SubjectLocati
    */
   record?: LocationHistoryRecord;
 
-  constructor(data?: PartialMessage<SubjectLocationSpanUpateEvent>);
+  constructor(data?: PartialMessage<SubjectLocationSpanUpdateEvent>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "event.v1.SubjectLocationSpanUpateEvent";
+  static readonly typeName = "event.v1.SubjectLocationSpanUpdateEvent";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubjectLocationSpanUpateEvent;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubjectLocationSpanUpdateEvent;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubjectLocationSpanUpateEvent;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubjectLocationSpanUpdateEvent;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubjectLocationSpanUpateEvent;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubjectLocationSpanUpdateEvent;
 
-  static equals(a: SubjectLocationSpanUpateEvent | PlainMessage<SubjectLocationSpanUpateEvent> | undefined, b: SubjectLocationSpanUpateEvent | PlainMessage<SubjectLocationSpanUpateEvent> | undefined): boolean;
+  static equals(a: SubjectLocationSpanUpdateEvent | PlainMessage<SubjectLocationSpanUpdateEvent> | undefined, b: SubjectLocationSpanUpdateEvent | PlainMessage<SubjectLocationSpanUpdateEvent> | undefined): boolean;
 }
 

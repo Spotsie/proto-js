@@ -90,10 +90,10 @@ export const DeviceDiscovery = proto3.makeMessageType(
 /**
  * Produced by timeline service
  *
- * @generated from message event.v1.SubjectLocationSpanUpateEvent
+ * @generated from message event.v1.SubjectLocationSpanUpdateEvent
  */
-export const SubjectLocationSpanUpateEvent = proto3.makeMessageType(
-  "event.v1.SubjectLocationSpanUpateEvent",
+export const SubjectLocationSpanUpdateEvent = proto3.makeMessageType(
+  "event.v1.SubjectLocationSpanUpdateEvent",
   () => [
     { no: 1, name: "subject", kind: "message", T: Subject },
     { no: 2, name: "record", kind: "message", T: LocationHistoryRecord },
