@@ -11,7 +11,7 @@ import { Message, proto3 } from "@bufbuild/protobuf";
  */
 export declare class LocationHistoryRecord extends Message<LocationHistoryRecord> {
   /**
-   * Zone in which the beacon was present
+   * Zone ID in which the beacon was present
    *
    * @generated from field: int32 zone = 1;
    */
@@ -26,6 +26,13 @@ export declare class LocationHistoryRecord extends Message<LocationHistoryRecord
    * @generated from field: google.protobuf.Timestamp to_time = 3;
    */
   toTime?: Timestamp;
+
+  /**
+   * Current zone name. Zone name can change over time, but the ID is always the same.
+   *
+   * @generated from field: string zone_name = 4;
+   */
+  zoneName: string;
 
   constructor(data?: PartialMessage<LocationHistoryRecord>);
 

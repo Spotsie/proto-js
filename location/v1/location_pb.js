@@ -14,6 +14,7 @@ export const LocationHistoryRecord = proto3.makeMessageType(
     { no: 1, name: "zone", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 2, name: "from_time", kind: "message", T: Timestamp },
     { no: 3, name: "to_time", kind: "message", T: Timestamp },
+    { no: 4, name: "zone_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
