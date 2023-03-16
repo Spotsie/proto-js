@@ -3,42 +3,9 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-
-/**
- * @generated from message watchdog.v1.Audit
- */
-export declare class Audit extends Message<Audit> {
-  /**
-   * @generated from field: optional google.protobuf.Timestamp created_at = 1;
-   */
-  createdAt?: Timestamp;
-
-  /**
-   * @generated from field: optional google.protobuf.Timestamp updated_at = 2;
-   */
-  updatedAt?: Timestamp;
-
-  /**
-   * @generated from field: optional google.protobuf.Timestamp deleted_at = 3;
-   */
-  deletedAt?: Timestamp;
-
-  constructor(data?: PartialMessage<Audit>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "watchdog.v1.Audit";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Audit;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Audit;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Audit;
-
-  static equals(a: Audit | PlainMessage<Audit> | undefined, b: Audit | PlainMessage<Audit> | undefined): boolean;
-}
+import type { Audit } from "../../domain/v1/domain_pb.js";
 
 /**
  * @generated from message watchdog.v1.SubjectGroup
@@ -70,7 +37,7 @@ export declare class SubjectGroup extends Message<SubjectGroup> {
   subjectIds: number[];
 
   /**
-   * @generated from field: watchdog.v1.Audit audit = 6;
+   * @generated from field: domain.v1.Audit audit = 6;
    */
   audit?: Audit;
 

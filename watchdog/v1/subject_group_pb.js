@@ -3,19 +3,8 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { proto3, Timestamp } from "@bufbuild/protobuf";
-
-/**
- * @generated from message watchdog.v1.Audit
- */
-export const Audit = proto3.makeMessageType(
-  "watchdog.v1.Audit",
-  () => [
-    { no: 1, name: "created_at", kind: "message", T: Timestamp, opt: true },
-    { no: 2, name: "updated_at", kind: "message", T: Timestamp, opt: true },
-    { no: 3, name: "deleted_at", kind: "message", T: Timestamp, opt: true },
-  ],
-);
+import { proto3 } from "@bufbuild/protobuf";
+import { Audit } from "../../domain/v1/domain_pb.js";
 
 /**
  * @generated from message watchdog.v1.SubjectGroup
