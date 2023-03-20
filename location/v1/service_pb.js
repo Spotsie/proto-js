@@ -16,6 +16,7 @@ export const GetLocationHistoryRequest = proto3.makeMessageType(
     { no: 1, name: "subjects", kind: "message", T: Subject, repeated: true },
     { no: 2, name: "from_time", kind: "message", T: Timestamp },
     { no: 3, name: "to_time", kind: "message", T: Timestamp },
+    { no: 4, name: "trim_out_of_bound_records", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

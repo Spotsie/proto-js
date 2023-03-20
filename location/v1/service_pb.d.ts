@@ -27,6 +27,13 @@ export declare class GetLocationHistoryRequest extends Message<GetLocationHistor
    */
   toTime?: Timestamp;
 
+  /**
+   * trims the first and the last location history record if they don't fit in the requested time period specified by `from_time`` and `to_time`
+   *
+   * @generated from field: bool trim_out_of_bound_records = 4;
+   */
+  trimOutOfBoundRecords: boolean;
+
   constructor(data?: PartialMessage<GetLocationHistoryRequest>);
 
   static readonly runtime: typeof proto3;
