@@ -59,6 +59,11 @@ export declare class Beacon extends Message<Beacon> {
    */
   minor: number;
 
+  /**
+   * @generated from field: string bt_dev_addr = 3;
+   */
+  btDevAddr: string;
+
   constructor(data?: PartialMessage<Beacon>);
 
   static readonly runtime: typeof proto3;

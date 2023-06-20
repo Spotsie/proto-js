@@ -28,6 +28,7 @@ export const Beacon = proto3.makeMessageType(
   () => [
     { no: 1, name: "major", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 2, name: "minor", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 3, name: "bt_dev_addr", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

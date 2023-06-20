@@ -69,6 +69,55 @@ export declare class BeaconObservationEvent extends Message<BeaconObservationEve
 }
 
 /**
+ * @generated from message event.v1.EddystoneTLM_ObservationEvent
+ */
+export declare class EddystoneTLM_ObservationEvent extends Message<EddystoneTLM_ObservationEvent> {
+  /**
+   * @generated from field: domain.v1.Beacon beacon = 1;
+   */
+  beacon?: Beacon;
+
+  /**
+   * @generated from field: int32 rssi = 2;
+   */
+  rssi: number;
+
+  /**
+   * @generated from field: uint32 bat_voltage = 3;
+   */
+  batVoltage: number;
+
+  /**
+   * @generated from field: uint32 temperature = 4;
+   */
+  temperature: number;
+
+  /**
+   * @generated from field: uint32 adv_count = 5;
+   */
+  advCount: number;
+
+  /**
+   * @generated from field: uint32 sec_count = 6;
+   */
+  secCount: number;
+
+  constructor(data?: PartialMessage<EddystoneTLM_ObservationEvent>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "event.v1.EddystoneTLM_ObservationEvent";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EddystoneTLM_ObservationEvent;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EddystoneTLM_ObservationEvent;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EddystoneTLM_ObservationEvent;
+
+  static equals(a: EddystoneTLM_ObservationEvent | PlainMessage<EddystoneTLM_ObservationEvent> | undefined, b: EddystoneTLM_ObservationEvent | PlainMessage<EddystoneTLM_ObservationEvent> | undefined): boolean;
+}
+
+/**
  * @generated from message event.v1.SubjectLocationUpdateEvent
  */
 export declare class SubjectLocationUpdateEvent extends Message<SubjectLocationUpdateEvent> {

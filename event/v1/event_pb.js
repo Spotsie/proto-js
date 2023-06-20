@@ -32,6 +32,21 @@ export const BeaconObservationEvent = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message event.v1.EddystoneTLM_ObservationEvent
+ */
+export const EddystoneTLM_ObservationEvent = proto3.makeMessageType(
+  "event.v1.EddystoneTLM_ObservationEvent",
+  () => [
+    { no: 1, name: "beacon", kind: "message", T: Beacon },
+    { no: 2, name: "rssi", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "bat_voltage", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 4, name: "temperature", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 5, name: "adv_count", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 6, name: "sec_count", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ],
+);
+
+/**
  * @generated from message event.v1.SubjectLocationUpdateEvent
  */
 export const SubjectLocationUpdateEvent = proto3.makeMessageType(

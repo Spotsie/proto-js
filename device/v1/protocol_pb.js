@@ -205,7 +205,7 @@ export const ClientMessage_BleScan = proto3.makeMessageType(
   () => [
     { no: 2, name: "timestamp", kind: "message", T: Timestamp },
     { no: 3, name: "ibeacon", kind: "message", T: ClientMessage_BleScan_IBeacon, oneof: "results" },
-    { no: 4, name: "eddystone", kind: "message", T: ClientMessage_BleScan_Eddystone, oneof: "results" },
+    { no: 4, name: "eddystoneTLM", kind: "message", T: ClientMessage_BleScan_EddystoneTLM, oneof: "results" },
   ],
   {localName: "ClientMessage_BleScan"},
 );
@@ -230,30 +230,36 @@ export const ClientMessage_BleScan_IBeacon_AdvertisingData = proto3.makeMessageT
     { no: 1, name: "major", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 2, name: "minor", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 3, name: "rssi", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "bt_dev_addr", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
   {localName: "ClientMessage_BleScan_IBeacon_AdvertisingData"},
 );
 
 /**
- * TODO: implement
- *
- * @generated from message device.v1.ClientMessage.BleScan.Eddystone
+ * @generated from message device.v1.ClientMessage.BleScan.EddystoneTLM
  */
-export const ClientMessage_BleScan_Eddystone = proto3.makeMessageType(
-  "device.v1.ClientMessage.BleScan.Eddystone",
+export const ClientMessage_BleScan_EddystoneTLM = proto3.makeMessageType(
+  "device.v1.ClientMessage.BleScan.EddystoneTLM",
   () => [
-    { no: 1, name: "data", kind: "message", T: ClientMessage_BleScan_Eddystone_AdvertisingData, repeated: true },
+    { no: 1, name: "data", kind: "message", T: ClientMessage_BleScan_EddystoneTLM_AdvertisingData, repeated: true },
   ],
-  {localName: "ClientMessage_BleScan_Eddystone"},
+  {localName: "ClientMessage_BleScan_EddystoneTLM"},
 );
 
 /**
- * @generated from message device.v1.ClientMessage.BleScan.Eddystone.AdvertisingData
+ * @generated from message device.v1.ClientMessage.BleScan.EddystoneTLM.AdvertisingData
  */
-export const ClientMessage_BleScan_Eddystone_AdvertisingData = proto3.makeMessageType(
-  "device.v1.ClientMessage.BleScan.Eddystone.AdvertisingData",
-  [],
-  {localName: "ClientMessage_BleScan_Eddystone_AdvertisingData"},
+export const ClientMessage_BleScan_EddystoneTLM_AdvertisingData = proto3.makeMessageType(
+  "device.v1.ClientMessage.BleScan.EddystoneTLM.AdvertisingData",
+  () => [
+    { no: 1, name: "bt_dev_addr", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "rssi", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "bat_voltage", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 4, name: "temperature", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 5, name: "adv_count", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 6, name: "sec_count", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ],
+  {localName: "ClientMessage_BleScan_EddystoneTLM_AdvertisingData"},
 );
 
 /**
@@ -267,6 +273,7 @@ export const BackendMessage = proto3.makeMessageType(
     { no: 1, name: "ping", kind: "message", T: BackendMessage_Ping, oneof: "payload" },
     { no: 2, name: "configure", kind: "message", T: BackendMessage_Configure, oneof: "payload" },
     { no: 3, name: "ota", kind: "message", T: BackendMessage_Ota, oneof: "payload" },
+    { no: 4, name: "restart", kind: "message", T: BackendMessage_Restart, oneof: "payload" },
   ],
 );
 
@@ -301,6 +308,17 @@ export const BackendMessage_Ota = proto3.makeMessageType(
     { no: 1, name: "uri", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
   {localName: "BackendMessage_Ota"},
+);
+
+/**
+ * @generated from message device.v1.BackendMessage.Restart
+ */
+export const BackendMessage_Restart = proto3.makeMessageType(
+  "device.v1.BackendMessage.Restart",
+  () => [
+    { no: 1, name: "timestamp", kind: "message", T: Timestamp },
+  ],
+  {localName: "BackendMessage_Restart"},
 );
 
 /**
