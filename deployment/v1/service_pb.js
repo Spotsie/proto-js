@@ -332,3 +332,42 @@ export const GetOrganizationsResponse = proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message deployment.v1.GetDeploymentStateRequest
+ */
+export const GetDeploymentStateRequest = proto3.makeMessageType(
+  "deployment.v1.GetDeploymentStateRequest",
+  () => [
+    { no: 1, name: "deployment_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message deployment.v1.GetDeploymentStateResponse
+ */
+export const GetDeploymentStateResponse = proto3.makeMessageType(
+  "deployment.v1.GetDeploymentStateResponse",
+  () => [
+    { no: 1, name: "state", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+  ],
+);
+
+/**
+ * @generated from message deployment.v1.SetDeploymentStateRequest
+ */
+export const SetDeploymentStateRequest = proto3.makeMessageType(
+  "deployment.v1.SetDeploymentStateRequest",
+  () => [
+    { no: 1, name: "deployment_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "state", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+  ],
+);
+
+/**
+ * @generated from message deployment.v1.SetDeploymentStateResponse
+ */
+export const SetDeploymentStateResponse = proto3.makeMessageType(
+  "deployment.v1.SetDeploymentStateResponse",
+  [],
+);
+

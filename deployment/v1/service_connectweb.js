@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddPositioningReferentRequest, AddPositioningReferentResponse, CreateDeploymentRequest, CreateDeploymentResponse, CreateOrganizationRequest, CreateOrganizationResponse, CreateZoneRequest, CreateZoneResponse, DeleteZoneRequest, DeleteZoneResponse, GetDeploymentRequest, GetDeploymentResponse, GetDeploymentsRequest, GetDeploymentsResponse, GetOrganizationRequest, GetOrganizationResponse, GetOrganizationsRequest, GetOrganizationsResponse, GetPositioningReferentRequest, GetPositioningReferentResponse, GetPositioningReferentsRequest, GetPositioningReferentsResponse, GetZoneRequest, GetZoneResponse, GetZonesRequest, GetZonesResponse, UpdateDeploymentRequest, UpdateDeploymentResponse, UpdatePositioningReferentRequest, UpdatePositioningReferentResponse, UpdateZoneRequest, UpdateZoneResponse } from "./service_pb.js";
+import { AddPositioningReferentRequest, AddPositioningReferentResponse, CreateDeploymentRequest, CreateDeploymentResponse, CreateOrganizationRequest, CreateOrganizationResponse, CreateZoneRequest, CreateZoneResponse, DeleteZoneRequest, DeleteZoneResponse, GetDeploymentRequest, GetDeploymentResponse, GetDeploymentsRequest, GetDeploymentsResponse, GetDeploymentStateRequest, GetDeploymentStateResponse, GetOrganizationRequest, GetOrganizationResponse, GetOrganizationsRequest, GetOrganizationsResponse, GetPositioningReferentRequest, GetPositioningReferentResponse, GetPositioningReferentsRequest, GetPositioningReferentsResponse, GetZoneRequest, GetZoneResponse, GetZonesRequest, GetZonesResponse, SetDeploymentStateRequest, SetDeploymentStateResponse, UpdateDeploymentRequest, UpdateDeploymentResponse, UpdatePositioningReferentRequest, UpdatePositioningReferentResponse, UpdateZoneRequest, UpdateZoneResponse } from "./service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -48,6 +48,24 @@ export const DeploymentService = {
       name: "GetDeployment",
       I: GetDeploymentRequest,
       O: GetDeploymentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc deployment.v1.DeploymentService.GetDeploymentState
+     */
+    getDeploymentState: {
+      name: "GetDeploymentState",
+      I: GetDeploymentStateRequest,
+      O: GetDeploymentStateResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc deployment.v1.DeploymentService.SetDeploymentState
+     */
+    setDeploymentState: {
+      name: "SetDeploymentState",
+      I: SetDeploymentStateRequest,
+      O: SetDeploymentStateResponse,
       kind: MethodKind.Unary,
     },
     /**
