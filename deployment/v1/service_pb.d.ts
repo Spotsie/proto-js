@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Deployment, Deployment_Type, MultilaterationConfig, Organization, PointConfig, PositioningReferent, PositioningReferent_DeviceType, Zone, Zone_Config } from "./organization_pb.js";
 import type { GeoPoint } from "../../domain/v1/domain_pb.js";
@@ -896,6 +896,11 @@ export declare class GetDeploymentStateResponse extends Message<GetDeploymentSta
    * @generated from field: bytes state = 1;
    */
   state: Uint8Array;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated = 2;
+   */
+  updated?: Timestamp;
 
   constructor(data?: PartialMessage<GetDeploymentStateResponse>);
 
