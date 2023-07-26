@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { Subject } from "../../domain/v1/domain_pb.js";
+import type { Subject, TimePeriod } from "../../domain/v1/domain_pb.js";
 import type { BatteryTelemetry, TemperatureTelemetry } from "./subject_pb.js";
 
 /**
@@ -76,14 +76,9 @@ export declare class GetSubjectsTelemetryRequest extends Message<GetSubjectsTele
   subjects: Subject[];
 
   /**
-   * @generated from field: google.protobuf.Timestamp from_time = 3;
+   * @generated from field: domain.v1.TimePeriod time = 2;
    */
-  fromTime?: Timestamp;
-
-  /**
-   * @generated from field: google.protobuf.Timestamp to_time = 4;
-   */
-  toTime?: Timestamp;
+  time?: TimePeriod;
 
   constructor(data?: PartialMessage<GetSubjectsTelemetryRequest>);
 
@@ -129,9 +124,9 @@ export declare class GetSubjectsTelemetryResponse extends Message<GetSubjectsTel
  */
 export declare class GetSubjectsTelemetryResponse_SubjectTelemetry extends Message<GetSubjectsTelemetryResponse_SubjectTelemetry> {
   /**
-   * @generated from field: domain.v1.Subject subjects = 1;
+   * @generated from field: domain.v1.Subject subject = 1;
    */
-  subjects?: Subject;
+  subject?: Subject;
 
   /**
    * @generated from field: repeated subject.v1.TemperatureTelemetry temperature = 2;
@@ -156,5 +151,87 @@ export declare class GetSubjectsTelemetryResponse_SubjectTelemetry extends Messa
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetSubjectsTelemetryResponse_SubjectTelemetry;
 
   static equals(a: GetSubjectsTelemetryResponse_SubjectTelemetry | PlainMessage<GetSubjectsTelemetryResponse_SubjectTelemetry> | undefined, b: GetSubjectsTelemetryResponse_SubjectTelemetry | PlainMessage<GetSubjectsTelemetryResponse_SubjectTelemetry> | undefined): boolean;
+}
+
+/**
+ * @generated from message subject.v1.GetLatestSubjectsTelemetryRequest
+ */
+export declare class GetLatestSubjectsTelemetryRequest extends Message<GetLatestSubjectsTelemetryRequest> {
+  /**
+   * @generated from field: repeated domain.v1.Subject subjects = 1;
+   */
+  subjects: Subject[];
+
+  constructor(data?: PartialMessage<GetLatestSubjectsTelemetryRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "subject.v1.GetLatestSubjectsTelemetryRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLatestSubjectsTelemetryRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLatestSubjectsTelemetryRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLatestSubjectsTelemetryRequest;
+
+  static equals(a: GetLatestSubjectsTelemetryRequest | PlainMessage<GetLatestSubjectsTelemetryRequest> | undefined, b: GetLatestSubjectsTelemetryRequest | PlainMessage<GetLatestSubjectsTelemetryRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message subject.v1.GetLatestSubjectsTelemetryResponse
+ */
+export declare class GetLatestSubjectsTelemetryResponse extends Message<GetLatestSubjectsTelemetryResponse> {
+  /**
+   * @generated from field: repeated subject.v1.GetLatestSubjectsTelemetryResponse.LatestSubjectTelemetry subject_telemetries = 4;
+   */
+  subjectTelemetries: GetLatestSubjectsTelemetryResponse_LatestSubjectTelemetry[];
+
+  constructor(data?: PartialMessage<GetLatestSubjectsTelemetryResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "subject.v1.GetLatestSubjectsTelemetryResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLatestSubjectsTelemetryResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLatestSubjectsTelemetryResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLatestSubjectsTelemetryResponse;
+
+  static equals(a: GetLatestSubjectsTelemetryResponse | PlainMessage<GetLatestSubjectsTelemetryResponse> | undefined, b: GetLatestSubjectsTelemetryResponse | PlainMessage<GetLatestSubjectsTelemetryResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message subject.v1.GetLatestSubjectsTelemetryResponse.LatestSubjectTelemetry
+ */
+export declare class GetLatestSubjectsTelemetryResponse_LatestSubjectTelemetry extends Message<GetLatestSubjectsTelemetryResponse_LatestSubjectTelemetry> {
+  /**
+   * @generated from field: domain.v1.Subject subject = 1;
+   */
+  subject?: Subject;
+
+  /**
+   * @generated from field: subject.v1.TemperatureTelemetry temperature = 2;
+   */
+  temperature?: TemperatureTelemetry;
+
+  /**
+   * @generated from field: subject.v1.BatteryTelemetry battery = 3;
+   */
+  battery?: BatteryTelemetry;
+
+  constructor(data?: PartialMessage<GetLatestSubjectsTelemetryResponse_LatestSubjectTelemetry>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "subject.v1.GetLatestSubjectsTelemetryResponse.LatestSubjectTelemetry";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLatestSubjectsTelemetryResponse_LatestSubjectTelemetry;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLatestSubjectsTelemetryResponse_LatestSubjectTelemetry;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLatestSubjectsTelemetryResponse_LatestSubjectTelemetry;
+
+  static equals(a: GetLatestSubjectsTelemetryResponse_LatestSubjectTelemetry | PlainMessage<GetLatestSubjectsTelemetryResponse_LatestSubjectTelemetry> | undefined, b: GetLatestSubjectsTelemetryResponse_LatestSubjectTelemetry | PlainMessage<GetLatestSubjectsTelemetryResponse_LatestSubjectTelemetry> | undefined): boolean;
 }
 

@@ -4,7 +4,8 @@
 // @ts-nocheck
 
 import { UnaryHooks } from "@bufbuild/connect-query";
-import { GetAllSubjectsRequest, GetAllSubjectsResponse, GetSubjectsTelemetryRequest, GetSubjectsTelemetryResponse } from "./service_pb.js";
+import { GetAllSubjectsRequest, GetAllSubjectsResponse, GetLatestSubjectsTelemetryRequest, GetLatestSubjectsTelemetryResponse, GetSubjectsTelemetryRequest, GetSubjectsTelemetryResponse } from "./service_pb.js";
 
 export const getAllSubjects: UnaryHooks<GetAllSubjectsRequest, GetAllSubjectsResponse>;
 export const getSubjectsTelemetry: UnaryHooks<GetSubjectsTelemetryRequest, GetSubjectsTelemetryResponse>;
+export const getLatestSubjectsTelemetry: UnaryHooks<GetLatestSubjectsTelemetryRequest, GetLatestSubjectsTelemetryResponse>;

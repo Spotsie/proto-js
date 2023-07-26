@@ -5,7 +5,7 @@
 
 import { createQueryService } from "@bufbuild/connect-query";
 import { MethodKind } from "@bufbuild/protobuf";
-import { GetAllSubjectsRequest, GetAllSubjectsResponse, GetSubjectsTelemetryRequest, GetSubjectsTelemetryResponse } from "./service_pb.js";
+import { GetAllSubjectsRequest, GetAllSubjectsResponse, GetLatestSubjectsTelemetryRequest, GetLatestSubjectsTelemetryResponse, GetSubjectsTelemetryRequest, GetSubjectsTelemetryResponse } from "./service_pb.js";
 
 export const typeName = "subject.v1.SubjectService";
 
@@ -27,6 +27,8 @@ export const getAllSubjects = createQueryService({
 }).getAllSubjects;
 
 /**
+ * Retrieves all telemetry data for specified subjects in selected time period
+ *
  * @generated from rpc subject.v1.SubjectService.GetSubjectsTelemetry
  */
 export const getSubjectsTelemetry = createQueryService({
@@ -42,3 +44,22 @@ export const getSubjectsTelemetry = createQueryService({
     typeName: "subject.v1.SubjectService",
   },
 }).getSubjectsTelemetry;
+
+/**
+ * Retrieves only the most recent sample of telemetry data for specified subjects
+ *
+ * @generated from rpc subject.v1.SubjectService.GetLatestSubjectsTelemetry
+ */
+export const getLatestSubjectsTelemetry = createQueryService({
+  service: {
+    methods: {
+      getLatestSubjectsTelemetry: {
+        name: "GetLatestSubjectsTelemetry",
+        kind: MethodKind.Unary,
+        I: GetLatestSubjectsTelemetryRequest,
+        O: GetLatestSubjectsTelemetryResponse,
+      },
+    },
+    typeName: "subject.v1.SubjectService",
+  },
+}).getLatestSubjectsTelemetry;

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetAllSubjectsRequest, GetAllSubjectsResponse, GetSubjectsTelemetryRequest, GetSubjectsTelemetryResponse } from "./service_pb.js";
+import { GetAllSubjectsRequest, GetAllSubjectsResponse, GetLatestSubjectsTelemetryRequest, GetLatestSubjectsTelemetryResponse, GetSubjectsTelemetryRequest, GetSubjectsTelemetryResponse } from "./service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -22,12 +22,25 @@ export const SubjectService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Retrieves all telemetry data for specified subjects in selected time period
+     *
      * @generated from rpc subject.v1.SubjectService.GetSubjectsTelemetry
      */
     getSubjectsTelemetry: {
       name: "GetSubjectsTelemetry",
       I: GetSubjectsTelemetryRequest,
       O: GetSubjectsTelemetryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Retrieves only the most recent sample of telemetry data for specified subjects
+     *
+     * @generated from rpc subject.v1.SubjectService.GetLatestSubjectsTelemetry
+     */
+    getLatestSubjectsTelemetry: {
+      name: "GetLatestSubjectsTelemetry",
+      I: GetLatestSubjectsTelemetryRequest,
+      O: GetLatestSubjectsTelemetryResponse,
       kind: MethodKind.Unary,
     },
   }
