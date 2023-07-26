@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetAllSubjectsRequest, GetSubjectsTelemetryRequest, GetSubjectsTelemetryResponse } from "./service_pb.js";
+import { GetAllSubjectsRequest, GetAllSubjectsResponse, GetSubjectsTelemetryRequest, GetSubjectsTelemetryResponse } from "./service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -18,7 +18,7 @@ export declare const SubjectService: {
     readonly getAllSubjects: {
       readonly name: "GetAllSubjects",
       readonly I: typeof GetAllSubjectsRequest,
-      readonly O: typeof GetAllSubjectsRequest,
+      readonly O: typeof GetAllSubjectsResponse,
       readonly kind: MethodKind.Unary,
     },
     /**

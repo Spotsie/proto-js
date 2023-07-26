@@ -5,7 +5,7 @@
 
 import { createQueryService } from "@bufbuild/connect-query";
 import { MethodKind } from "@bufbuild/protobuf";
-import { GetAllSubjectsRequest, GetSubjectsTelemetryRequest, GetSubjectsTelemetryResponse } from "./service_pb.js";
+import { GetAllSubjectsRequest, GetAllSubjectsResponse, GetSubjectsTelemetryRequest, GetSubjectsTelemetryResponse } from "./service_pb.js";
 
 export const typeName = "subject.v1.SubjectService";
 
@@ -19,7 +19,7 @@ export const getAllSubjects = createQueryService({
         name: "GetAllSubjects",
         kind: MethodKind.Unary,
         I: GetAllSubjectsRequest,
-        O: GetAllSubjectsRequest,
+        O: GetAllSubjectsResponse,
       },
     },
     typeName: "subject.v1.SubjectService",
