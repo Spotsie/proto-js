@@ -205,3 +205,65 @@ export declare class Session extends Message<Session> {
   static equals(a: Session | PlainMessage<Session> | undefined, b: Session | PlainMessage<Session> | undefined): boolean;
 }
 
+/**
+ * @generated from message device.v1.BeaconTemperatureData
+ */
+export declare class BeaconTemperatureData extends Message<BeaconTemperatureData> {
+  /**
+   * @generated from field: google.protobuf.Timestamp timestamp = 1;
+   */
+  timestamp?: Timestamp;
+
+  /**
+   * celsius
+   *
+   * @generated from field: int32 temperature = 2;
+   */
+  temperature: number;
+
+  constructor(data?: PartialMessage<BeaconTemperatureData>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "device.v1.BeaconTemperatureData";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BeaconTemperatureData;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BeaconTemperatureData;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BeaconTemperatureData;
+
+  static equals(a: BeaconTemperatureData | PlainMessage<BeaconTemperatureData> | undefined, b: BeaconTemperatureData | PlainMessage<BeaconTemperatureData> | undefined): boolean;
+}
+
+/**
+ * @generated from message device.v1.BeaconVoltageData
+ */
+export declare class BeaconVoltageData extends Message<BeaconVoltageData> {
+  /**
+   * @generated from field: google.protobuf.Timestamp timestamp = 1;
+   */
+  timestamp?: Timestamp;
+
+  /**
+   * millivolts
+   *
+   * @generated from field: int32 voltage = 2;
+   */
+  voltage: number;
+
+  constructor(data?: PartialMessage<BeaconVoltageData>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "device.v1.BeaconVoltageData";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BeaconVoltageData;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BeaconVoltageData;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BeaconVoltageData;
+
+  static equals(a: BeaconVoltageData | PlainMessage<BeaconVoltageData> | undefined, b: BeaconVoltageData | PlainMessage<BeaconVoltageData> | undefined): boolean;
+}
+

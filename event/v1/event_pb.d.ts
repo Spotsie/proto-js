@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Beacon, DeploymentDto, GeoPoint, Observation, Subject, TimePeriod } from "../../domain/v1/domain_pb.js";
-import type { LocationHistoryRecord } from "../../location/v1/location_pb.js";
+import type { BatteryTelemetry, TemperatureTelemetry } from "../../subject/v1/subject_pb.js";
 
 /**
  * @generated from message event.v1.BeaconObservationsEvent
@@ -234,11 +234,6 @@ export declare class SubjectLocationSpanUpdateEvent extends Message<SubjectLocat
    */
   subject?: Subject;
 
-  /**
-   * @generated from field: location.v1.LocationHistoryRecord record = 2;
-   */
-  record?: LocationHistoryRecord;
-
   constructor(data?: PartialMessage<SubjectLocationSpanUpdateEvent>);
 
   static readonly runtime: typeof proto3;
@@ -252,5 +247,39 @@ export declare class SubjectLocationSpanUpdateEvent extends Message<SubjectLocat
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubjectLocationSpanUpdateEvent;
 
   static equals(a: SubjectLocationSpanUpdateEvent | PlainMessage<SubjectLocationSpanUpdateEvent> | undefined, b: SubjectLocationSpanUpdateEvent | PlainMessage<SubjectLocationSpanUpdateEvent> | undefined): boolean;
+}
+
+/**
+ * @generated from message event.v1.SubjectTelemetryEvent
+ */
+export declare class SubjectTelemetryEvent extends Message<SubjectTelemetryEvent> {
+  /**
+   * @generated from field: domain.v1.Subject subject = 1;
+   */
+  subject?: Subject;
+
+  /**
+   * @generated from field: optional subject.v1.BatteryTelemetry battery = 2;
+   */
+  battery?: BatteryTelemetry;
+
+  /**
+   * @generated from field: optional subject.v1.TemperatureTelemetry temperature = 3;
+   */
+  temperature?: TemperatureTelemetry;
+
+  constructor(data?: PartialMessage<SubjectTelemetryEvent>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "event.v1.SubjectTelemetryEvent";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubjectTelemetryEvent;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubjectTelemetryEvent;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubjectTelemetryEvent;
+
+  static equals(a: SubjectTelemetryEvent | PlainMessage<SubjectTelemetryEvent> | undefined, b: SubjectTelemetryEvent | PlainMessage<SubjectTelemetryEvent> | undefined): boolean;
 }
 
