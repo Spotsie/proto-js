@@ -5,7 +5,6 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { Subject } from "../../domain/v1/domain_pb.js";
 
 /**
  * @generated from message location.v1.LocationHistoryRecord
@@ -125,75 +124,5 @@ export declare class LocationRecord extends Message<LocationRecord> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LocationRecord;
 
   static equals(a: LocationRecord | PlainMessage<LocationRecord> | undefined, b: LocationRecord | PlainMessage<LocationRecord> | undefined): boolean;
-}
-
-/**
- * @generated from message location.v1.SubjectLocationSpan
- */
-export declare class SubjectLocationSpan extends Message<SubjectLocationSpan> {
-  /**
-   * @generated from field: domain.v1.Subject subject = 1;
-   */
-  subject?: Subject;
-
-  /**
-   * @generated from field: location.v1.LocationSpan location_span = 2;
-   */
-  locationSpan?: LocationSpan;
-
-  constructor(data?: PartialMessage<SubjectLocationSpan>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "location.v1.SubjectLocationSpan";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubjectLocationSpan;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubjectLocationSpan;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubjectLocationSpan;
-
-  static equals(a: SubjectLocationSpan | PlainMessage<SubjectLocationSpan> | undefined, b: SubjectLocationSpan | PlainMessage<SubjectLocationSpan> | undefined): boolean;
-}
-
-/**
- * @generated from message location.v1.LocationSpan
- */
-export declare class LocationSpan extends Message<LocationSpan> {
-  /**
-   * @generated from field: int32 zone_id = 1;
-   */
-  zoneId: number;
-
-  /**
-   * Current zone name. Zone name can change over time, but the ID is always the same.
-   *
-   * @generated from field: string zone_name = 4;
-   */
-  zoneName: string;
-
-  /**
-   * @generated from field: google.protobuf.Timestamp from_time = 2;
-   */
-  fromTime?: Timestamp;
-
-  /**
-   * @generated from field: google.protobuf.Timestamp to_time = 3;
-   */
-  toTime?: Timestamp;
-
-  constructor(data?: PartialMessage<LocationSpan>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "location.v1.LocationSpan";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LocationSpan;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LocationSpan;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LocationSpan;
-
-  static equals(a: LocationSpan | PlainMessage<LocationSpan> | undefined, b: LocationSpan | PlainMessage<LocationSpan> | undefined): boolean;
 }
 

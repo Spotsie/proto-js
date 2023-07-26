@@ -4,8 +4,9 @@
 // @ts-nocheck
 
 import { proto3, Timestamp } from "@bufbuild/protobuf";
-import { Beacon, DeploymentDto, GeoPoint, Observation, Subject, TimePeriod } from "../../domain/v1/domain_pb.js";
+import { Beacon, DeploymentDto, GeoPoint, Observation, Subject } from "../../domain/v1/domain_pb.js";
 import { LocationHistoryRecord } from "../../location/v1/location_pb.js";
+import { BatteryTelemetry, TemperatureTelemetry } from "../../subject/v1/subject_pb.js";
 
 /**
  * @generated from message event.v1.BeaconObservationsEvent
@@ -16,7 +17,6 @@ export const BeaconObservationsEvent = proto3.makeMessageType(
     { no: 1, name: "deployment_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 2, name: "beacon", kind: "message", T: Beacon },
     { no: 3, name: "observations", kind: "message", T: Observation, repeated: true },
-    { no: 4, name: "time", kind: "message", T: TimePeriod },
   ],
 );
 
@@ -98,6 +98,18 @@ export const SubjectLocationSpanUpdateEvent = proto3.makeMessageType(
   () => [
     { no: 1, name: "subject", kind: "message", T: Subject },
     { no: 2, name: "record", kind: "message", T: LocationHistoryRecord },
+  ],
+);
+
+/**
+ * @generated from message event.v1.SubjectTelemetryEvent
+ */
+export const SubjectTelemetryEvent = proto3.makeMessageType(
+  "event.v1.SubjectTelemetryEvent",
+  () => [
+    { no: 1, name: "subject", kind: "message", T: Subject },
+    { no: 2, name: "battery", kind: "message", T: BatteryTelemetry, opt: true },
+    { no: 3, name: "temperature", kind: "message", T: TemperatureTelemetry, opt: true },
   ],
 );
 

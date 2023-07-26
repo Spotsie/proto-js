@@ -1258,32 +1258,3 @@ export declare class Pagination extends Message<Pagination> {
   static equals(a: Pagination | PlainMessage<Pagination> | undefined, b: Pagination | PlainMessage<Pagination> | undefined): boolean;
 }
 
-/**
- * @generated from message domain.v1.TimePeriod
- */
-export declare class TimePeriod extends Message<TimePeriod> {
-  /**
-   * @generated from field: google.protobuf.Timestamp start = 1;
-   */
-  start?: Timestamp;
-
-  /**
-   * @generated from field: google.protobuf.Timestamp end = 2;
-   */
-  end?: Timestamp;
-
-  constructor(data?: PartialMessage<TimePeriod>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "domain.v1.TimePeriod";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TimePeriod;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TimePeriod;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TimePeriod;
-
-  static equals(a: TimePeriod | PlainMessage<TimePeriod> | undefined, b: TimePeriod | PlainMessage<TimePeriod> | undefined): boolean;
-}
-

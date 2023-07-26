@@ -4,14 +4,12 @@
 // @ts-nocheck
 
 import { UnaryHooks } from "@bufbuild/connect-query";
-import { AddPositioningReferentRequest, AddPositioningReferentResponse, CreateDeploymentRequest, CreateDeploymentResponse, CreateOrganizationRequest, CreateOrganizationResponse, CreateZoneRequest, CreateZoneResponse, DeleteZoneRequest, DeleteZoneResponse, GetDeploymentRequest, GetDeploymentResponse, GetDeploymentsRequest, GetDeploymentsResponse, GetDeploymentStateRequest, GetDeploymentStateResponse, GetOrganizationRequest, GetOrganizationResponse, GetOrganizationsRequest, GetOrganizationsResponse, GetPositioningReferentRequest, GetPositioningReferentResponse, GetPositioningReferentsRequest, GetPositioningReferentsResponse, GetZoneRequest, GetZoneResponse, GetZonesRequest, GetZonesResponse, SetDeploymentStateRequest, SetDeploymentStateResponse, UpdateDeploymentRequest, UpdateDeploymentResponse, UpdatePositioningReferentRequest, UpdatePositioningReferentResponse, UpdateZoneRequest, UpdateZoneResponse } from "./service_pb.js";
+import { AddPositioningReferentRequest, AddPositioningReferentResponse, CreateDeploymentRequest, CreateDeploymentResponse, CreateOrganizationRequest, CreateOrganizationResponse, CreateZoneRequest, CreateZoneResponse, DeleteZoneRequest, DeleteZoneResponse, GetDeploymentRequest, GetDeploymentResponse, GetDeploymentsRequest, GetDeploymentsResponse, GetOrganizationRequest, GetOrganizationResponse, GetOrganizationsRequest, GetOrganizationsResponse, GetPositioningReferentRequest, GetPositioningReferentResponse, GetPositioningReferentsRequest, GetPositioningReferentsResponse, GetZoneRequest, GetZoneResponse, GetZonesRequest, GetZonesResponse, UpdateDeploymentRequest, UpdateDeploymentResponse, UpdatePositioningReferentRequest, UpdatePositioningReferentResponse, UpdateZoneRequest, UpdateZoneResponse } from "./service_pb.js";
 
 export const getDeployments: UnaryHooks<GetDeploymentsRequest, GetDeploymentsResponse>;
 export const createDeployment: UnaryHooks<CreateDeploymentRequest, CreateDeploymentResponse>;
 export const updateDeployment: UnaryHooks<UpdateDeploymentRequest, UpdateDeploymentResponse>;
 export const getDeployment: UnaryHooks<GetDeploymentRequest, GetDeploymentResponse>;
-export const getDeploymentState: UnaryHooks<GetDeploymentStateRequest, GetDeploymentStateResponse>;
-export const setDeploymentState: UnaryHooks<SetDeploymentStateRequest, SetDeploymentStateResponse>;
 export const createZone: UnaryHooks<CreateZoneRequest, CreateZoneResponse>;
 export const deleteZone: UnaryHooks<DeleteZoneRequest, DeleteZoneResponse>;
 export const updateZone: UnaryHooks<UpdateZoneRequest, UpdateZoneResponse>;

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Deployment, Deployment_Type, MultilaterationConfig, Organization, PointConfig, PositioningReferent, PositioningReferent_DeviceType, Zone, Zone_Config } from "./organization_pb.js";
 import type { GeoPoint } from "../../domain/v1/domain_pb.js";
@@ -862,106 +862,5 @@ export declare class GetOrganizationsResponse extends Message<GetOrganizationsRe
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetOrganizationsResponse;
 
   static equals(a: GetOrganizationsResponse | PlainMessage<GetOrganizationsResponse> | undefined, b: GetOrganizationsResponse | PlainMessage<GetOrganizationsResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message deployment.v1.GetDeploymentStateRequest
- */
-export declare class GetDeploymentStateRequest extends Message<GetDeploymentStateRequest> {
-  /**
-   * @generated from field: int32 deployment_id = 1;
-   */
-  deploymentId: number;
-
-  constructor(data?: PartialMessage<GetDeploymentStateRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "deployment.v1.GetDeploymentStateRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDeploymentStateRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDeploymentStateRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDeploymentStateRequest;
-
-  static equals(a: GetDeploymentStateRequest | PlainMessage<GetDeploymentStateRequest> | undefined, b: GetDeploymentStateRequest | PlainMessage<GetDeploymentStateRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message deployment.v1.GetDeploymentStateResponse
- */
-export declare class GetDeploymentStateResponse extends Message<GetDeploymentStateResponse> {
-  /**
-   * @generated from field: bytes state = 1;
-   */
-  state: Uint8Array;
-
-  /**
-   * @generated from field: google.protobuf.Timestamp updated = 2;
-   */
-  updated?: Timestamp;
-
-  constructor(data?: PartialMessage<GetDeploymentStateResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "deployment.v1.GetDeploymentStateResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDeploymentStateResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDeploymentStateResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDeploymentStateResponse;
-
-  static equals(a: GetDeploymentStateResponse | PlainMessage<GetDeploymentStateResponse> | undefined, b: GetDeploymentStateResponse | PlainMessage<GetDeploymentStateResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message deployment.v1.SetDeploymentStateRequest
- */
-export declare class SetDeploymentStateRequest extends Message<SetDeploymentStateRequest> {
-  /**
-   * @generated from field: int32 deployment_id = 1;
-   */
-  deploymentId: number;
-
-  /**
-   * @generated from field: bytes state = 2;
-   */
-  state: Uint8Array;
-
-  constructor(data?: PartialMessage<SetDeploymentStateRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "deployment.v1.SetDeploymentStateRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetDeploymentStateRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetDeploymentStateRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetDeploymentStateRequest;
-
-  static equals(a: SetDeploymentStateRequest | PlainMessage<SetDeploymentStateRequest> | undefined, b: SetDeploymentStateRequest | PlainMessage<SetDeploymentStateRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message deployment.v1.SetDeploymentStateResponse
- */
-export declare class SetDeploymentStateResponse extends Message<SetDeploymentStateResponse> {
-  constructor(data?: PartialMessage<SetDeploymentStateResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "deployment.v1.SetDeploymentStateResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetDeploymentStateResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetDeploymentStateResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetDeploymentStateResponse;
-
-  static equals(a: SetDeploymentStateResponse | PlainMessage<SetDeploymentStateResponse> | undefined, b: SetDeploymentStateResponse | PlainMessage<SetDeploymentStateResponse> | undefined): boolean;
 }
 

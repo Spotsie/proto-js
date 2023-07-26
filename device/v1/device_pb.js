@@ -76,3 +76,25 @@ export const Session = proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message device.v1.BeaconTemperatureData
+ */
+export const BeaconTemperatureData = proto3.makeMessageType(
+  "device.v1.BeaconTemperatureData",
+  () => [
+    { no: 1, name: "timestamp", kind: "message", T: Timestamp },
+    { no: 2, name: "temperature", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message device.v1.BeaconVoltageData
+ */
+export const BeaconVoltageData = proto3.makeMessageType(
+  "device.v1.BeaconVoltageData",
+  () => [
+    { no: 1, name: "timestamp", kind: "message", T: Timestamp },
+    { no: 2, name: "voltage", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
