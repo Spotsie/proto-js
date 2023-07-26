@@ -450,3 +450,14 @@ export const Pagination = proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message domain.v1.TimePeriod
+ */
+export const TimePeriod = proto3.makeMessageType(
+  "domain.v1.TimePeriod",
+  () => [
+    { no: 1, name: "start", kind: "message", T: Timestamp },
+    { no: 2, name: "end", kind: "message", T: Timestamp },
+  ],
+);
+

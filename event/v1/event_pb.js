@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { proto3, Timestamp } from "@bufbuild/protobuf";
-import { Beacon, DeploymentDto, GeoPoint, Observation, Subject } from "../../domain/v1/domain_pb.js";
+import { Beacon, DeploymentDto, GeoPoint, Observation, Subject, TimePeriod } from "../../domain/v1/domain_pb.js";
 import { LocationHistoryRecord } from "../../location/v1/location_pb.js";
 
 /**
@@ -16,6 +16,7 @@ export const BeaconObservationsEvent = proto3.makeMessageType(
     { no: 1, name: "deployment_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 2, name: "beacon", kind: "message", T: Beacon },
     { no: 3, name: "observations", kind: "message", T: Observation, repeated: true },
+    { no: 4, name: "time", kind: "message", T: TimePeriod },
   ],
 );
 

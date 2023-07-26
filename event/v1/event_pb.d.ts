@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { Beacon, DeploymentDto, GeoPoint, Observation, Subject } from "../../domain/v1/domain_pb.js";
+import type { Beacon, DeploymentDto, GeoPoint, Observation, Subject, TimePeriod } from "../../domain/v1/domain_pb.js";
 import type { LocationHistoryRecord } from "../../location/v1/location_pb.js";
 
 /**
@@ -26,6 +26,11 @@ export declare class BeaconObservationsEvent extends Message<BeaconObservationsE
    * @generated from field: repeated domain.v1.Observation observations = 3;
    */
   observations: Observation[];
+
+  /**
+   * @generated from field: domain.v1.TimePeriod time = 4;
+   */
+  time?: TimePeriod;
 
   constructor(data?: PartialMessage<BeaconObservationsEvent>);
 

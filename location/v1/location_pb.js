@@ -4,6 +4,7 @@
 // @ts-nocheck
 
 import { proto3, Timestamp } from "@bufbuild/protobuf";
+import { Subject } from "../../domain/v1/domain_pb.js";
 
 /**
  * @generated from message location.v1.LocationHistoryRecord
@@ -44,6 +45,30 @@ export const LocationRecord = proto3.makeMessageType(
     { no: 1, name: "zone", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 2, name: "coordinates", kind: "message", T: LatLng, opt: true },
     { no: 3, name: "time", kind: "message", T: Timestamp },
+  ],
+);
+
+/**
+ * @generated from message location.v1.SubjectLocationSpan
+ */
+export const SubjectLocationSpan = proto3.makeMessageType(
+  "location.v1.SubjectLocationSpan",
+  () => [
+    { no: 1, name: "subject", kind: "message", T: Subject },
+    { no: 2, name: "location_span", kind: "message", T: LocationSpan },
+  ],
+);
+
+/**
+ * @generated from message location.v1.LocationSpan
+ */
+export const LocationSpan = proto3.makeMessageType(
+  "location.v1.LocationSpan",
+  () => [
+    { no: 1, name: "zone_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "zone_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "from_time", kind: "message", T: Timestamp },
+    { no: 3, name: "to_time", kind: "message", T: Timestamp },
   ],
 );
 
