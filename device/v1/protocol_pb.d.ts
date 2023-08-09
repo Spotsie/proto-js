@@ -536,17 +536,26 @@ export declare class ClientMessage_BleScan extends Message$1<ClientMessage_BleSc
  */
 export declare class ClientMessage_BleScan_Telemetry extends Message$1<ClientMessage_BleScan_Telemetry> {
   /**
+   * Beacon's MAC address
+   *
+   * @generated from field: int64 mac_address = 1;
+   */
+  macAddress: bigint;
+
+  /**
+   * Vendor specific payload
+   *
    * @generated from oneof device.v1.ClientMessage.BleScan.Telemetry.data
    */
   data: {
     /**
-     * @generated from field: device.v1.ClientMessage.BleScan.Telemetry.Minew minew = 1;
+     * @generated from field: device.v1.ClientMessage.BleScan.Telemetry.Minew minew = 2;
      */
     value: ClientMessage_BleScan_Telemetry_Minew;
     case: "minew";
   } | {
     /**
-     * @generated from field: device.v1.ClientMessage.BleScan.Telemetry.Extronics extronics = 2;
+     * @generated from field: device.v1.ClientMessage.BleScan.Telemetry.Extronics extronics = 3;
      */
     value: ClientMessage_BleScan_Telemetry_Extronics;
     case: "extronics";
@@ -666,14 +675,9 @@ export declare class ClientMessage_BleScan_IBeacon_AdvertisingData extends Messa
   rssi: number;
 
   /**
-   * @generated from field: string bt_dev_addr = 4;
+   * @generated from field: int64 mac_address = 4;
    */
-  btDevAddr: string;
-
-  /**
-   * @generated from field: optional device.v1.ClientMessage.BleScan.Telemetry telemetrey = 5;
-   */
-  telemetrey?: ClientMessage_BleScan_Telemetry;
+  macAddress: bigint;
 
   constructor(data?: PartialMessage<ClientMessage_BleScan_IBeacon_AdvertisingData>);
 
@@ -719,9 +723,9 @@ export declare class ClientMessage_BleScan_EddystoneTLM extends Message$1<Client
  */
 export declare class ClientMessage_BleScan_EddystoneTLM_AdvertisingData extends Message$1<ClientMessage_BleScan_EddystoneTLM_AdvertisingData> {
   /**
-   * @generated from field: int64 bt_dev_addr = 1;
+   * @generated from field: int64 mac_address = 1;
    */
-  btDevAddr: bigint;
+  macAddress: bigint;
 
   /**
    * @generated from field: int32 rssi = 2;

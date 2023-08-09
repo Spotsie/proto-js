@@ -217,8 +217,9 @@ export const ClientMessage_BleScan = proto3.makeMessageType(
 export const ClientMessage_BleScan_Telemetry = proto3.makeMessageType(
   "device.v1.ClientMessage.BleScan.Telemetry",
   () => [
-    { no: 1, name: "minew", kind: "message", T: ClientMessage_BleScan_Telemetry_Minew, oneof: "data" },
-    { no: 2, name: "extronics", kind: "message", T: ClientMessage_BleScan_Telemetry_Extronics, oneof: "data" },
+    { no: 1, name: "mac_address", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "minew", kind: "message", T: ClientMessage_BleScan_Telemetry_Minew, oneof: "data" },
+    { no: 3, name: "extronics", kind: "message", T: ClientMessage_BleScan_Telemetry_Extronics, oneof: "data" },
   ],
   {localName: "ClientMessage_BleScan_Telemetry"},
 );
@@ -265,8 +266,7 @@ export const ClientMessage_BleScan_IBeacon_AdvertisingData = proto3.makeMessageT
     { no: 1, name: "major", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 2, name: "minor", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 3, name: "rssi", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 4, name: "bt_dev_addr", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "telemetrey", kind: "message", T: ClientMessage_BleScan_Telemetry, opt: true },
+    { no: 4, name: "mac_address", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
   {localName: "ClientMessage_BleScan_IBeacon_AdvertisingData"},
 );
@@ -288,7 +288,7 @@ export const ClientMessage_BleScan_EddystoneTLM = proto3.makeMessageType(
 export const ClientMessage_BleScan_EddystoneTLM_AdvertisingData = proto3.makeMessageType(
   "device.v1.ClientMessage.BleScan.EddystoneTLM.AdvertisingData",
   () => [
-    { no: 1, name: "bt_dev_addr", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: "mac_address", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "rssi", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "bat_voltage", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 4, name: "temperature", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
