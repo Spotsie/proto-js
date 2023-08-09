@@ -206,8 +206,43 @@ export const ClientMessage_BleScan = proto3.makeMessageType(
     { no: 2, name: "timestamp", kind: "message", T: Timestamp },
     { no: 3, name: "ibeacon", kind: "message", T: ClientMessage_BleScan_IBeacon, oneof: "results" },
     { no: 4, name: "eddystoneTLM", kind: "message", T: ClientMessage_BleScan_EddystoneTLM, oneof: "results" },
+    { no: 5, name: "telemtry", kind: "message", T: ClientMessage_BleScan_Telemetry, oneof: "results" },
   ],
   {localName: "ClientMessage_BleScan"},
+);
+
+/**
+ * @generated from message device.v1.ClientMessage.BleScan.Telemetry
+ */
+export const ClientMessage_BleScan_Telemetry = proto3.makeMessageType(
+  "device.v1.ClientMessage.BleScan.Telemetry",
+  () => [
+    { no: 1, name: "minew", kind: "message", T: ClientMessage_BleScan_Telemetry_Minew, oneof: "data" },
+    { no: 2, name: "extronics", kind: "message", T: ClientMessage_BleScan_Telemetry_Extronics, oneof: "data" },
+  ],
+  {localName: "ClientMessage_BleScan_Telemetry"},
+);
+
+/**
+ * @generated from message device.v1.ClientMessage.BleScan.Telemetry.Minew
+ */
+export const ClientMessage_BleScan_Telemetry_Minew = proto3.makeMessageType(
+  "device.v1.ClientMessage.BleScan.Telemetry.Minew",
+  [],
+  {localName: "ClientMessage_BleScan_Telemetry_Minew"},
+);
+
+/**
+ * @generated from message device.v1.ClientMessage.BleScan.Telemetry.Extronics
+ */
+export const ClientMessage_BleScan_Telemetry_Extronics = proto3.makeMessageType(
+  "device.v1.ClientMessage.BleScan.Telemetry.Extronics",
+  () => [
+    { no: 1, name: "battery", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 2, name: "temperature", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 3, name: "recently_moved", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+  {localName: "ClientMessage_BleScan_Telemetry_Extronics"},
 );
 
 /**
@@ -231,6 +266,7 @@ export const ClientMessage_BleScan_IBeacon_AdvertisingData = proto3.makeMessageT
     { no: 2, name: "minor", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 3, name: "rssi", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 4, name: "bt_dev_addr", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "telemetrey", kind: "message", T: ClientMessage_BleScan_Telemetry, opt: true },
   ],
   {localName: "ClientMessage_BleScan_IBeacon_AdvertisingData"},
 );
@@ -252,7 +288,7 @@ export const ClientMessage_BleScan_EddystoneTLM = proto3.makeMessageType(
 export const ClientMessage_BleScan_EddystoneTLM_AdvertisingData = proto3.makeMessageType(
   "device.v1.ClientMessage.BleScan.EddystoneTLM.AdvertisingData",
   () => [
-    { no: 1, name: "bt_dev_addr", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "bt_dev_addr", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "rssi", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "bat_voltage", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 4, name: "temperature", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },

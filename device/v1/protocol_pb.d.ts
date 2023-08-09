@@ -508,6 +508,12 @@ export declare class ClientMessage_BleScan extends Message$1<ClientMessage_BleSc
      */
     value: ClientMessage_BleScan_EddystoneTLM;
     case: "eddystoneTLM";
+  } | {
+    /**
+     * @generated from field: device.v1.ClientMessage.BleScan.Telemetry telemtry = 5;
+     */
+    value: ClientMessage_BleScan_Telemetry;
+    case: "telemtry";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<ClientMessage_BleScan>);
@@ -523,6 +529,95 @@ export declare class ClientMessage_BleScan extends Message$1<ClientMessage_BleSc
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ClientMessage_BleScan;
 
   static equals(a: ClientMessage_BleScan | PlainMessage<ClientMessage_BleScan> | undefined, b: ClientMessage_BleScan | PlainMessage<ClientMessage_BleScan> | undefined): boolean;
+}
+
+/**
+ * @generated from message device.v1.ClientMessage.BleScan.Telemetry
+ */
+export declare class ClientMessage_BleScan_Telemetry extends Message$1<ClientMessage_BleScan_Telemetry> {
+  /**
+   * @generated from oneof device.v1.ClientMessage.BleScan.Telemetry.data
+   */
+  data: {
+    /**
+     * @generated from field: device.v1.ClientMessage.BleScan.Telemetry.Minew minew = 1;
+     */
+    value: ClientMessage_BleScan_Telemetry_Minew;
+    case: "minew";
+  } | {
+    /**
+     * @generated from field: device.v1.ClientMessage.BleScan.Telemetry.Extronics extronics = 2;
+     */
+    value: ClientMessage_BleScan_Telemetry_Extronics;
+    case: "extronics";
+  } | { case: undefined; value?: undefined };
+
+  constructor(data?: PartialMessage<ClientMessage_BleScan_Telemetry>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "device.v1.ClientMessage.BleScan.Telemetry";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClientMessage_BleScan_Telemetry;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ClientMessage_BleScan_Telemetry;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ClientMessage_BleScan_Telemetry;
+
+  static equals(a: ClientMessage_BleScan_Telemetry | PlainMessage<ClientMessage_BleScan_Telemetry> | undefined, b: ClientMessage_BleScan_Telemetry | PlainMessage<ClientMessage_BleScan_Telemetry> | undefined): boolean;
+}
+
+/**
+ * @generated from message device.v1.ClientMessage.BleScan.Telemetry.Minew
+ */
+export declare class ClientMessage_BleScan_Telemetry_Minew extends Message$1<ClientMessage_BleScan_Telemetry_Minew> {
+  constructor(data?: PartialMessage<ClientMessage_BleScan_Telemetry_Minew>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "device.v1.ClientMessage.BleScan.Telemetry.Minew";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClientMessage_BleScan_Telemetry_Minew;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ClientMessage_BleScan_Telemetry_Minew;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ClientMessage_BleScan_Telemetry_Minew;
+
+  static equals(a: ClientMessage_BleScan_Telemetry_Minew | PlainMessage<ClientMessage_BleScan_Telemetry_Minew> | undefined, b: ClientMessage_BleScan_Telemetry_Minew | PlainMessage<ClientMessage_BleScan_Telemetry_Minew> | undefined): boolean;
+}
+
+/**
+ * @generated from message device.v1.ClientMessage.BleScan.Telemetry.Extronics
+ */
+export declare class ClientMessage_BleScan_Telemetry_Extronics extends Message$1<ClientMessage_BleScan_Telemetry_Extronics> {
+  /**
+   * @generated from field: uint32 battery = 1;
+   */
+  battery: number;
+
+  /**
+   * @generated from field: uint32 temperature = 2;
+   */
+  temperature: number;
+
+  /**
+   * @generated from field: bool recently_moved = 3;
+   */
+  recentlyMoved: boolean;
+
+  constructor(data?: PartialMessage<ClientMessage_BleScan_Telemetry_Extronics>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "device.v1.ClientMessage.BleScan.Telemetry.Extronics";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClientMessage_BleScan_Telemetry_Extronics;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ClientMessage_BleScan_Telemetry_Extronics;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ClientMessage_BleScan_Telemetry_Extronics;
+
+  static equals(a: ClientMessage_BleScan_Telemetry_Extronics | PlainMessage<ClientMessage_BleScan_Telemetry_Extronics> | undefined, b: ClientMessage_BleScan_Telemetry_Extronics | PlainMessage<ClientMessage_BleScan_Telemetry_Extronics> | undefined): boolean;
 }
 
 /**
@@ -554,6 +649,8 @@ export declare class ClientMessage_BleScan_IBeacon extends Message$1<ClientMessa
  */
 export declare class ClientMessage_BleScan_IBeacon_AdvertisingData extends Message$1<ClientMessage_BleScan_IBeacon_AdvertisingData> {
   /**
+   * TODO: deprecate
+   *
    * @generated from field: uint32 major = 1;
    */
   major: number;
@@ -572,6 +669,11 @@ export declare class ClientMessage_BleScan_IBeacon_AdvertisingData extends Messa
    * @generated from field: string bt_dev_addr = 4;
    */
   btDevAddr: string;
+
+  /**
+   * @generated from field: optional device.v1.ClientMessage.BleScan.Telemetry telemetrey = 5;
+   */
+  telemetrey?: ClientMessage_BleScan_Telemetry;
 
   constructor(data?: PartialMessage<ClientMessage_BleScan_IBeacon_AdvertisingData>);
 
@@ -617,9 +719,9 @@ export declare class ClientMessage_BleScan_EddystoneTLM extends Message$1<Client
  */
 export declare class ClientMessage_BleScan_EddystoneTLM_AdvertisingData extends Message$1<ClientMessage_BleScan_EddystoneTLM_AdvertisingData> {
   /**
-   * @generated from field: string bt_dev_addr = 1;
+   * @generated from field: int64 bt_dev_addr = 1;
    */
-  btDevAddr: string;
+  btDevAddr: bigint;
 
   /**
    * @generated from field: int32 rssi = 2;
