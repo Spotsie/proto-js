@@ -242,6 +242,7 @@ export const ClientMessage_BleScan_Telemetry_Data = proto3.makeMessageType(
     { no: 12, name: "button_pressed", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
     { no: 13, name: "fw_version", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
     { no: 14, name: "beacon_type", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 15, name: "temperature", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
   ],
   {localName: "ClientMessage_BleScan_Telemetry_Data"},
 );

@@ -629,6 +629,11 @@ export declare class ClientMessage_BleScan_Telemetry_Data extends Message$1<Clie
    */
   beaconType?: boolean;
 
+  /**
+   * @generated from field: optional int32 temperature = 15;
+   */
+  temperature?: number;
+
   constructor(data?: PartialMessage<ClientMessage_BleScan_Telemetry_Data>);
 
   static readonly runtime: typeof proto3;
