@@ -536,30 +536,9 @@ export declare class ClientMessage_BleScan extends Message$1<ClientMessage_BleSc
  */
 export declare class ClientMessage_BleScan_Telemetry extends Message$1<ClientMessage_BleScan_Telemetry> {
   /**
-   * Beacon's MAC address
-   *
-   * @generated from field: int64 mac_address = 1;
+   * @generated from field: repeated device.v1.ClientMessage.BleScan.Telemetry.Data data = 1;
    */
-  macAddress: bigint;
-
-  /**
-   * Vendor specific payload
-   *
-   * @generated from oneof device.v1.ClientMessage.BleScan.Telemetry.data
-   */
-  data: {
-    /**
-     * @generated from field: device.v1.ClientMessage.BleScan.Telemetry.Minew minew = 2;
-     */
-    value: ClientMessage_BleScan_Telemetry_Minew;
-    case: "minew";
-  } | {
-    /**
-     * @generated from field: device.v1.ClientMessage.BleScan.Telemetry.Extronics extronics = 3;
-     */
-    value: ClientMessage_BleScan_Telemetry_Extronics;
-    case: "extronics";
-  } | { case: undefined; value?: undefined };
+  data: ClientMessage_BleScan_Telemetry_Data[];
 
   constructor(data?: PartialMessage<ClientMessage_BleScan_Telemetry>);
 
@@ -577,56 +556,92 @@ export declare class ClientMessage_BleScan_Telemetry extends Message$1<ClientMes
 }
 
 /**
- * @generated from message device.v1.ClientMessage.BleScan.Telemetry.Minew
+ * @generated from message device.v1.ClientMessage.BleScan.Telemetry.Data
  */
-export declare class ClientMessage_BleScan_Telemetry_Minew extends Message$1<ClientMessage_BleScan_Telemetry_Minew> {
-  constructor(data?: PartialMessage<ClientMessage_BleScan_Telemetry_Minew>);
+export declare class ClientMessage_BleScan_Telemetry_Data extends Message$1<ClientMessage_BleScan_Telemetry_Data> {
+  /**
+   * @generated from field: uint64 mac_address = 1;
+   */
+  macAddress: bigint;
+
+  /**
+   * @generated from field: optional uint32 major = 2;
+   */
+  major?: number;
+
+  /**
+   * @generated from field: optional uint32 minor = 3;
+   */
+  minor?: number;
+
+  /**
+   * @generated from field: optional string local_name = 4;
+   */
+  localName?: string;
+
+  /**
+   * @generated from field: optional uint32 company_id = 5;
+   */
+  companyId?: number;
+
+  /**
+   * @generated from field: optional double battery_voltage = 6;
+   */
+  batteryVoltage?: number;
+
+  /**
+   * @generated from field: optional bool moved_beacon_state = 7;
+   */
+  movedBeaconState?: boolean;
+
+  /**
+   * @generated from field: optional bool movement_active = 8;
+   */
+  movementActive?: boolean;
+
+  /**
+   * @generated from field: optional bool active_or_shipping = 9;
+   */
+  activeOrShipping?: boolean;
+
+  /**
+   * @generated from field: optional bool recently_moved = 10;
+   */
+  recentlyMoved?: boolean;
+
+  /**
+   * @generated from field: optional bool accel_present = 11;
+   */
+  accelPresent?: boolean;
+
+  /**
+   * @generated from field: optional bool button_pressed = 12;
+   */
+  buttonPressed?: boolean;
+
+  /**
+   * @generated from field: optional bool fw_version = 13;
+   */
+  fwVersion?: boolean;
+
+  /**
+   * @generated from field: optional bool beacon_type = 14;
+   */
+  beaconType?: boolean;
+
+  constructor(data?: PartialMessage<ClientMessage_BleScan_Telemetry_Data>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "device.v1.ClientMessage.BleScan.Telemetry.Minew";
+  static readonly typeName = "device.v1.ClientMessage.BleScan.Telemetry.Data";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClientMessage_BleScan_Telemetry_Minew;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClientMessage_BleScan_Telemetry_Data;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ClientMessage_BleScan_Telemetry_Minew;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ClientMessage_BleScan_Telemetry_Data;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ClientMessage_BleScan_Telemetry_Minew;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ClientMessage_BleScan_Telemetry_Data;
 
-  static equals(a: ClientMessage_BleScan_Telemetry_Minew | PlainMessage<ClientMessage_BleScan_Telemetry_Minew> | undefined, b: ClientMessage_BleScan_Telemetry_Minew | PlainMessage<ClientMessage_BleScan_Telemetry_Minew> | undefined): boolean;
-}
-
-/**
- * @generated from message device.v1.ClientMessage.BleScan.Telemetry.Extronics
- */
-export declare class ClientMessage_BleScan_Telemetry_Extronics extends Message$1<ClientMessage_BleScan_Telemetry_Extronics> {
-  /**
-   * @generated from field: uint32 battery = 1;
-   */
-  battery: number;
-
-  /**
-   * @generated from field: uint32 temperature = 2;
-   */
-  temperature: number;
-
-  /**
-   * @generated from field: bool recently_moved = 3;
-   */
-  recentlyMoved: boolean;
-
-  constructor(data?: PartialMessage<ClientMessage_BleScan_Telemetry_Extronics>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "device.v1.ClientMessage.BleScan.Telemetry.Extronics";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClientMessage_BleScan_Telemetry_Extronics;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ClientMessage_BleScan_Telemetry_Extronics;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ClientMessage_BleScan_Telemetry_Extronics;
-
-  static equals(a: ClientMessage_BleScan_Telemetry_Extronics | PlainMessage<ClientMessage_BleScan_Telemetry_Extronics> | undefined, b: ClientMessage_BleScan_Telemetry_Extronics | PlainMessage<ClientMessage_BleScan_Telemetry_Extronics> | undefined): boolean;
+  static equals(a: ClientMessage_BleScan_Telemetry_Data | PlainMessage<ClientMessage_BleScan_Telemetry_Data> | undefined, b: ClientMessage_BleScan_Telemetry_Data | PlainMessage<ClientMessage_BleScan_Telemetry_Data> | undefined): boolean;
 }
 
 /**
@@ -675,7 +690,7 @@ export declare class ClientMessage_BleScan_IBeacon_AdvertisingData extends Messa
   rssi: number;
 
   /**
-   * @generated from field: int64 mac_address = 4;
+   * @generated from field: uint64 mac_address = 4;
    */
   macAddress: bigint;
 
@@ -723,7 +738,7 @@ export declare class ClientMessage_BleScan_EddystoneTLM extends Message$1<Client
  */
 export declare class ClientMessage_BleScan_EddystoneTLM_AdvertisingData extends Message$1<ClientMessage_BleScan_EddystoneTLM_AdvertisingData> {
   /**
-   * @generated from field: int64 mac_address = 1;
+   * @generated from field: uint64 mac_address = 1;
    */
   macAddress: bigint;
 

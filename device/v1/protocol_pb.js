@@ -217,33 +217,33 @@ export const ClientMessage_BleScan = proto3.makeMessageType(
 export const ClientMessage_BleScan_Telemetry = proto3.makeMessageType(
   "device.v1.ClientMessage.BleScan.Telemetry",
   () => [
-    { no: 1, name: "mac_address", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: "minew", kind: "message", T: ClientMessage_BleScan_Telemetry_Minew, oneof: "data" },
-    { no: 3, name: "extronics", kind: "message", T: ClientMessage_BleScan_Telemetry_Extronics, oneof: "data" },
+    { no: 1, name: "data", kind: "message", T: ClientMessage_BleScan_Telemetry_Data, repeated: true },
   ],
   {localName: "ClientMessage_BleScan_Telemetry"},
 );
 
 /**
- * @generated from message device.v1.ClientMessage.BleScan.Telemetry.Minew
+ * @generated from message device.v1.ClientMessage.BleScan.Telemetry.Data
  */
-export const ClientMessage_BleScan_Telemetry_Minew = proto3.makeMessageType(
-  "device.v1.ClientMessage.BleScan.Telemetry.Minew",
-  [],
-  {localName: "ClientMessage_BleScan_Telemetry_Minew"},
-);
-
-/**
- * @generated from message device.v1.ClientMessage.BleScan.Telemetry.Extronics
- */
-export const ClientMessage_BleScan_Telemetry_Extronics = proto3.makeMessageType(
-  "device.v1.ClientMessage.BleScan.Telemetry.Extronics",
+export const ClientMessage_BleScan_Telemetry_Data = proto3.makeMessageType(
+  "device.v1.ClientMessage.BleScan.Telemetry.Data",
   () => [
-    { no: 1, name: "battery", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
-    { no: 2, name: "temperature", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
-    { no: 3, name: "recently_moved", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 1, name: "mac_address", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 2, name: "major", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 3, name: "minor", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 4, name: "local_name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 5, name: "company_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 6, name: "battery_voltage", kind: "scalar", T: 1 /* ScalarType.DOUBLE */, opt: true },
+    { no: 7, name: "moved_beacon_state", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 8, name: "movement_active", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 9, name: "active_or_shipping", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 10, name: "recently_moved", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 11, name: "accel_present", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 12, name: "button_pressed", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 13, name: "fw_version", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 14, name: "beacon_type", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
   ],
-  {localName: "ClientMessage_BleScan_Telemetry_Extronics"},
+  {localName: "ClientMessage_BleScan_Telemetry_Data"},
 );
 
 /**
@@ -266,7 +266,7 @@ export const ClientMessage_BleScan_IBeacon_AdvertisingData = proto3.makeMessageT
     { no: 1, name: "major", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 2, name: "minor", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 3, name: "rssi", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 4, name: "mac_address", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "mac_address", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
   ],
   {localName: "ClientMessage_BleScan_IBeacon_AdvertisingData"},
 );
@@ -288,7 +288,7 @@ export const ClientMessage_BleScan_EddystoneTLM = proto3.makeMessageType(
 export const ClientMessage_BleScan_EddystoneTLM_AdvertisingData = proto3.makeMessageType(
   "device.v1.ClientMessage.BleScan.EddystoneTLM.AdvertisingData",
   () => [
-    { no: 1, name: "mac_address", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: "mac_address", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
     { no: 2, name: "rssi", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "bat_voltage", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 4, name: "temperature", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
