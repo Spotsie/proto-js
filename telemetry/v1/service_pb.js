@@ -94,8 +94,6 @@ export const GetLatestBeaconLogsRequest = proto3.makeMessageType(
   "telemetry.v1.GetLatestBeaconLogsRequest",
   () => [
     { no: 1, name: "beacons", kind: "message", T: BeaconFilter, repeated: true },
-    { no: 2, name: "start", kind: "message", T: Timestamp },
-    { no: 3, name: "end", kind: "message", T: Timestamp },
   ],
 );
 

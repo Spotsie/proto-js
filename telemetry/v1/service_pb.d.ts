@@ -261,16 +261,6 @@ export declare class GetLatestBeaconLogsRequest extends Message<GetLatestBeaconL
    */
   beacons: BeaconFilter[];
 
-  /**
-   * @generated from field: google.protobuf.Timestamp start = 2;
-   */
-  start?: Timestamp;
-
-  /**
-   * @generated from field: google.protobuf.Timestamp end = 3;
-   */
-  end?: Timestamp;
-
   constructor(data?: PartialMessage<GetLatestBeaconLogsRequest>);
 
   static readonly runtime: typeof proto3;
