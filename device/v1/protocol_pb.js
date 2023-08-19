@@ -158,30 +158,32 @@ export const ClientMessage = proto3.makeMessageType(
     { no: 2, name: "device_id", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
     { no: 10, name: "discovery", kind: "message", T: ClientMessage_Discovery, oneof: "payload" },
     { no: 11, name: "ble_scan", kind: "message", T: ClientMessage_BleScan, oneof: "payload" },
-    { no: 12, name: "error", kind: "message", T: ClientMessage_Error, oneof: "payload" },
+    { no: 12, name: "status", kind: "message", T: ClientMessage_Status, oneof: "payload" },
   ],
 );
 
 /**
- * @generated from enum device.v1.ClientMessage.ErrorCode
+ * @generated from enum device.v1.ClientMessage.StatusCode
  */
-export const ClientMessage_ErrorCode = proto3.makeEnum(
-  "device.v1.ClientMessage.ErrorCode",
+export const ClientMessage_StatusCode = proto3.makeEnum(
+  "device.v1.ClientMessage.StatusCode",
   [
-    {no: 0, name: "ERROR_CODE_UNSPECIFIED", localName: "UNSPECIFIED"},
-    {no: 1, name: "ERROR_CODE_OTA_UPDATE", localName: "OTA_UPDATE"},
+    {no: 0, name: "STATUS_CODE_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "STATUS_CODE_OTA_UPDATE_START", localName: "OTA_UPDATE_START"},
+    {no: 2, name: "STATUS_CODE_OTA_UPDATE_END_SUCCESS", localName: "OTA_UPDATE_END_SUCCESS"},
+    {no: 3, name: "STATUS_CODE_OTA_UPDATE_END_FAIL", localName: "OTA_UPDATE_END_FAIL"},
   ],
 );
 
 /**
- * @generated from message device.v1.ClientMessage.Error
+ * @generated from message device.v1.ClientMessage.Status
  */
-export const ClientMessage_Error = proto3.makeMessageType(
-  "device.v1.ClientMessage.Error",
+export const ClientMessage_Status = proto3.makeMessageType(
+  "device.v1.ClientMessage.Status",
   () => [
-    { no: 1, name: "error_code", kind: "enum", T: proto3.getEnumType(ClientMessage_ErrorCode) },
+    { no: 1, name: "status_code", kind: "enum", T: proto3.getEnumType(ClientMessage_StatusCode) },
   ],
-  {localName: "ClientMessage_Error"},
+  {localName: "ClientMessage_Status"},
 );
 
 /**

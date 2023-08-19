@@ -398,10 +398,10 @@ export declare class ClientMessage extends Message$1<ClientMessage> {
     case: "bleScan";
   } | {
     /**
-     * @generated from field: device.v1.ClientMessage.Error error = 12;
+     * @generated from field: device.v1.ClientMessage.Status status = 12;
      */
-    value: ClientMessage_Error;
-    case: "error";
+    value: ClientMessage_Status;
+    case: "status";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<ClientMessage>);
@@ -420,42 +420,52 @@ export declare class ClientMessage extends Message$1<ClientMessage> {
 }
 
 /**
- * @generated from enum device.v1.ClientMessage.ErrorCode
+ * @generated from enum device.v1.ClientMessage.StatusCode
  */
-export declare enum ClientMessage_ErrorCode {
+export declare enum ClientMessage_StatusCode {
   /**
-   * @generated from enum value: ERROR_CODE_UNSPECIFIED = 0;
+   * @generated from enum value: STATUS_CODE_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
-   * @generated from enum value: ERROR_CODE_OTA_UPDATE = 1;
+   * @generated from enum value: STATUS_CODE_OTA_UPDATE_START = 1;
    */
-  OTA_UPDATE = 1,
+  OTA_UPDATE_START = 1,
+
+  /**
+   * @generated from enum value: STATUS_CODE_OTA_UPDATE_END_SUCCESS = 2;
+   */
+  OTA_UPDATE_END_SUCCESS = 2,
+
+  /**
+   * @generated from enum value: STATUS_CODE_OTA_UPDATE_END_FAIL = 3;
+   */
+  OTA_UPDATE_END_FAIL = 3,
 }
 
 /**
- * @generated from message device.v1.ClientMessage.Error
+ * @generated from message device.v1.ClientMessage.Status
  */
-export declare class ClientMessage_Error extends Message$1<ClientMessage_Error> {
+export declare class ClientMessage_Status extends Message$1<ClientMessage_Status> {
   /**
-   * @generated from field: device.v1.ClientMessage.ErrorCode error_code = 1;
+   * @generated from field: device.v1.ClientMessage.StatusCode status_code = 1;
    */
-  errorCode: ClientMessage_ErrorCode;
+  statusCode: ClientMessage_StatusCode;
 
-  constructor(data?: PartialMessage<ClientMessage_Error>);
+  constructor(data?: PartialMessage<ClientMessage_Status>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "device.v1.ClientMessage.Error";
+  static readonly typeName = "device.v1.ClientMessage.Status";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClientMessage_Error;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClientMessage_Status;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ClientMessage_Error;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ClientMessage_Status;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ClientMessage_Error;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ClientMessage_Status;
 
-  static equals(a: ClientMessage_Error | PlainMessage<ClientMessage_Error> | undefined, b: ClientMessage_Error | PlainMessage<ClientMessage_Error> | undefined): boolean;
+  static equals(a: ClientMessage_Status | PlainMessage<ClientMessage_Status> | undefined, b: ClientMessage_Status | PlainMessage<ClientMessage_Status> | undefined): boolean;
 }
 
 /**
