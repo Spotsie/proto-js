@@ -442,6 +442,11 @@ export declare enum ClientMessage_StatusCode {
    * @generated from enum value: STATUS_CODE_OTA_UPDATE_END_FAIL = 3;
    */
   OTA_UPDATE_END_FAIL = 3,
+
+  /**
+   * @generated from enum value: STATUS_CODE_PING = 4;
+   */
+  PING = 4,
 }
 
 /**
@@ -452,6 +457,11 @@ export declare class ClientMessage_Status extends Message$1<ClientMessage_Status
    * @generated from field: device.v1.ClientMessage.StatusCode status_code = 1;
    */
   statusCode: ClientMessage_StatusCode;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp timestamp = 2;
+   */
+  timestamp?: Timestamp;
 
   constructor(data?: PartialMessage<ClientMessage_Status>);
 

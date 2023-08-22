@@ -172,6 +172,7 @@ export const ClientMessage_StatusCode = proto3.makeEnum(
     {no: 1, name: "STATUS_CODE_OTA_UPDATE_START", localName: "OTA_UPDATE_START"},
     {no: 2, name: "STATUS_CODE_OTA_UPDATE_END_SUCCESS", localName: "OTA_UPDATE_END_SUCCESS"},
     {no: 3, name: "STATUS_CODE_OTA_UPDATE_END_FAIL", localName: "OTA_UPDATE_END_FAIL"},
+    {no: 4, name: "STATUS_CODE_PING", localName: "PING"},
   ],
 );
 
@@ -182,6 +183,7 @@ export const ClientMessage_Status = proto3.makeMessageType(
   "device.v1.ClientMessage.Status",
   () => [
     { no: 1, name: "status_code", kind: "enum", T: proto3.getEnumType(ClientMessage_StatusCode) },
+    { no: 2, name: "timestamp", kind: "message", T: Timestamp },
   ],
   {localName: "ClientMessage_Status"},
 );
