@@ -34,6 +34,9 @@ export const Event_Payload = proto3.makeMessageType(
     { no: 12, name: "zone_overstay", kind: "message", T: Event_Payload_ZoneOverstay, oneof: "payload" },
     { no: 13, name: "similar_movement", kind: "message", T: Event_Payload_SimilarMovement, oneof: "payload" },
     { no: 14, name: "zone_visit", kind: "message", T: Event_Payload_ZoneVisit, oneof: "payload" },
+    { no: 15, name: "no_movement", kind: "message", T: Event_Payload_NoMovement, oneof: "payload" },
+    { no: 16, name: "temperature_limit", kind: "message", T: Event_Payload_TemperatureLimit, oneof: "payload" },
+    { no: 17, name: "low_battery", kind: "message", T: Event_Payload_LowBattery, oneof: "payload" },
   ],
   {localName: "Event_Payload"},
 );
@@ -83,5 +86,63 @@ export const Event_Payload_ZoneVisit = proto3.makeMessageType(
   "watchdog.v1.Event.Payload.ZoneVisit",
   [],
   {localName: "Event_Payload_ZoneVisit"},
+);
+
+/**
+ * beacon did not move for a certain period of time
+ *
+ * @generated from message watchdog.v1.Event.Payload.NoMovement
+ */
+export const Event_Payload_NoMovement = proto3.makeMessageType(
+  "watchdog.v1.Event.Payload.NoMovement",
+  [],
+  {localName: "Event_Payload_NoMovement"},
+);
+
+/**
+ * @generated from message watchdog.v1.Event.Payload.TemperatureLimit
+ */
+export const Event_Payload_TemperatureLimit = proto3.makeMessageType(
+  "watchdog.v1.Event.Payload.TemperatureLimit",
+  () => [
+    { no: 1, name: "max_allowed_temperature", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "min_allowed_temperature", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "max", kind: "message", T: Event_Payload_TemperatureLimit_MaxViolation, oneof: "violation" },
+    { no: 4, name: "min", kind: "message", T: Event_Payload_TemperatureLimit_MinViolation, oneof: "violation" },
+  ],
+  {localName: "Event_Payload_TemperatureLimit"},
+);
+
+/**
+ * @generated from message watchdog.v1.Event.Payload.TemperatureLimit.MaxViolation
+ */
+export const Event_Payload_TemperatureLimit_MaxViolation = proto3.makeMessageType(
+  "watchdog.v1.Event.Payload.TemperatureLimit.MaxViolation",
+  () => [
+    { no: 1, name: "max_measured_celsius", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+  {localName: "Event_Payload_TemperatureLimit_MaxViolation"},
+);
+
+/**
+ * @generated from message watchdog.v1.Event.Payload.TemperatureLimit.MinViolation
+ */
+export const Event_Payload_TemperatureLimit_MinViolation = proto3.makeMessageType(
+  "watchdog.v1.Event.Payload.TemperatureLimit.MinViolation",
+  () => [
+    { no: 1, name: "min_measured_celsius", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+  {localName: "Event_Payload_TemperatureLimit_MinViolation"},
+);
+
+/**
+ * @generated from message watchdog.v1.Event.Payload.LowBattery
+ */
+export const Event_Payload_LowBattery = proto3.makeMessageType(
+  "watchdog.v1.Event.Payload.LowBattery",
+  () => [
+    { no: 1, name: "voltage", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+  ],
+  {localName: "Event_Payload_LowBattery"},
 );
 

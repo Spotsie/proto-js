@@ -85,6 +85,24 @@ export declare class Job_Config extends Message<Job_Config> {
      */
     value: Job_Config_ZoneOverstay;
     case: "zoneOverstay";
+  } | {
+    /**
+     * @generated from field: watchdog.v1.Job.Config.NoMovement no_movement = 14;
+     */
+    value: Job_Config_NoMovement;
+    case: "noMovement";
+  } | {
+    /**
+     * @generated from field: watchdog.v1.Job.Config.TemperatureLimit temperature_limit = 15;
+     */
+    value: Job_Config_TemperatureLimit;
+    case: "temperatureLimit";
+  } | {
+    /**
+     * @generated from field: watchdog.v1.Job.Config.LowBattery low_battery = 16;
+     */
+    value: Job_Config_LowBattery;
+    case: "lowBattery";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<Job_Config>);
@@ -190,5 +208,86 @@ export declare class Job_Config_ZoneOverstay extends Message<Job_Config_ZoneOver
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Job_Config_ZoneOverstay;
 
   static equals(a: Job_Config_ZoneOverstay | PlainMessage<Job_Config_ZoneOverstay> | undefined, b: Job_Config_ZoneOverstay | PlainMessage<Job_Config_ZoneOverstay> | undefined): boolean;
+}
+
+/**
+ * @generated from message watchdog.v1.Job.Config.NoMovement
+ */
+export declare class Job_Config_NoMovement extends Message<Job_Config_NoMovement> {
+  /**
+   * Watchdog will trigger if subject not moved for specified duration
+   *
+   * @generated from field: google.protobuf.Duration duration_threshold = 1;
+   */
+  durationThreshold?: Duration;
+
+  constructor(data?: PartialMessage<Job_Config_NoMovement>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "watchdog.v1.Job.Config.NoMovement";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Job_Config_NoMovement;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Job_Config_NoMovement;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Job_Config_NoMovement;
+
+  static equals(a: Job_Config_NoMovement | PlainMessage<Job_Config_NoMovement> | undefined, b: Job_Config_NoMovement | PlainMessage<Job_Config_NoMovement> | undefined): boolean;
+}
+
+/**
+ * @generated from message watchdog.v1.Job.Config.TemperatureLimit
+ */
+export declare class Job_Config_TemperatureLimit extends Message<Job_Config_TemperatureLimit> {
+  /**
+   * Watchdog will trigger if subject's temperature exceeded the min or max value
+   *
+   * @generated from field: int32 max_temperature = 1;
+   */
+  maxTemperature: number;
+
+  /**
+   * @generated from field: int32 min_temperature = 2;
+   */
+  minTemperature: number;
+
+  constructor(data?: PartialMessage<Job_Config_TemperatureLimit>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "watchdog.v1.Job.Config.TemperatureLimit";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Job_Config_TemperatureLimit;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Job_Config_TemperatureLimit;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Job_Config_TemperatureLimit;
+
+  static equals(a: Job_Config_TemperatureLimit | PlainMessage<Job_Config_TemperatureLimit> | undefined, b: Job_Config_TemperatureLimit | PlainMessage<Job_Config_TemperatureLimit> | undefined): boolean;
+}
+
+/**
+ * @generated from message watchdog.v1.Job.Config.LowBattery
+ */
+export declare class Job_Config_LowBattery extends Message<Job_Config_LowBattery> {
+  /**
+   * @generated from field: float min_allowed_battery_level = 1;
+   */
+  minAllowedBatteryLevel: number;
+
+  constructor(data?: PartialMessage<Job_Config_LowBattery>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "watchdog.v1.Job.Config.LowBattery";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Job_Config_LowBattery;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Job_Config_LowBattery;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Job_Config_LowBattery;
+
+  static equals(a: Job_Config_LowBattery | PlainMessage<Job_Config_LowBattery> | undefined, b: Job_Config_LowBattery | PlainMessage<Job_Config_LowBattery> | undefined): boolean;
 }
 

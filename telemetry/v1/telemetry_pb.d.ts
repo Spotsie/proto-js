@@ -121,27 +121,32 @@ export declare enum ButtonPressLog_Button {
 }
 
 /**
- * @generated from message telemetry.v1.StillnessLog
+ * @generated from message telemetry.v1.MovementLog
  */
-export declare class StillnessLog extends Message<StillnessLog> {
+export declare class MovementLog extends Message<MovementLog> {
   /**
    * @generated from field: google.protobuf.Timestamp time = 1;
    */
   time?: Timestamp;
 
-  constructor(data?: PartialMessage<StillnessLog>);
+  /**
+   * @generated from field: bool has_moved = 2;
+   */
+  hasMoved: boolean;
+
+  constructor(data?: PartialMessage<MovementLog>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "telemetry.v1.StillnessLog";
+  static readonly typeName = "telemetry.v1.MovementLog";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StillnessLog;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MovementLog;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StillnessLog;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MovementLog;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StillnessLog;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MovementLog;
 
-  static equals(a: StillnessLog | PlainMessage<StillnessLog> | undefined, b: StillnessLog | PlainMessage<StillnessLog> | undefined): boolean;
+  static equals(a: MovementLog | PlainMessage<MovementLog> | undefined, b: MovementLog | PlainMessage<MovementLog> | undefined): boolean;
 }
 
 /**

@@ -29,6 +29,9 @@ export const Job_Config = proto3.makeMessageType(
     { no: 11, name: "activity", kind: "message", T: Job_Config_Activity, oneof: "kind" },
     { no: 12, name: "similar_movement", kind: "message", T: Job_Config_SimilarMovement, oneof: "kind" },
     { no: 13, name: "zone_overstay", kind: "message", T: Job_Config_ZoneOverstay, oneof: "kind" },
+    { no: 14, name: "no_movement", kind: "message", T: Job_Config_NoMovement, oneof: "kind" },
+    { no: 15, name: "temperature_limit", kind: "message", T: Job_Config_TemperatureLimit, oneof: "kind" },
+    { no: 16, name: "low_battery", kind: "message", T: Job_Config_LowBattery, oneof: "kind" },
   ],
   {localName: "Job_Config"},
 );
@@ -71,5 +74,39 @@ export const Job_Config_ZoneOverstay = proto3.makeMessageType(
     { no: 1, name: "duration_threshold", kind: "message", T: Duration },
   ],
   {localName: "Job_Config_ZoneOverstay"},
+);
+
+/**
+ * @generated from message watchdog.v1.Job.Config.NoMovement
+ */
+export const Job_Config_NoMovement = proto3.makeMessageType(
+  "watchdog.v1.Job.Config.NoMovement",
+  () => [
+    { no: 1, name: "duration_threshold", kind: "message", T: Duration },
+  ],
+  {localName: "Job_Config_NoMovement"},
+);
+
+/**
+ * @generated from message watchdog.v1.Job.Config.TemperatureLimit
+ */
+export const Job_Config_TemperatureLimit = proto3.makeMessageType(
+  "watchdog.v1.Job.Config.TemperatureLimit",
+  () => [
+    { no: 1, name: "max_temperature", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "min_temperature", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+  {localName: "Job_Config_TemperatureLimit"},
+);
+
+/**
+ * @generated from message watchdog.v1.Job.Config.LowBattery
+ */
+export const Job_Config_LowBattery = proto3.makeMessageType(
+  "watchdog.v1.Job.Config.LowBattery",
+  () => [
+    { no: 1, name: "min_allowed_battery_level", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+  ],
+  {localName: "Job_Config_LowBattery"},
 );
 

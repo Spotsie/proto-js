@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Beacon } from "../../domain/v1/domain_pb.js";
-import type { BatteryLog, Beacon as Beacon$1, ButtonPressLog, StillnessLog, TemperatureLog } from "./telemetry_pb.js";
+import type { BatteryLog, Beacon as Beacon$1, ButtonPressLog, MovementLog, TemperatureLog } from "./telemetry_pb.js";
 
 /**
  * common/utility messages
@@ -93,11 +93,11 @@ export declare class GetBeaconLogsRequest extends Message<GetBeaconLogsRequest> 
   buttonPressLogs: boolean;
 
   /**
-   * Fetch stillness logs
+   * Fetch movement logs
    *
-   * @generated from field: bool stillness_logs = 7;
+   * @generated from field: bool movement_logs = 7;
    */
-  stillnessLogs: boolean;
+  movementLogs: boolean;
 
   constructor(data?: PartialMessage<GetBeaconLogsRequest>);
 
@@ -165,9 +165,9 @@ export declare class GetBeaconLogsResponse_BeaconLogs extends Message<GetBeaconL
   buttonPress: ButtonPressLog[];
 
   /**
-   * @generated from field: repeated telemetry.v1.StillnessLog stillness = 5;
+   * @generated from field: repeated telemetry.v1.MovementLog movement = 5;
    */
-  stillness: StillnessLog[];
+  movement: MovementLog[];
 
   constructor(data?: PartialMessage<GetBeaconLogsResponse_BeaconLogs>);
 
@@ -233,9 +233,9 @@ export declare class GetLatestBeaconLogsResponse_LatestBeaconLogs extends Messag
   buttonPress?: ButtonPressLog;
 
   /**
-   * @generated from field: optional telemetry.v1.StillnessLog stillnes_log = 5;
+   * @generated from field: optional telemetry.v1.MovementLog movement = 5;
    */
-  stillnesLog?: StillnessLog;
+  movement?: MovementLog;
 
   constructor(data?: PartialMessage<GetLatestBeaconLogsResponse_LatestBeaconLogs>);
 

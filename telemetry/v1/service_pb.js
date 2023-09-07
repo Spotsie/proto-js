@@ -5,7 +5,7 @@
 
 import { proto3, Timestamp } from "@bufbuild/protobuf";
 import { Beacon } from "../../domain/v1/domain_pb.js";
-import { BatteryLog, Beacon as Beacon$1, ButtonPressLog, StillnessLog, TemperatureLog } from "./telemetry_pb.js";
+import { BatteryLog, Beacon as Beacon$1, ButtonPressLog, MovementLog, TemperatureLog } from "./telemetry_pb.js";
 
 /**
  * common/utility messages
@@ -33,7 +33,7 @@ export const GetBeaconLogsRequest = proto3.makeMessageType(
     { no: 4, name: "temperature_logs", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 5, name: "battery_logs", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 6, name: "button_press_logs", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 7, name: "stillness_logs", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "movement_logs", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -57,7 +57,7 @@ export const GetBeaconLogsResponse_BeaconLogs = proto3.makeMessageType(
     { no: 2, name: "temperature", kind: "message", T: TemperatureLog, repeated: true },
     { no: 3, name: "battery", kind: "message", T: BatteryLog, repeated: true },
     { no: 4, name: "button_press", kind: "message", T: ButtonPressLog, repeated: true },
-    { no: 5, name: "stillness", kind: "message", T: StillnessLog, repeated: true },
+    { no: 5, name: "movement", kind: "message", T: MovementLog, repeated: true },
   ],
   {localName: "GetBeaconLogsResponse_BeaconLogs"},
 );
@@ -82,7 +82,7 @@ export const GetLatestBeaconLogsResponse_LatestBeaconLogs = proto3.makeMessageTy
     { no: 2, name: "temperature", kind: "message", T: TemperatureLog, opt: true },
     { no: 3, name: "battery", kind: "message", T: BatteryLog, opt: true },
     { no: 4, name: "button_press", kind: "message", T: ButtonPressLog, opt: true },
-    { no: 5, name: "stillnes_log", kind: "message", T: StillnessLog, opt: true },
+    { no: 5, name: "movement", kind: "message", T: MovementLog, opt: true },
   ],
   {localName: "GetLatestBeaconLogsResponse_LatestBeaconLogs"},
 );

@@ -52,12 +52,13 @@ export const ButtonPressLog_Button = proto3.makeEnum(
 );
 
 /**
- * @generated from message telemetry.v1.StillnessLog
+ * @generated from message telemetry.v1.MovementLog
  */
-export const StillnessLog = proto3.makeMessageType(
-  "telemetry.v1.StillnessLog",
+export const MovementLog = proto3.makeMessageType(
+  "telemetry.v1.MovementLog",
   () => [
     { no: 1, name: "time", kind: "message", T: Timestamp },
+    { no: 2, name: "has_moved", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

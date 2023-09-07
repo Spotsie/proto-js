@@ -113,6 +113,24 @@ export declare class Event_Payload extends Message<Event_Payload> {
      */
     value: Event_Payload_ZoneVisit;
     case: "zoneVisit";
+  } | {
+    /**
+     * @generated from field: watchdog.v1.Event.Payload.NoMovement no_movement = 15;
+     */
+    value: Event_Payload_NoMovement;
+    case: "noMovement";
+  } | {
+    /**
+     * @generated from field: watchdog.v1.Event.Payload.TemperatureLimit temperature_limit = 16;
+     */
+    value: Event_Payload_TemperatureLimit;
+    case: "temperatureLimit";
+  } | {
+    /**
+     * @generated from field: watchdog.v1.Event.Payload.LowBattery low_battery = 17;
+     */
+    value: Event_Payload_LowBattery;
+    case: "lowBattery";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<Event_Payload>);
@@ -230,5 +248,150 @@ export declare class Event_Payload_ZoneVisit extends Message<Event_Payload_ZoneV
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Event_Payload_ZoneVisit;
 
   static equals(a: Event_Payload_ZoneVisit | PlainMessage<Event_Payload_ZoneVisit> | undefined, b: Event_Payload_ZoneVisit | PlainMessage<Event_Payload_ZoneVisit> | undefined): boolean;
+}
+
+/**
+ * beacon did not move for a certain period of time
+ *
+ * @generated from message watchdog.v1.Event.Payload.NoMovement
+ */
+export declare class Event_Payload_NoMovement extends Message<Event_Payload_NoMovement> {
+  constructor(data?: PartialMessage<Event_Payload_NoMovement>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "watchdog.v1.Event.Payload.NoMovement";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Event_Payload_NoMovement;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Event_Payload_NoMovement;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Event_Payload_NoMovement;
+
+  static equals(a: Event_Payload_NoMovement | PlainMessage<Event_Payload_NoMovement> | undefined, b: Event_Payload_NoMovement | PlainMessage<Event_Payload_NoMovement> | undefined): boolean;
+}
+
+/**
+ * @generated from message watchdog.v1.Event.Payload.TemperatureLimit
+ */
+export declare class Event_Payload_TemperatureLimit extends Message<Event_Payload_TemperatureLimit> {
+  /**
+   * @generated from field: int32 max_allowed_temperature = 1;
+   */
+  maxAllowedTemperature: number;
+
+  /**
+   * @generated from field: int32 min_allowed_temperature = 2;
+   */
+  minAllowedTemperature: number;
+
+  /**
+   * Temperature violation can be either over the limit, or under the specified limit
+   *
+   * @generated from oneof watchdog.v1.Event.Payload.TemperatureLimit.violation
+   */
+  violation: {
+    /**
+     * @generated from field: watchdog.v1.Event.Payload.TemperatureLimit.MaxViolation max = 3;
+     */
+    value: Event_Payload_TemperatureLimit_MaxViolation;
+    case: "max";
+  } | {
+    /**
+     * @generated from field: watchdog.v1.Event.Payload.TemperatureLimit.MinViolation min = 4;
+     */
+    value: Event_Payload_TemperatureLimit_MinViolation;
+    case: "min";
+  } | { case: undefined; value?: undefined };
+
+  constructor(data?: PartialMessage<Event_Payload_TemperatureLimit>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "watchdog.v1.Event.Payload.TemperatureLimit";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Event_Payload_TemperatureLimit;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Event_Payload_TemperatureLimit;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Event_Payload_TemperatureLimit;
+
+  static equals(a: Event_Payload_TemperatureLimit | PlainMessage<Event_Payload_TemperatureLimit> | undefined, b: Event_Payload_TemperatureLimit | PlainMessage<Event_Payload_TemperatureLimit> | undefined): boolean;
+}
+
+/**
+ * @generated from message watchdog.v1.Event.Payload.TemperatureLimit.MaxViolation
+ */
+export declare class Event_Payload_TemperatureLimit_MaxViolation extends Message<Event_Payload_TemperatureLimit_MaxViolation> {
+  /**
+   * highest measured temperature since event was created
+   *
+   * @generated from field: int32 max_measured_celsius = 1;
+   */
+  maxMeasuredCelsius: number;
+
+  constructor(data?: PartialMessage<Event_Payload_TemperatureLimit_MaxViolation>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "watchdog.v1.Event.Payload.TemperatureLimit.MaxViolation";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Event_Payload_TemperatureLimit_MaxViolation;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Event_Payload_TemperatureLimit_MaxViolation;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Event_Payload_TemperatureLimit_MaxViolation;
+
+  static equals(a: Event_Payload_TemperatureLimit_MaxViolation | PlainMessage<Event_Payload_TemperatureLimit_MaxViolation> | undefined, b: Event_Payload_TemperatureLimit_MaxViolation | PlainMessage<Event_Payload_TemperatureLimit_MaxViolation> | undefined): boolean;
+}
+
+/**
+ * @generated from message watchdog.v1.Event.Payload.TemperatureLimit.MinViolation
+ */
+export declare class Event_Payload_TemperatureLimit_MinViolation extends Message<Event_Payload_TemperatureLimit_MinViolation> {
+  /**
+   * lowest measured temperature since event was created
+   *
+   * @generated from field: int32 min_measured_celsius = 1;
+   */
+  minMeasuredCelsius: number;
+
+  constructor(data?: PartialMessage<Event_Payload_TemperatureLimit_MinViolation>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "watchdog.v1.Event.Payload.TemperatureLimit.MinViolation";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Event_Payload_TemperatureLimit_MinViolation;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Event_Payload_TemperatureLimit_MinViolation;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Event_Payload_TemperatureLimit_MinViolation;
+
+  static equals(a: Event_Payload_TemperatureLimit_MinViolation | PlainMessage<Event_Payload_TemperatureLimit_MinViolation> | undefined, b: Event_Payload_TemperatureLimit_MinViolation | PlainMessage<Event_Payload_TemperatureLimit_MinViolation> | undefined): boolean;
+}
+
+/**
+ * @generated from message watchdog.v1.Event.Payload.LowBattery
+ */
+export declare class Event_Payload_LowBattery extends Message<Event_Payload_LowBattery> {
+  /**
+   * @generated from field: float voltage = 1;
+   */
+  voltage: number;
+
+  constructor(data?: PartialMessage<Event_Payload_LowBattery>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "watchdog.v1.Event.Payload.LowBattery";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Event_Payload_LowBattery;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Event_Payload_LowBattery;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Event_Payload_LowBattery;
+
+  static equals(a: Event_Payload_LowBattery | PlainMessage<Event_Payload_LowBattery> | undefined, b: Event_Payload_LowBattery | PlainMessage<Event_Payload_LowBattery> | undefined): boolean;
 }
 
