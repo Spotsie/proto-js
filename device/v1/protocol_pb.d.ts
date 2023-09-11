@@ -487,6 +487,41 @@ export declare class ClientMessage_Discovery extends Message$1<ClientMessage_Dis
    */
   softwareId: string;
 
+  /**
+   * @generated from field: uint64 gw_mac_address = 2;
+   */
+  gwMacAddress: bigint;
+
+  /**
+   * @generated from field: uint64 ap_mac_address = 3;
+   */
+  apMacAddress: bigint;
+
+  /**
+   * @generated from field: string ap_ssid = 4;
+   */
+  apSsid: string;
+
+  /**
+   * @generated from field: int32 ap_rssi = 5;
+   */
+  apRssi: number;
+
+  /**
+   * @generated from field: string reset_by = 6;
+   */
+  resetBy: string;
+
+  /**
+   * @generated from field: string reset_msg = 7;
+   */
+  resetMsg: string;
+
+  /**
+   * @generated from field: string reset_reason = 8;
+   */
+  resetReason: string;
+
   constructor(data?: PartialMessage<ClientMessage_Discovery>);
 
   static readonly runtime: typeof proto3;

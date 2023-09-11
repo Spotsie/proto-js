@@ -195,6 +195,13 @@ export const ClientMessage_Discovery = proto3.makeMessageType(
   "device.v1.ClientMessage.Discovery",
   () => [
     { no: 1, name: "software_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "gw_mac_address", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 3, name: "ap_mac_address", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 4, name: "ap_ssid", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "ap_rssi", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "reset_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "reset_msg", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "reset_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
   {localName: "ClientMessage_Discovery"},
 );
