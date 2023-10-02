@@ -97,3 +97,21 @@ export const GetLatestBeaconLogsRequest = proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message telemetry.v1.GetBeaconsRequest
+ */
+export const GetBeaconsRequest = proto3.makeMessageType(
+  "telemetry.v1.GetBeaconsRequest",
+  [],
+);
+
+/**
+ * @generated from message telemetry.v1.GetBeaconsResponse
+ */
+export const GetBeaconsResponse = proto3.makeMessageType(
+  "telemetry.v1.GetBeaconsResponse",
+  () => [
+    { no: 1, name: "beacons", kind: "message", T: Beacon$1, repeated: true },
+  ],
+);
+

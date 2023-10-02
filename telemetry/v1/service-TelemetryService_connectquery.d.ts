@@ -4,7 +4,8 @@
 // @ts-nocheck
 
 import { UnaryHooks } from "@bufbuild/connect-query";
-import { GetBeaconLogsRequest, GetBeaconLogsResponse, GetLatestBeaconLogsRequest, GetLatestBeaconLogsResponse } from "./service_pb.js";
+import { GetBeaconLogsRequest, GetBeaconLogsResponse, GetBeaconsRequest, GetBeaconsResponse, GetLatestBeaconLogsRequest, GetLatestBeaconLogsResponse } from "./service_pb.js";
 
+export const getBeacons: UnaryHooks<GetBeaconsRequest, GetBeaconsResponse>;
 export const getBeaconLogs: UnaryHooks<GetBeaconLogsRequest, GetBeaconLogsResponse>;
 export const getLatestBeaconLogs: UnaryHooks<GetLatestBeaconLogsRequest, GetLatestBeaconLogsResponse>;

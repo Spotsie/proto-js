@@ -276,3 +276,46 @@ export declare class GetLatestBeaconLogsRequest extends Message<GetLatestBeaconL
   static equals(a: GetLatestBeaconLogsRequest | PlainMessage<GetLatestBeaconLogsRequest> | undefined, b: GetLatestBeaconLogsRequest | PlainMessage<GetLatestBeaconLogsRequest> | undefined): boolean;
 }
 
+/**
+ * @generated from message telemetry.v1.GetBeaconsRequest
+ */
+export declare class GetBeaconsRequest extends Message<GetBeaconsRequest> {
+  constructor(data?: PartialMessage<GetBeaconsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "telemetry.v1.GetBeaconsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetBeaconsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetBeaconsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetBeaconsRequest;
+
+  static equals(a: GetBeaconsRequest | PlainMessage<GetBeaconsRequest> | undefined, b: GetBeaconsRequest | PlainMessage<GetBeaconsRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message telemetry.v1.GetBeaconsResponse
+ */
+export declare class GetBeaconsResponse extends Message<GetBeaconsResponse> {
+  /**
+   * @generated from field: repeated telemetry.v1.Beacon beacons = 1;
+   */
+  beacons: Beacon$1[];
+
+  constructor(data?: PartialMessage<GetBeaconsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "telemetry.v1.GetBeaconsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetBeaconsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetBeaconsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetBeaconsResponse;
+
+  static equals(a: GetBeaconsResponse | PlainMessage<GetBeaconsResponse> | undefined, b: GetBeaconsResponse | PlainMessage<GetBeaconsResponse> | undefined): boolean;
+}
+
