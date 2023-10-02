@@ -280,6 +280,13 @@ export declare class GetLatestBeaconLogsRequest extends Message<GetLatestBeaconL
  * @generated from message telemetry.v1.GetBeaconsRequest
  */
 export declare class GetBeaconsRequest extends Message<GetBeaconsRequest> {
+  /**
+   * Filter beacons by ibeacon.major field
+   *
+   * @generated from field: optional int32 ibeacon_major = 1;
+   */
+  ibeaconMajor?: number;
+
   constructor(data?: PartialMessage<GetBeaconsRequest>);
 
   static readonly runtime: typeof proto3;

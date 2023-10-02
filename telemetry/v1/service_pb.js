@@ -102,7 +102,9 @@ export const GetLatestBeaconLogsRequest = proto3.makeMessageType(
  */
 export const GetBeaconsRequest = proto3.makeMessageType(
   "telemetry.v1.GetBeaconsRequest",
-  [],
+  () => [
+    { no: 1, name: "ibeacon_major", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+  ],
 );
 
 /**
