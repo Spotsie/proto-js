@@ -198,6 +198,11 @@ export declare class GetSubjectLocationsAtResponse extends Message<GetSubjectLoc
    */
   subjectLocations: { [key: number]: number };
 
+  /**
+   * @generated from field: optional domain.v1.GeoPoint point = 2;
+   */
+  point?: GeoPoint;
+
   constructor(data?: PartialMessage<GetSubjectLocationsAtResponse>);
 
   static readonly runtime: typeof proto3;

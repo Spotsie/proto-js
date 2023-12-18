@@ -81,6 +81,7 @@ export const GetSubjectLocationsAtResponse = proto3.makeMessageType(
   "location.v1.GetSubjectLocationsAtResponse",
   () => [
     { no: 1, name: "subject_locations", kind: "map", K: 5 /* ScalarType.INT32 */, V: {kind: "scalar", T: 5 /* ScalarType.INT32 */} },
+    { no: 2, name: "point", kind: "message", T: GeoPoint, opt: true },
   ],
 );
 

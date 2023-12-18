@@ -5,26 +5,9 @@
 
 import { createQueryService } from "@bufbuild/connect-query";
 import { MethodKind } from "@bufbuild/protobuf";
-import { GetBeaconLogsRequest, GetBeaconLogsResponse, GetBeaconsRequest, GetBeaconsResponse, GetLatestBeaconLogsRequest, GetLatestBeaconLogsResponse } from "./service_pb.js";
+import { GetBeaconLogsRequest, GetBeaconLogsResponse, GetLatestBeaconLogsRequest, GetLatestBeaconLogsResponse } from "./service_pb.js";
 
 export const typeName = "telemetry.v1.TelemetryService";
-
-/**
- * @generated from rpc telemetry.v1.TelemetryService.GetBeacons
- */
-export const getBeacons = createQueryService({
-  service: {
-    methods: {
-      getBeacons: {
-        name: "GetBeacons",
-        kind: MethodKind.Unary,
-        I: GetBeaconsRequest,
-        O: GetBeaconsResponse,
-      },
-    },
-    typeName: "telemetry.v1.TelemetryService",
-  },
-}).getBeacons;
 
 /**
  * @generated from rpc telemetry.v1.TelemetryService.GetBeaconLogs

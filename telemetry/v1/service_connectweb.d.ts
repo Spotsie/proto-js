@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetBeaconLogsRequest, GetBeaconLogsResponse, GetBeaconsRequest, GetBeaconsResponse, GetLatestBeaconLogsRequest, GetLatestBeaconLogsResponse } from "./service_pb.js";
+import { GetBeaconLogsRequest, GetBeaconLogsResponse, GetLatestBeaconLogsRequest, GetLatestBeaconLogsResponse } from "./service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -12,15 +12,6 @@ import { MethodKind } from "@bufbuild/protobuf";
 export declare const TelemetryService: {
   readonly typeName: "telemetry.v1.TelemetryService",
   readonly methods: {
-    /**
-     * @generated from rpc telemetry.v1.TelemetryService.GetBeacons
-     */
-    readonly getBeacons: {
-      readonly name: "GetBeacons",
-      readonly I: typeof GetBeaconsRequest,
-      readonly O: typeof GetBeaconsResponse,
-      readonly kind: MethodKind.Unary,
-    },
     /**
      * @generated from rpc telemetry.v1.TelemetryService.GetBeaconLogs
      */
