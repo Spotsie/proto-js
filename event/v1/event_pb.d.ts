@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Beacon, DeploymentDto, Observation, Subject, TimePeriod } from "../../domain/v1/domain_pb.js";
-import type { LocationRecord } from "../../location/v1/location_pb.js";
+import type { LocationHistoryRecord, LocationRecord } from "../../location/v1/location_pb.js";
 import type { BatteryTelemetry, TemperatureTelemetry } from "../../subject/v1/subject_pb.js";
 
 /**
@@ -224,6 +224,11 @@ export declare class SubjectLocationSpanUpdateEvent extends Message<SubjectLocat
    * @generated from field: domain.v1.Subject subject = 1;
    */
   subject?: Subject;
+
+  /**
+   * @generated from field: location.v1.LocationHistoryRecord record = 2;
+   */
+  record?: LocationHistoryRecord;
 
   constructor(data?: PartialMessage<SubjectLocationSpanUpdateEvent>);
 

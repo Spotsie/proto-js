@@ -5,7 +5,7 @@
 
 import { proto3 } from "@bufbuild/protobuf";
 import { Beacon, DeploymentDto, Observation, Subject, TimePeriod } from "../../domain/v1/domain_pb.js";
-import { LocationRecord } from "../../location/v1/location_pb.js";
+import { LocationHistoryRecord, LocationRecord } from "../../location/v1/location_pb.js";
 import { BatteryTelemetry, TemperatureTelemetry } from "../../subject/v1/subject_pb.js";
 
 /**
@@ -96,6 +96,7 @@ export const SubjectLocationSpanUpdateEvent = proto3.makeMessageType(
   "event.v1.SubjectLocationSpanUpdateEvent",
   () => [
     { no: 1, name: "subject", kind: "message", T: Subject },
+    { no: 2, name: "record", kind: "message", T: LocationHistoryRecord },
   ],
 );
 
