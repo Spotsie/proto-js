@@ -183,3 +183,22 @@ export declare class Beacon extends Message<Beacon> {
   static equals(a: Beacon | PlainMessage<Beacon> | undefined, b: Beacon | PlainMessage<Beacon> | undefined): boolean;
 }
 
+/**
+ * @generated from message telemetry.v1.BuildTest
+ */
+export declare class BuildTest extends Message<BuildTest> {
+  constructor(data?: PartialMessage<BuildTest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "telemetry.v1.BuildTest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BuildTest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BuildTest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BuildTest;
+
+  static equals(a: BuildTest | PlainMessage<BuildTest> | undefined, b: BuildTest | PlainMessage<BuildTest> | undefined): boolean;
+}
+
