@@ -166,13 +166,6 @@ export declare class LocationSpan extends Message<LocationSpan> {
   zoneId: number;
 
   /**
-   * Current zone name. Zone name can change over time, but the ID is always the same.
-   *
-   * @generated from field: string zone_name = 4;
-   */
-  zoneName: string;
-
-  /**
    * @generated from field: google.protobuf.Timestamp from_time = 2;
    */
   fromTime?: Timestamp;

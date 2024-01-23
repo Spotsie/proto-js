@@ -66,7 +66,6 @@ export const LocationSpan = proto3.makeMessageType(
   "location.v1.LocationSpan",
   () => [
     { no: 1, name: "zone_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 4, name: "zone_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "from_time", kind: "message", T: Timestamp },
     { no: 3, name: "to_time", kind: "message", T: Timestamp },
   ],

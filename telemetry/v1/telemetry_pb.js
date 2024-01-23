@@ -74,3 +74,11 @@ export const Beacon = proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message telemetry.v1.BuildTest
+ */
+export const BuildTest = proto3.makeMessageType(
+  "telemetry.v1.BuildTest",
+  [],
+);
+
