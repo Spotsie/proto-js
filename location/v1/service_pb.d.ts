@@ -9,6 +9,64 @@ import type { GeoPoint, Subject } from "../../domain/v1/domain_pb.js";
 import type { LocationHistoryRecord, LocationRecord } from "./location_pb.js";
 
 /**
+ * @generated from message location.v1.GetLocationHistoryStreamRequest
+ */
+export declare class GetLocationHistoryStreamRequest extends Message<GetLocationHistoryStreamRequest> {
+  /**
+   * @generated from field: repeated domain.v1.Subject subjects = 1;
+   */
+  subjects: Subject[];
+
+  /**
+   * @generated from field: google.protobuf.Timestamp from_time = 2;
+   */
+  fromTime?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp to_time = 3;
+   */
+  toTime?: Timestamp;
+
+  constructor(data?: PartialMessage<GetLocationHistoryStreamRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "location.v1.GetLocationHistoryStreamRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLocationHistoryStreamRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLocationHistoryStreamRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLocationHistoryStreamRequest;
+
+  static equals(a: GetLocationHistoryStreamRequest | PlainMessage<GetLocationHistoryStreamRequest> | undefined, b: GetLocationHistoryStreamRequest | PlainMessage<GetLocationHistoryStreamRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message location.v1.GetLocationHistoryStreamResponse
+ */
+export declare class GetLocationHistoryStreamResponse extends Message<GetLocationHistoryStreamResponse> {
+  /**
+   * @generated from field: map<int32, location.v1.LocationHistory> subject_location_history = 1;
+   */
+  subjectLocationHistory: { [key: number]: LocationHistory };
+
+  constructor(data?: PartialMessage<GetLocationHistoryStreamResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "location.v1.GetLocationHistoryStreamResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLocationHistoryStreamResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLocationHistoryStreamResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLocationHistoryStreamResponse;
+
+  static equals(a: GetLocationHistoryStreamResponse | PlainMessage<GetLocationHistoryStreamResponse> | undefined, b: GetLocationHistoryStreamResponse | PlainMessage<GetLocationHistoryStreamResponse> | undefined): boolean;
+}
+
+/**
  * @generated from message location.v1.GetLocationHistoryRequest
  */
 export declare class GetLocationHistoryRequest extends Message<GetLocationHistoryRequest> {

@@ -24,6 +24,15 @@ export declare const LocationService: {
       readonly kind: MethodKind.Unary,
     },
     /**
+     * @generated from rpc location.v1.LocationService.GetLocationHistoryStream
+     */
+    readonly getLocationHistoryStream: {
+      readonly name: "GetLocationHistoryStream",
+      readonly I: typeof GetLocationHistoryRequest,
+      readonly O: typeof GetLocationHistoryResponse,
+      readonly kind: MethodKind.ServerStreaming,
+    },
+    /**
      * Point in time location records based on zone and/or coordinates
      *
      * @generated from rpc location.v1.LocationService.GetLocationRecords
