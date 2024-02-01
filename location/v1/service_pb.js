@@ -8,6 +8,28 @@ import { GeoPoint, Subject } from "../../domain/v1/domain_pb.js";
 import { LocationHistoryRecord, LocationRecord } from "./location_pb.js";
 
 /**
+ * @generated from message location.v1.GetLocationHistoryStreamRequest
+ */
+export const GetLocationHistoryStreamRequest = proto3.makeMessageType(
+  "location.v1.GetLocationHistoryStreamRequest",
+  () => [
+    { no: 1, name: "subjects", kind: "message", T: Subject, repeated: true },
+    { no: 2, name: "from_time", kind: "message", T: Timestamp },
+    { no: 3, name: "to_time", kind: "message", T: Timestamp },
+  ],
+);
+
+/**
+ * @generated from message location.v1.GetLocationHistoryStreamResponse
+ */
+export const GetLocationHistoryStreamResponse = proto3.makeMessageType(
+  "location.v1.GetLocationHistoryStreamResponse",
+  () => [
+    { no: 1, name: "subject_location_history", kind: "map", K: 5 /* ScalarType.INT32 */, V: {kind: "message", T: LocationHistory} },
+  ],
+);
+
+/**
  * @generated from message location.v1.GetLocationHistoryRequest
  */
 export const GetLocationHistoryRequest = proto3.makeMessageType(

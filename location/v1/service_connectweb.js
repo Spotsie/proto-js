@@ -24,6 +24,15 @@ export const LocationService = {
       kind: MethodKind.Unary,
     },
     /**
+     * @generated from rpc location.v1.LocationService.GetLocationHistoryStream
+     */
+    getLocationHistoryStream: {
+      name: "GetLocationHistoryStream",
+      I: GetLocationHistoryRequest,
+      O: GetLocationHistoryResponse,
+      kind: MethodKind.ServerStreaming,
+    },
+    /**
      * Point in time location records based on zone and/or coordinates
      *
      * @generated from rpc location.v1.LocationService.GetLocationRecords

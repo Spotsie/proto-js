@@ -193,6 +193,26 @@ export declare class Deployment extends Message<Deployment> {
   lastModifiedBy: string;
 
   /**
+   * @generated from field: string geo_json = 14;
+   */
+  geoJson: string;
+
+  /**
+   * @generated from field: domain.v1.GeoPoint inital_map_position = 15;
+   */
+  initalMapPosition?: GeoPoint;
+
+  /**
+   * @generated from field: int32 max_map_zoom = 16;
+   */
+  maxMapZoom: number;
+
+  /**
+   * @generated from field: int32 default_map_zoom = 17;
+   */
+  defaultMapZoom: number;
+
+  /**
    * @generated from oneof deployment.v1.Deployment.locator_config
    */
   locatorConfig: {
