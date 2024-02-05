@@ -39,6 +39,7 @@ export const CreateJobRequest = proto3.makeMessageType(
     { no: 4, name: "start_time", kind: "message", T: Duration },
     { no: 5, name: "end_time", kind: "message", T: Duration },
     { no: 6, name: "config", kind: "message", T: Job_Config },
+    { no: 7, name: "namespace_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ],
 );
 

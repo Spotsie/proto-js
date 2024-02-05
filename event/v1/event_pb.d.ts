@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Beacon, DeploymentDto, Observation, Subject, TimePeriod } from "../../domain/v1/domain_pb.js";
 import type { LocationRecord, SubjectLocationSpan } from "../../location/v1/location_pb.js";
@@ -282,5 +282,34 @@ export declare class SubjectTelemetryEvent extends Message<SubjectTelemetryEvent
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubjectTelemetryEvent;
 
   static equals(a: SubjectTelemetryEvent | PlainMessage<SubjectTelemetryEvent> | undefined, b: SubjectTelemetryEvent | PlainMessage<SubjectTelemetryEvent> | undefined): boolean;
+}
+
+/**
+ * @generated from message event.v1.BeaconButtonPressEvent
+ */
+export declare class BeaconButtonPressEvent extends Message<BeaconButtonPressEvent> {
+  /**
+   * @generated from field: domain.v1.Beacon beacon = 1;
+   */
+  beacon?: Beacon;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp time = 2;
+   */
+  time?: Timestamp;
+
+  constructor(data?: PartialMessage<BeaconButtonPressEvent>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "event.v1.BeaconButtonPressEvent";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BeaconButtonPressEvent;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BeaconButtonPressEvent;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BeaconButtonPressEvent;
+
+  static equals(a: BeaconButtonPressEvent | PlainMessage<BeaconButtonPressEvent> | undefined, b: BeaconButtonPressEvent | PlainMessage<BeaconButtonPressEvent> | undefined): boolean;
 }
 

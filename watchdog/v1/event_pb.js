@@ -37,6 +37,7 @@ export const Event_Payload = proto3.makeMessageType(
     { no: 15, name: "no_movement", kind: "message", T: Event_Payload_NoMovement, oneof: "payload" },
     { no: 16, name: "temperature_limit", kind: "message", T: Event_Payload_TemperatureLimit, oneof: "payload" },
     { no: 17, name: "low_battery", kind: "message", T: Event_Payload_LowBattery, oneof: "payload" },
+    { no: 18, name: "button_press", kind: "message", T: Event_Payload_ButtonPress, oneof: "payload" },
   ],
   {localName: "Event_Payload"},
 );
@@ -144,5 +145,14 @@ export const Event_Payload_LowBattery = proto3.makeMessageType(
     { no: 1, name: "voltage", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
   ],
   {localName: "Event_Payload_LowBattery"},
+);
+
+/**
+ * @generated from message watchdog.v1.Event.Payload.ButtonPress
+ */
+export const Event_Payload_ButtonPress = proto3.makeMessageType(
+  "watchdog.v1.Event.Payload.ButtonPress",
+  [],
+  {localName: "Event_Payload_ButtonPress"},
 );
 

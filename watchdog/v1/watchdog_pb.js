@@ -32,6 +32,7 @@ export const Job_Config = proto3.makeMessageType(
     { no: 14, name: "no_movement", kind: "message", T: Job_Config_NoMovement, oneof: "kind" },
     { no: 15, name: "temperature_limit", kind: "message", T: Job_Config_TemperatureLimit, oneof: "kind" },
     { no: 16, name: "low_battery", kind: "message", T: Job_Config_LowBattery, oneof: "kind" },
+    { no: 17, name: "button_press", kind: "message", T: Job_Config_ButtonPress, oneof: "kind" },
   ],
   {localName: "Job_Config"},
 );
@@ -108,5 +109,14 @@ export const Job_Config_LowBattery = proto3.makeMessageType(
     { no: 1, name: "min_allowed_battery_level", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
   ],
   {localName: "Job_Config_LowBattery"},
+);
+
+/**
+ * @generated from message watchdog.v1.Job.Config.ButtonPress
+ */
+export const Job_Config_ButtonPress = proto3.makeMessageType(
+  "watchdog.v1.Job.Config.ButtonPress",
+  [],
+  {localName: "Job_Config_ButtonPress"},
 );
 

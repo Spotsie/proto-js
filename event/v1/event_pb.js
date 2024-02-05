@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { proto3 } from "@bufbuild/protobuf";
+import { proto3, Timestamp } from "@bufbuild/protobuf";
 import { Beacon, DeploymentDto, Observation, Subject, TimePeriod } from "../../domain/v1/domain_pb.js";
 import { LocationRecord, SubjectLocationSpan } from "../../location/v1/location_pb.js";
 import { BatteryTelemetry, TemperatureTelemetry } from "../../subject/v1/subject_pb.js";
@@ -110,6 +110,17 @@ export const SubjectTelemetryEvent = proto3.makeMessageType(
     { no: 1, name: "subject", kind: "message", T: Subject },
     { no: 2, name: "battery", kind: "message", T: BatteryTelemetry, opt: true },
     { no: 3, name: "temperature", kind: "message", T: TemperatureTelemetry, opt: true },
+  ],
+);
+
+/**
+ * @generated from message event.v1.BeaconButtonPressEvent
+ */
+export const BeaconButtonPressEvent = proto3.makeMessageType(
+  "event.v1.BeaconButtonPressEvent",
+  () => [
+    { no: 1, name: "beacon", kind: "message", T: Beacon },
+    { no: 2, name: "time", kind: "message", T: Timestamp },
   ],
 );
 

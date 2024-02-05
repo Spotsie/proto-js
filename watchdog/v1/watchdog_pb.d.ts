@@ -103,6 +103,12 @@ export declare class Job_Config extends Message<Job_Config> {
      */
     value: Job_Config_LowBattery;
     case: "lowBattery";
+  } | {
+    /**
+     * @generated from field: watchdog.v1.Job.Config.ButtonPress button_press = 17;
+     */
+    value: Job_Config_ButtonPress;
+    case: "buttonPress";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<Job_Config>);
@@ -289,5 +295,24 @@ export declare class Job_Config_LowBattery extends Message<Job_Config_LowBattery
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Job_Config_LowBattery;
 
   static equals(a: Job_Config_LowBattery | PlainMessage<Job_Config_LowBattery> | undefined, b: Job_Config_LowBattery | PlainMessage<Job_Config_LowBattery> | undefined): boolean;
+}
+
+/**
+ * @generated from message watchdog.v1.Job.Config.ButtonPress
+ */
+export declare class Job_Config_ButtonPress extends Message<Job_Config_ButtonPress> {
+  constructor(data?: PartialMessage<Job_Config_ButtonPress>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "watchdog.v1.Job.Config.ButtonPress";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Job_Config_ButtonPress;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Job_Config_ButtonPress;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Job_Config_ButtonPress;
+
+  static equals(a: Job_Config_ButtonPress | PlainMessage<Job_Config_ButtonPress> | undefined, b: Job_Config_ButtonPress | PlainMessage<Job_Config_ButtonPress> | undefined): boolean;
 }
 

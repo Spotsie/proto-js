@@ -131,6 +131,12 @@ export declare class Event_Payload extends Message<Event_Payload> {
      */
     value: Event_Payload_LowBattery;
     case: "lowBattery";
+  } | {
+    /**
+     * @generated from field: watchdog.v1.Event.Payload.ButtonPress button_press = 18;
+     */
+    value: Event_Payload_ButtonPress;
+    case: "buttonPress";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<Event_Payload>);
@@ -393,5 +399,24 @@ export declare class Event_Payload_LowBattery extends Message<Event_Payload_LowB
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Event_Payload_LowBattery;
 
   static equals(a: Event_Payload_LowBattery | PlainMessage<Event_Payload_LowBattery> | undefined, b: Event_Payload_LowBattery | PlainMessage<Event_Payload_LowBattery> | undefined): boolean;
+}
+
+/**
+ * @generated from message watchdog.v1.Event.Payload.ButtonPress
+ */
+export declare class Event_Payload_ButtonPress extends Message<Event_Payload_ButtonPress> {
+  constructor(data?: PartialMessage<Event_Payload_ButtonPress>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "watchdog.v1.Event.Payload.ButtonPress";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Event_Payload_ButtonPress;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Event_Payload_ButtonPress;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Event_Payload_ButtonPress;
+
+  static equals(a: Event_Payload_ButtonPress | PlainMessage<Event_Payload_ButtonPress> | undefined, b: Event_Payload_ButtonPress | PlainMessage<Event_Payload_ButtonPress> | undefined): boolean;
 }
 

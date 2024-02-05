@@ -93,6 +93,11 @@ export declare class CreateJobRequest extends Message<CreateJobRequest> {
    */
   config?: Job_Config;
 
+  /**
+   * @generated from field: int32 namespace_id = 7;
+   */
+  namespaceId: number;
+
   constructor(data?: PartialMessage<CreateJobRequest>);
 
   static readonly runtime: typeof proto3;
