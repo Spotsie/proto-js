@@ -93,6 +93,7 @@ export const GetSubjectLocationsAtRequest = proto3.makeMessageType(
   () => [
     { no: 1, name: "time", kind: "message", T: Timestamp },
     { no: 2, name: "namespace", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "subject_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
   ],
 );
 

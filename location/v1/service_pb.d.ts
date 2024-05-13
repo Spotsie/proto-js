@@ -230,6 +230,13 @@ export declare class GetSubjectLocationsAtRequest extends Message<GetSubjectLoca
    */
   namespace: number;
 
+  /**
+   * query only specified subjects
+   *
+   * @generated from field: repeated int32 subject_ids = 3;
+   */
+  subjectIds: number[];
+
   constructor(data?: PartialMessage<GetSubjectLocationsAtRequest>);
 
   static readonly runtime: typeof proto3;
