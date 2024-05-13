@@ -405,6 +405,13 @@ export declare class Event_Payload_LowBattery extends Message<Event_Payload_LowB
  * @generated from message watchdog.v1.Event.Payload.ButtonPress
  */
 export declare class Event_Payload_ButtonPress extends Message<Event_Payload_ButtonPress> {
+  /**
+   * zone in which the beacon was located when button was pressed
+   *
+   * @generated from field: optional int32 zone_id = 1;
+   */
+  zoneId?: number;
+
   constructor(data?: PartialMessage<Event_Payload_ButtonPress>);
 
   static readonly runtime: typeof proto3;

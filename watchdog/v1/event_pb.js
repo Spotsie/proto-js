@@ -152,7 +152,9 @@ export const Event_Payload_LowBattery = proto3.makeMessageType(
  */
 export const Event_Payload_ButtonPress = proto3.makeMessageType(
   "watchdog.v1.Event.Payload.ButtonPress",
-  [],
+  () => [
+    { no: 1, name: "zone_id", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+  ],
   {localName: "Event_Payload_ButtonPress"},
 );
 
