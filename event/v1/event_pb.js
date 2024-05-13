@@ -121,6 +121,7 @@ export const BeaconButtonPressEvent = proto3.makeMessageType(
   () => [
     { no: 1, name: "beacon", kind: "message", T: Beacon },
     { no: 2, name: "time", kind: "message", T: Timestamp },
+    { no: 3, name: "gateway_mac_address", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
   ],
 );
 

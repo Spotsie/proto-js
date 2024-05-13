@@ -298,6 +298,13 @@ export declare class BeaconButtonPressEvent extends Message<BeaconButtonPressEve
    */
   time?: Timestamp;
 
+  /**
+   * gateway that received the beacon button press signal
+   *
+   * @generated from field: uint64 gateway_mac_address = 3;
+   */
+  gatewayMacAddress: bigint;
+
   constructor(data?: PartialMessage<BeaconButtonPressEvent>);
 
   static readonly runtime: typeof proto3;
