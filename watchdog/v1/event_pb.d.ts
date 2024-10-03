@@ -406,11 +406,23 @@ export declare class Event_Payload_LowBattery extends Message<Event_Payload_LowB
  */
 export declare class Event_Payload_ButtonPress extends Message<Event_Payload_ButtonPress> {
   /**
+   * mac address of the gateway that received the button press signal
+   *
+   * @generated from field: int32 gateway_mac_address = 2;
+   */
+  gatewayMacAddress: number;
+
+  /**
    * zone in which the beacon was located when button was pressed
    *
    * @generated from field: optional int32 zone_id = 1;
    */
   zoneId?: number;
+
+  /**
+   * @generated from field: optional int32 zone_name = 3;
+   */
+  zoneName?: number;
 
   constructor(data?: PartialMessage<Event_Payload_ButtonPress>);
 
