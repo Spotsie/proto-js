@@ -420,9 +420,9 @@ export declare class Event_Payload_ButtonPress extends Message<Event_Payload_But
   zoneId?: number;
 
   /**
-   * @generated from field: optional int32 zone_name = 3;
+   * @generated from field: optional string zone_name = 3;
    */
-  zoneName?: number;
+  zoneName?: string;
 
   constructor(data?: PartialMessage<Event_Payload_ButtonPress>);
 

@@ -155,7 +155,7 @@ export const Event_Payload_ButtonPress = proto3.makeMessageType(
   () => [
     { no: 2, name: "gateway_mac_address", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 1, name: "zone_id", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
-    { no: 3, name: "zone_name", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 3, name: "zone_name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ],
   {localName: "Event_Payload_ButtonPress"},
 );
